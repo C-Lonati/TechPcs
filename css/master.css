@@ -1,0 +1,572 @@
+@font-face {
+    font-family: 'payboocB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'payboocEB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-ExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'payboocM';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'payboocL';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Light.woff') format('woff');
+}
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+body{
+    font-family: 'payboocM';
+}
+a{
+    text-decoration : none;
+    color : inherit;
+}
+img{
+    vertical-align: top;
+}
+ul{list-style: none;}
+h2{font-size : 2em;}
+h3{font-size : 1.5em;}
+h4{font-size : 1.3em;}
+.hidden{
+    display : none;
+}
+.tcenter{
+    text-align: center;
+}
+#header .lang{
+    cursor : pointer;
+}
+#footer{
+    width : 100%;
+    font-size : 15px;
+    background : rgba(0,0,0,0.3);
+}
+#footer .row{
+    height : 80px;
+    padding : 10px 5%;
+}
+#footer div{
+    padding : 20px 0;
+}
+#footer .lang>img{
+    max-height : 20px;
+    cursor : pointer;
+}
+.sns>ul{
+    display : flex;
+    justify-content : space-between;
+}
+.sns>ul>li{
+    flex : 0 1 30px;
+    max-height : 30px;
+}
+.sns>ul>li img{
+    max-width : 30px;
+    max-height : 30px;
+}
+#banner .bannerImg img{
+    width : 100%;
+}
+section>h2{
+    float : left;
+    margin-bottom : 4vh;
+}
+.more{
+    font-size : 0.75em;
+    float : right;
+}
+#hardwareNews>.news{
+    width : 100%;
+    display : flex;
+    flex-direction: column;
+    flex-wrap : wrap;
+}
+.news h3{
+    max-width : 100%;
+    white-space : nowrap;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    margin-bottom : 5px;
+}
+.news>article>.article{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news>*>.time{
+    text-align: right;
+    margin-bottom : 1.5em;
+}
+.news>*{
+    background : white;
+    box-shadow : 0 0 0.2em rgba(0,0,0,0.3);
+    border-radius : 1.5em;
+    padding : 1.5em;
+}
+#hardwareNews>.news img{
+    float : left;
+}
+.news>*{
+    cursor: pointer;
+    max-width : 100%;
+}
+.snb>li{
+    margin-bottom : 25px;
+}
+.subSnb{
+    padding-left : 1em;
+}
+.subSnb>li{
+    margin-top : 10px;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space: nowrap;
+}
+.recomnCpu{
+    width : 100%;
+    overflow: hidden;
+    display : flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding : 10px;
+}
+#recomnGpu>h2{
+    float : none;
+}
+.recomnCpu>article{
+    flex : 0 0 46%;
+    box-shadow : 0 0 3px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.cpuIcon>h3{
+    text-align: center;
+    padding-top : 10px;
+}
+#recomnGpu h3{
+    padding-bottom : 1vh;
+}
+.hitHw>p{
+    text-align: center;
+}
+.hw{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow : 0 0 3px rgba(0,0,0,0.3);
+}
+.mainParts{
+    display : flex;
+    flex-wrap: nowrap;
+}
+.mainParts>.parts{
+    display : flex;
+    gap : 5px;
+    flex-direction: column;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+.peripherals{
+    display : flex;
+    flex-wrap: nowrap;
+}
+
+.recomnBuild{
+    overflow : hidden;
+    padding : 20px 10px;
+}
+.recomnBuild:nth-child(even){
+    border-bottom : 1px solid #ccc;
+    border-top : 1px solid #ccc;
+}
+.recomnBuild img{
+    float : left;
+    padding-right : 3%;
+}
+.recomnBuild .nickname{
+    display : inline-block;
+    width : 15%;
+    min-width : 130px;
+    padding : 1vh 0 2vh;
+}
+.recomnBuild h3{
+    overflow: hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+}
+
+@media screen and (min-width:1200px){
+    section{
+        margin-bottom : 100px;
+    }
+    #header{
+        width : 1200px;
+        display : flex;
+        gap : 20px;
+    }
+    .hambuger{
+        display : none;
+    }
+    .logo{
+        flex : 2;
+    }
+    .logoImg{
+        height : 40px;
+        margin : 10px 5px;
+    }
+    .lnb{
+        flex : 14;
+        display : flex;
+        width : max-content;
+        gap : 20px;
+        line-height : 60px;
+        justify-content: space-between;
+    }
+    .lnb>li{
+        display : flex;
+        flex-direction: column;
+        position : relative;
+    }
+    .lnb>li>a{
+        display : block;
+    }
+    .subLnb{
+        box-sizing : content-box;
+        position : absolute;
+        background : white;
+        top : 40px;
+        left : -10px;
+        padding : 5px 15px 5px 5px;
+        display : none;
+        line-height : 20px;
+        border-radius: 5px;
+        min-width : 100%;
+    }
+    .subLnb>li{
+        width : max-content;
+        padding : 5px;
+    }
+    .lnb>li:hover>.subLnb{
+        display : block;
+    }
+    .gnb{
+        display : flex;
+        gap : 10px;
+        flex : 2;
+    }
+    .gnb>li{
+        flex : 1 1 50px;
+        margin-top : 10px;
+        cursor: pointer;
+    }
+    #header .lang{
+        margin-top : 20px !important;
+    }
+    #footer .logo{
+        padding : 12px 0;
+        height : 80px;
+    }
+
+    #hardwareNews>.news{
+        gap : 60px;
+    }
+    #hardwareNews>.news img{
+        border-radius : 20px 0 0 20px;
+        height : 320px;
+        padding-right : 20px;
+    }
+    .news>article>.article{
+        line-clamp : 12;
+        -webkit-line-clamp: 12;
+    }
+    .recomnCpu{
+        gap : 60px 0;
+    }
+    .recomnGpu{
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        overflow: hidden;
+        display : flex;
+        padding : 20px;
+        border-radius: 10px;
+        gap : 50px;
+        margin-bottom : 50px;
+    }
+    .recomnGpu>h3{
+        clear : both;
+    }
+    .recomnGpu>.gpu{
+        flex : 1;
+        text-align: center;
+    }
+    .hw{
+        gap : 20px;
+        padding : 20px;
+        border-radius: 10px;
+        margin-bottom : 5px;
+    }
+    .mainParts{
+        gap : 1.33%;
+    }
+    .mainParts>.parts{
+        border-radius: 10px;
+        flex : 0 0 30.33%;
+    }
+    .mainParts>.parts img{ 
+        height : 240px;
+    }
+    .peripherals{
+        gap : 1.33%;
+    }
+    .peri{
+        flex : 0 0 24%;
+    }
+    .peri img{
+        width : 100%;
+        height : 210px;
+        border-radius: 10px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    }
+    .recomnBuild img{
+        max-height : 300px;
+    }
+}
+@media screen and (max-width:1199px){
+    .lnb, .login{
+        display : none;
+    }
+    #footer .logo{
+        display : none;
+    }
+    #header{
+        display : flex;
+        justify-content : space-between;
+        flex-direction: row;
+    }
+    #header>*{
+        flex : 1;
+    }
+    #header>h1{
+        text-align: center;
+    }
+    #header .logoImg{
+        padding : 15px 0 !important;
+    }
+    #header img{
+        height : 80px;
+        padding : 30px 0;
+    }
+    .gnb{
+        display : flex;
+        gap : 5px;
+        justify-content: flex-end;
+    }
+}
+@media screen and (max-width:1199px) and (min-width:768px){
+    section{
+        margin-bottom : 12vh;
+    }
+
+    .news{
+        display : flex;
+        flex-direction : column;
+        gap : 5vh;
+    }
+    .news>article>img{
+        padding-right : 1.5vw;
+    }
+    .news>article>.article{
+        overflow : hidden;
+        text-overflow : ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        line-clamp : 13;
+        -webkit-line-clamp: 13;
+    }
+    .recomnCpu{
+        gap : 4vh 0;
+    }
+    .recomnGpu{
+        display : flex;
+        gap : 3vh 0;
+        justify-content : space-between;
+        text-align : center;
+        flex-wrap : wrap;
+        margin-bottom : 5vh;
+    }
+    .recomnGpu p{
+        overflow: hidden;
+        white-space : nowrap;
+        text-overflow : hidden;
+    }
+    .recomnGpu img{
+        max-height : 20vh;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        border-radius : 2vw;
+        margin-bottom : 1vh;
+    }
+    .gpu{
+        text-align: center;
+    }
+    .uhd>.gpu:last-child{
+        display : none;
+    }
+
+    .hitHw{
+        display : flex;
+        flex-wrap : nowrap;
+        gap : 5vh 0;
+        justify-content : space-between;
+    }
+    .hw{
+        flex : 0 0 20vw;
+        padding : 3vh;
+        border-radius: 2vh;
+    }
+    .hw:last-child{
+        display : none;
+    }
+    .mainParts{
+        gap : 4vw;
+    }
+    .mainParts>.parts{
+        flex : 0 0 21vw;
+        padding : 3vh;
+        border-radius: 2vh;
+    }
+    .mainParts>.parts img{
+        height : 10vh
+    }
+    .peripherals{
+        gap : 4vw;
+    }
+    .peri{
+        flex : 0 0 22vw;
+    }
+    .peri img{
+        width :100%;
+        height : 12vh;
+        border-radius: 2vh;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    }
+    .recomnBuild img{
+        max-width : 30%;
+    }
+    #pcBuild{
+        position : absolute;
+        top : 200px;
+        left : 5%;
+    }
+    #pcBuild h2{
+        display : none;
+    }
+}
+@media screen and (max-width:767px){
+    section{
+        margin-bottom : 8vh;
+    }
+    .news img{
+        max-width : 100px;
+        padding-right : 10px;
+    }
+    .news .article{
+        line-clamp : 3;
+        -webkit-line-clamp: 3;
+    }
+    .subSnb{
+        display : none;
+    }
+    .recomnCpu{
+        gap : 4%;
+        flex-wrap : nowrap;
+    }
+    .recomnCpu>article{
+        flex : 0 0 48%;
+    }
+    .snb{
+        display : flex;
+        font-size : .75em;
+        gap : 1vw;
+    }
+    .snb>li{
+        background : gray;
+        color : white;
+        padding : 3px;
+    }
+    .news{
+        gap : 3vh;
+    }
+    .recomnGpu{
+        overflow: hidden;
+        margin-bottom : 3vh;
+    }
+    .gpu>p{
+        text-align: center;
+        font-size : 0.8em;
+        overflow : hidden;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+    }
+    .hitHw{
+        display : flex;
+        flex-wrap : nowrap;
+        gap : 5vw;
+    }
+    .hw{
+        flex : 1 0 42.5vw;
+        border-radius : 1vh;
+    }
+    .mainParts{
+        gap : 5vw;
+    }
+    .parts{
+        flex : 1 0 42.5vw;
+    }
+    .peripherals{
+        gap : 5vw;
+    }
+    .peri{
+        flex : 1 0 42.5vw;
+    }
+    .recomnBuild img{
+        float : left;
+        padding-right : 2vw;
+        max-width : 20%
+    }
+    .recomnBuild .detail{
+        display : none;
+    }
+    #footer>.row{
+        display : flex;
+        flex-direction: row;
+        gap : 3vw;
+        font-size : 4vw;
+    }
+    .footerInfo{
+        flex : 4;
+    }
+    .contact{
+        flex : 3;
+    }
+    .sns{
+        flex : 1;
+    }
+    #footer>.row img{
+        max-width : 5vw;
+    }
+    #footer .lang img{
+        margin-top : 1.5vw;
+    }
+    .sns>ul{
+        flex-direction: row;
+        flex-wrap : wrap;
+        gap : 1vw 0;
+    }
+    .sns>ul>li{flex : 0 1 5vw !important;}
+}

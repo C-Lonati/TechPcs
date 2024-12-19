@@ -1,0 +1,172 @@
+/* response.css - 반응형 스타일 문서
+---------------------------------------------------------------- */
+.center { margin: 0 auto; }
+
+@media screen and (min-width : 1200px){
+	body{
+		font-size : 16px;
+	}
+	.row {
+		overflow: hidden;
+		width: 100%;
+		max-width: 1200px;
+		min-width: 800px;
+		margin: 0 auto;
+		position: relative;
+		padding : 0 20px;
+		box-sizing: content-box;
+	}
+
+	.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12, .col13, .col14, .col15 {
+		float: left;
+		margin-right: 1.33%;
+		min-height: 1px;
+	}
+
+	.row .col1  { width: 5%;	}
+	.row .col2  { width: 11.33%;	}
+	.row .col3  { width: 17.67%;	}
+	.row .col4  { width: 24%;	}
+	.row .col5  { width: 30.33%;	}
+	.row .col6  { width: 36.67%;		}
+	.row .col7  { width: 43%;	}
+	.row .col8  { width: 49.33%;	}
+	.row .col9  { width: 55.67%;	}
+	.row .col10 { width: 62%;	}
+	.row .col11 { width: 68.33%;	}
+	.row .col12 { width: 74.67%;}
+	.row .col13 { width: 81%;	}
+	.row .col14 { width: 87.33%;	}
+	.row .col15 { width: 93.67%;}
+	.row .col16 { width: 100%; float: left; }
+
+	.row .prefix1{padding-left : 6.33%;}
+	.row .prefix2{padding-left : 12.67%;}
+	.row .prefix3{padding-left : 19.00%;}
+	.row .prefix4{padding-left : 25.33%;}
+	.row .prefix5{padding-left : 31.67%;}
+	.row .prefix6{padding-left : 38.00%;}
+	.row .prefix7{padding-left : 44.33%;}
+	.row .prefix8{padding-left : 50.67%;}
+	.row .prefix9{padding-left : 57.00%;}
+	.row .prefix10{padding-left : 63.33%;}
+	.row .prefix11{padding-left : 69.67%;}
+	.row .prefix12{padding-left : 76.00%;}
+	.row .prefix13{padding-left : 82.33%;}
+	.row .prefix14{padding-left : 88.67%;}
+	.row .prefix15{padding-left : 95.00%;}
+
+	.row .suffix1{padding-right : 6.33%;}
+	.row .suffix2{padding-right : 12.67%;}
+	.row .suffix3{padding-right : 19.00%;}
+	.row .suffix4{padding-right : 25.33%;}
+	.row .suffix5{padding-right : 31.67%;}
+	.row .suffix6{padding-right : 38.00%;}
+	.row .suffix7{padding-right : 44.33%;}
+	.row .suffix8{padding-right : 50.67%;}
+	.row .suffix9{padding-right : 57.00%;}
+	.row .suffix10{padding-right : 63.33%;}
+	.row .suffix11{padding-right : 69.67%;}
+	.row .suffix12{padding-right : 76.00%;}
+	.row .suffix13{padding-right : 82.33%;}
+	.row .suffix14{padding-right : 88.67%;}
+	.row .suffix15{padding-right : 95.00%;}
+}
+.last { margin-right: 0 !important; }
+[class^=col]>:first-child { margin-top: 0; }/*^= 와일드카드 ~~로 시작하는*/
+
+img, object, embed, iframe { max-width: 100%; }
+img, iframe { height: auto; }
+
+.fr { float: right; }
+.clearfix{clear:both;}
+
+/* IE */
+.old .col1,  .ie9 .col1  { width: 4.7%;   } 
+.old .col2,  .ie9 .col2  { width: 13.2%;  } 
+.old .col3,  .ie9 .col3  { width: 22.05%; } 
+.old .col4,  .ie9 .col4  { width: 30.6%;  } 
+.old .col5,  .ie9 .col5  { width: 39%;    } 
+.old .col6,  .ie9 .col6  { width: 48%;    } 
+.old .col7,  .ie9 .col7  { width: 56.75%; } 
+.old .col8,  .ie9 .col8  { width: 61.6%;  } 
+.old .col9,  .ie9 .col9  { width: 74.05%; } 
+.old .col10, .ie9 .col10 { width: 82%;    } 
+.old .col11, .ie9 .col11 { width: 91.35%; }
+
+/* Tablet Size: 1200 이하 */
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+	body {
+		font-size: 15px;
+	}
+	.tcol1, .tcol2, .tcol3, .tcol4, .tcol5, .tcol6, .tcol7{
+		float: left;
+		margin-right: 4.0650%;
+		min-height: 1px;
+	}
+	.row {
+		box-sizing : content-box;
+		width: 90%;
+		min-width: 320px;
+		padding : 0 5%;
+		overflow : hidden;
+	}
+
+
+	.row .tcol1{width : 8.9431%;}
+	.row .tcol2{width : 21.9512%;}
+	.row .tcol3{width : 34.9593%;}
+	.row .tcol4{width : 47.9675%;}
+	.row .tcol5{width : 60.9756%;}
+	.row .tcol6{width : 73.9837%;}
+	.row .tcol7{width : 86.9919%;}
+	.row .tcol8{width : 100.0000%;}
+
+
+	.row .tprefix1{padding-left : 13.0081%;}
+	.row .tprefix2{padding-left : 26.0163%;}
+	.row .tprefix3{padding-left : 39.0244%;}
+	.row .tprefix4{padding-left : 52.0325%;}
+	.row .tprefix5{padding-left : 65.0407%;}
+	.row .tprefix6{padding-left : 78.0488%;}
+	.row .tprefix7{padding-left : 91.0569%;}
+
+	.row .suffix1{padding-right : 13.0081%;}
+	.row .suffix2{padding-right : 26.0163%;}
+	.row .suffix3{padding-right : 39.0244%;}
+	.row .suffix4{padding-right : 52.0325%;}
+	.row .suffix5{padding-right : 65.0407%;}
+	.row .suffix6{padding-right : 78.0488%;}
+	.row .suffix7{padding-right : 91.0569%;}
+}
+
+
+/* Mobile Size: 767px 이하 */
+@media handheld, only screen and (max-width: 767px) {
+	body { font-size: 14px;}
+	.mcol1, .mcol2, .mcol3 {
+		float: left;
+		margin-right: 6.1728%;
+		min-height: 1px;
+	}
+	.row {
+		box-sizing : content-box;
+		width: 90%;
+		min-width: 320px;
+		padding : 0 5%;
+		overflow : hidden;
+	}
+
+	.row .mcol1{width : 20.37%;}
+	.row .mcol2{width : 46.9136%;}
+	.row .mcol3{width : 73.4568%;}
+	.row .mcol4{width : 100.0000%;}
+	
+	.row .mprefix1{padding-left : 26.54%;}
+	.row .mprefix2{padding-left : 53.09%;}
+	.row .mprefix3{padding-left : 79.63%;}
+
+	.row .msuffix1{padding-right : 26.54%;}
+	.row .msuffix2{padding-right : 53.09%;}
+	.row .msuffix3{padding-right : 79.63%;}
+}
