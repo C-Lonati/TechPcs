@@ -20,19 +20,21 @@
     padding : 0;
     box-sizing : border-box;
 }
-#header .langBox{
-    left : 10%;
+.lbHead{
+    top : 60px;
 }
-#footer .langBox{
-    left : 10%;
+.lbFoot{
+    bottom : 100px;
 }
 .langBox{
+    left : 10%;
     width : 80%;
     padding : 5vw !important;
     position : absolute;
     background : white;
     border-radius: 3vw;
     z-index : 97;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
 .langBox>ul{
     display: flex;
@@ -46,6 +48,32 @@
 .langBox>ul>li>img{
     width : 7vw;
     height : 5vw;
+}
+#searchBox{
+    position : absolute;
+    top : 60px;
+    right : 5%;
+    width : 80%;
+    max-width : 500px;
+    height : 600px;
+    padding : 20px;
+    background : white;
+    z-index : 90;
+}
+#searchBox input[type="search"]{
+    min-width : 80%;
+    padding : 5px;
+    border : none;
+    outline-style : none;
+}
+#searchBox input[type="image"]{
+    height : 30px;
+    float : right;
+}
+.underLine{
+    padding : 10px 5px;
+    border-bottom : 1px solid #333;
+    margin-top : 10px;
 }
 #banner{
     max-height : 600px;
@@ -66,24 +94,28 @@ h2{font-size : 2em;}
 h3{font-size : 1.5em;}
 h4{font-size : 1.3em;}
 .hidden{
-    display : none;
+    display : none !important;
+}
+.block{
+    display : block !important;
 }
 .tcenter{
     text-align: center;
 }
-#header .lang{
+#headLang{
     cursor : pointer;
 }
 #footer{
     width : 100%;
     font-size : 15px;
     background : rgba(0,0,0,0.3);
+    position : relative;
 }
 #footer .row{
     height : 80px;
     padding : 10px 5%;
 }
-#footer .lang>img{
+#footLang>img{
     max-height : 20px;
     cursor : pointer;
 }
@@ -114,6 +146,7 @@ section>h2{
     display : flex;
     flex-direction: column;
     flex-wrap : wrap;
+    position : relative;
 }
 .news h3{
     max-width : 100%;
@@ -137,13 +170,11 @@ section>h2{
     box-shadow : 0 0 0.2em rgba(0,0,0,0.3);
     border-radius : 1.5em;
     padding : 1.5em;
+    cursor: pointer;
+    max-width : 100%;
 }
 #hardwareNews>.news img{
     float : left;
-}
-.news>*{
-    cursor: pointer;
-    max-width : 100%;
 }
 .snb>li{
     margin-bottom : 25px;
@@ -190,9 +221,48 @@ section>h2{
     text-align: center;
     box-shadow : 0 0 3px rgba(0,0,0,0.3);
 }
+#mainParts{
+    position : relative;
+}
 .mainParts{
     display : flex;
     flex-wrap: nowrap;
+    position : relative;
+    width : max-content;
+    transition : .6s;
+    left : 0;
+}
+.prev, .next{
+    position : absolute;
+    opacity: 0%;
+    transition : 0.3s;
+    width : 30px;
+    height : 30px;
+    cursor: pointer;
+    z-index : 10;
+}
+.prev{
+    background : url('../images/leftBtn.svg')no-repeat 50% 50%;
+    left : 10px;
+}
+.next{
+    background : url('../images/rightBtn.svg')no-repeat 50% 50%;
+    right : 10px;
+}
+#mainParts:hover .prev, #mainParts:hover .next{
+    opacity: 100%;
+}
+#mainParts .prev, #mainParts .next{
+    bottom : 35%;
+}
+#peripherals{
+    position : relative;
+}
+#peripherals .prev, #peripherals .next{
+    bottom : 40%;
+}
+#peripherals:hover .prev, #peripherals:hover .next{
+    opacity: 100%;
 }
 .mainParts>.parts{
     display : flex;
@@ -203,6 +273,10 @@ section>h2{
 .peripherals{
     display : flex;
     flex-wrap: nowrap;
+    position : relative;
+    width : max-content;
+    left : 0;
+    transition : .6s;
 }
 
 .recomnBuild{
@@ -219,9 +293,13 @@ section>h2{
 }
 .recomnBuild .nickname{
     display : inline-block;
-    width : 15%;
     min-width : 130px;
     padding : 1vh 0 2vh;
+}
+.recomnBuild .date{
+    display : inline-block;
+    min-width : 15%;
+    min-width : 200px;
 }
 .recomnBuild h3{
     overflow: hidden;
@@ -230,6 +308,105 @@ section>h2{
 }
 
 @media screen and (min-width:1200px){
+    #searchBox{
+        right : 200px !important;
+    }
+    #modal{
+        width : 100%;
+        height : 100%;
+        position : fixed;
+        top : 0;
+        left : 0;
+        z-index : 98;
+        background : rgba(0,0,0,0.6);
+    }
+    #login{
+        width : 60%;
+        left : 20%;
+        top : 100px;
+        position : fixed;
+        z-index : 99;
+        height : 600px;
+        background : white;
+        border-radius: 2vw;
+        display : flex;
+        gap : 5%;
+    }
+    #login>form{
+        flex : 1;
+        padding : 10%;
+        position : relative;
+    }
+    #login h2{
+        text-align : center;
+    }
+    #login input{
+        border : none;
+        outline-style : none;
+        padding : 10px;
+    }
+    #login label{
+        display : none;
+    }
+    .loginSns{
+        display : flex;
+        gap : 10px;
+        
+        justify-content :space-around;
+    }
+    #loginForm .loginSns{
+        margin-top : 60px;
+    }
+    .loginSns>li{
+        flex : 0 0 2vw;
+    }
+    .loginSns img{
+        width : 100%;
+        height : 100%;
+    }
+    .formBtn{
+        position : absolute;
+        width : 60%;
+        bottom : 100px;
+        height : 50px;
+        border : none;
+        box-shadow : 0 0 3px rgba(0,0,0,0.3);
+        border-radius: 25px;
+    }
+    .formToggle{
+        background : #fff;
+    }
+    .loginTextBox{
+        position : absolute;
+        width : 50%;
+        height : 100%;
+        top : 0;
+        transition : 1.5s;
+        background : #49B591;
+        z-index: 100;
+        padding : 10%;
+        color : white;
+    }
+    .loginTextBox h2{
+        margin-bottom : 60px;
+    }
+    .loginTextRight p:nth-of-type(even){
+        margin-bottom : 150px;
+    }
+    .loginTextLeft p:nth-of-type(2){
+        margin-top : 112px;
+    }
+    .loginTextLeft .loginSns{
+        margin-top : 20px;
+    }
+    .textBoxLeft{
+        left : 0;
+        border-radius: 2vw 0 0 2vw;
+    }
+    .textBoxRight{
+        left : 50%;
+        border-radius: 0 2vw 2vw 0;
+    }
     section{
         margin-bottom : 100px;
     }
@@ -305,11 +482,21 @@ section>h2{
 
     #hardwareNews>.news{
         gap : 60px;
+        height : 796px;
     }
     #hardwareNews>.news img{
         border-radius : 20px 0 0 20px;
         height : 320px;
         padding-right : 20px;
+    }
+    .news>article:hover{
+        position : absolute;
+        top : 0;
+        bottom : 0;
+    }
+    .news>article:hover>.article{
+        line-clamp : 33;
+        -webkit-line-clamp: 33;
     }
     .news>article>.article{
         line-clamp : 12;
@@ -324,7 +511,7 @@ section>h2{
         display : flex;
         padding : 20px;
         border-radius: 10px;
-        gap : 50px;
+        gap : 30px;
         margin-bottom : 50px;
     }
     .recomnGpu>h3{
@@ -339,13 +526,19 @@ section>h2{
         padding : 20px;
         border-radius: 10px;
         margin-bottom : 5px;
+        transition : .3s;
+    }
+    .hw:hover{
+        position : relative;
+        top : -3px;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.6);
     }
     .mainParts{
         gap : 1.33%;
     }
     .mainParts>.parts{
         border-radius: 10px;
-        flex : 0 0 30.33%;
+        flex : 1 1 30.33%;
     }
     .mainParts>.parts img{ 
         height : 240px;
@@ -354,10 +547,9 @@ section>h2{
         gap : 1.33%;
     }
     .peri{
-        flex : 0 0 24%;
+        flex : 1 1 24%;
     }
     .peri img{
-        width : 100%;
         height : 210px;
         border-radius: 10px;
         box-shadow: 0 0 3px rgba(0,0,0,0.3);
@@ -401,7 +593,7 @@ section>h2{
     }
     #header img{
         height : 80px;
-        padding : 30px 0;
+        padding : 20px 0;
     }
     .gnb{
         display : flex;
@@ -620,7 +812,7 @@ section>h2{
     #footer>.row img{
         max-width : 5vw;
     }
-    #footer .lang img{
+    #footer #footLang img{
         margin-top : 1.5vw;
     }
     .sns>ul{

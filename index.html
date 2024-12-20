@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech PCs Main</title>
+    <title>Tech PCs</title>
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/master.css">
     <script src="js/lib/jquery-3.6.0.js"></script>
 </head>
 <body>
+    <div id="login" class="hidden"></div>
+    <div class="langBox hidden"></div>
     <header id="header" class="center">
     </header>
     <section id="banner" class="col16 tcol8 mcol4 last">
@@ -191,23 +193,23 @@
             <h2>성능대별 Gpu추천</h2>
             <h3>FHD</h3>
             <article class="fhd recomnGpu">
-                <div class="gpu col4">
+                <div class="gpu">
                     <img src="images/fhd_gpu1.jpg" alt="Rtx 3060 12G">
                     <p>Rtx 3060 12G</p>
                     <p>₩300,000</p>
                     <p class="hidden">
-                        RTX 3060/8nm/부스트클럭: 1837MHz/스트림 프로세서: 3584개/PCIe4.0x16/GDDR6(DDR6)/출력단자: HDMI2.1, DP1.4/지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3/사용전력: 최대 180W/정격파워 550W 이상/전원 포트: 8핀 x1/전원부: 7페이즈/2팬/가로(길이): 245mm/두께: 40mm/제로팬(0-dB기술)/백플레이트/DrMOS/LED 라이트/ThunderMaster/A/S 3년/2021년 7월부로 LHR(채굴제한) 모델 유통
+                        RTX 3060 / 8nm / 부스트클럭: 1837MHz / 스트림 프로세서: 3584개 / PCIe4.0x16 / GDDR6(DDR6) / 출력단자: HDMI2.1, DP1.4 / 지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3 / 사용전력: 최대 180W / 정격파워 550W 이상 / 전원 포트: 8핀 x1 / 전원부: 7페이즈 / 2팬 / 가로(길이): 245mm / 두께: 40mm / 제로팬(0-dB기술) / 백플레이트 / DrMOS / LED 라이트 / ThunderMaster / A/S 3년 / 2021년 7월부로 LHR(채굴제한) 모델 유통
                     </p>
                 </div>
-                <div class="gpu col4">
+                <div class="gpu">
                     <img src="images/fhd_gpu2.jpg" alt="Rtx 4060 8G">
                     <p>Rtx 4060 8G</p>
                     <p>₩380,000</p>
                     <p class="hidden">
-                        RTX 4060/4nm/베이스클럭: 1830MHz/부스트클럭: 2670MHz/스트림 프로세서: 3072개/PCIe4.0x16(at x8)/GDDR6(DDR6)/출력단자: HDMI2.1, DP1.4/지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3/사용전력: 115W/정격파워 600W 이상/전원 포트: 8핀 x1/2팬/가로(길이): 249.9mm/두께: 40.2mm/제로팬(0-dB기술)/백플레이트/LED 라이트/A/S 3년
+                        RTX 4060 / 4nm / 베이스클럭: 1830MHz / 부스트클럭: 2670MHz/스트림 프로세서: 3072개/PCIe4.0x16(at x8)/GDDR6(DDR6)/출력단자: HDMI2.1, DP1.4/지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3/사용전력: 115W/정격파워 600W 이상/전원 포트: 8핀 x1/2팬/가로(길이): 249.9mm/두께: 40.2mm/제로팬(0-dB기술)/백플레이트/LED 라이트/A/S 3년
                     </p>
                 </div>
-                <div class="gpu col4">
+                <div class="gpu">
                     <img src="images/fhd_gpu3.jpg" alt="Rtx 4060ti 8G">
                     <p>Rtx 4060ti 8G</p>
                     <p>₩520,000</p>
@@ -215,7 +217,7 @@
                         RTX 4060 Ti/4nm/베이스클럭: 2310MHz/부스트클럭: 2685MHz/스트림 프로세서: 4352개/PCIe4.0x16(at x8)/GDDR6(DDR6)/출력단자: HDMI2.1, DP1.4/지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3/사용전력: 160W/정격파워 650W 이상/전원 포트: 8핀 x1/2팬/가로(길이): 249.9mm/두께: 40.1mm/제로팬(0-dB기술)/백플레이트/DrMOS/LED 라이트/ThunderMaster/A/S 3년
                     </p>
                 </div>
-                <div class="gpu col4 last">
+                <div class="gpu">
                     <img src="images/fhd_gpu4.jpg" alt="Arc A770 16G">
                     <p>Arc A770 16G</p>
                     <p>₩400,000</p>
@@ -226,36 +228,36 @@
             </article>
             <h3>QHD</h3>
             <article class="qhd recomnGpu">
-                <div class="gpu col4">
+                <div class="gpu">
                     <img src="images/qhd_gpu1.jpg" alt="Rtx 4070 super 12G">
                     <p>Rtx 4070 super 12G</p>
                     <p>₩940,000</p>
                     <p class="hidden">
-                        RTX 4070 SUPER/4nm/베이스클럭: 1980MHz/부스트클럭: 2475MHz/스트림 프로세서: 7168개/PCIe4.0x16/GDDR6X(DDR6X)/출력단자: HDMI2.1, DP1.4/지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3/사용전력: 220W/정격파워 650W 이상/전원 포트: 16핀(12VHPWR) x1/3팬/가로(길이): 315mm/두께: 50mm/제로팬(0-dB기술)/백플레이트/LED 라이트/구성품: VGA지지대, 2x8핀 to 16핀 커넥터/A/S 3년
+                        RTX 4070 SUPER / 4nm / 베이스클럭: 1980MHz/부스트클럭: 2475MHz / 스트림 프로세서: 7168개/PCIe4.0x16/GDDR6X(DDR6X) / 출력단자: HDMI2.1, DP1.4 / 지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3 / 사용전력: 220W / 정격파워 650W 이상/전원 포트: 16핀(12VHPWR) x1/3팬 / 가로(길이): 315mm / 두께: 50mm / 제로팬(0-dB기술) / 백플레이트 / LED 라이트/구성품: VGA지지대, 2x8핀 to 16핀 커넥터/A/S 3년
                     </p>
                 </div>
-                <div class="gpu col4">
+                <div class="gpu">
                     <img src="images/qhd_gpu2.jpg" alt="Rtx 3080 12G">
                     <p>Rtx 3080 12G(중고)</p>
                     <p>₩480,000</p>
                     <p class="hidden">
-                        RTX 3080/8nm/부스트클럭: 1755MHz/스트림 프로세서: 8960개/PCIe4.0x16/GDDR6X(DDR6X)/출력단자: HDMI2.1, DP1.4/지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3/사용전력: 최대 350W/정격파워 750W 이상/전원 포트: 8핀 x2/전원부: 16+3페이즈/3팬/가로(길이): 317.8mm/두께: 64.6mm/제로팬(0-dB기술)/백플레이트/LED 라이트/SPECTRA/A/S 3년
+                        RTX 3080 / 8nm / 부스트클럭: 1755MHz / 스트림 프로세서: 8960개 / PCIe4.0x16/GDDR6X(DDR6X) / 출력단자: HDMI2.1, DP1.4 / 지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3 / 사용전력: 최대 350W/정격파워 750W 이상 / 전원 포트: 8핀 x2 / 전원부: 16+3페이즈 / 3팬/가로(길이): 317.8mm / 두께: 64.6mm/제로팬(0-dB기술) / 백플레이트 / LED 라이트 / SPECTRA / A/S 3년
                     </p>
                 </div>
-                <div class="gpu col4">
+                <div class="gpu">
                     <img src="images/qhd_gpu3.jpg" alt="Rtx 4070 ti super 12G">
                     <p>Rtx 4070 ti super 16G</p>
                     <p>₩1,250,000</p>
                     <p class="hidden">
-                        RTX 4070 Ti SUPER/4nm/베이스클럭: 2340MHz/부스트클럭: 2640MHz/스트림 프로세서: 8448개/PCIe4.0x16/GDDR6X(DDR6X)/출력단자: HDMI2.1, DP1.4/지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3/사용전력: 285W/정격파워 750W 이상/전원 포트: 16핀(12VHPWR) x1/3팬/가로(길이): 328.9mm/두께: 63.5mm/제로팬(0-dB기술)/백플레이트/DrMOS/구성품: 2x8핀 to 16핀 커넥터/A/S 3년
+                        RTX 4070 Ti SUPER / 4nm / 베이스클럭: 2340MHz / 부스트클럭: 2640MHz / 스트림 프로세서: 8448개 / PCIe4.0x16/GDDR6X(DDR6X) / 출력단자: HDMI2.1, DP1.4 / 지원정보: 8K 지원, 4K 지원, HDR 지원, HDCP 2.3 / 사용전력: 285W / 정격파워 750W 이상/전원 포트: 16핀(12VHPWR) x1/3팬 / 가로(길이): 328.9mm / 두께: 63.5mm / 제로팬(0-dB기술) / 백플레이트 / DrMOS / 구성품: 2x8핀 to 16핀 커넥터 / A/S 3년
                     </p>
                 </div>
-                <div class="gpu col4 last">
+                <div class="gpu">
                     <img src="images/qhd_gpu4.jpg" alt="Rx 7800 XT">
                     <p>Rx 7800 XT(해외)</p>
                     <p>₩560,000</p>
                     <p class="hidden">
-                        RX 7800 XT/부스트클럭: 2565MHz/스트림 프로세서: 3840개/PCIe4.0x16/GDDR6(DDR6)/출력단자: HDMI2.1, DP2.1/지원정보: 8K 지원, 4K 지원/사용전력: 288W/정격파워 700W 이상/전원 포트: 8핀 x2/3팬/가로(길이): 320mm/두께: 61.57mm/백플레이트/LED 라이트/Dual BIOS/구성품: VGA지지대/A/S 3년
+                        RX 7800 XT / 부스트클럭: 2565MHz / 스트림 프로세서: 3840개 / PCIe4.0x16 / GDDR6(DDR6) / 출력단자: HDMI2.1, DP2.1 / 지원정보: 8K 지원, 4K 지원 / 사용전력: 288W / 정격파워 700W 이상 / 전원 포트: 8핀 x2/3팬 / 가로(길이): 320mm / 두께: 61.57mm / 백플레이트 / LED 라이트 / Dual BIOS / 구성품: VGA지지대 / A/S 3년
                     </p>
                 </div>
             </article>
@@ -315,6 +317,8 @@
         </section>
         <section id="mainParts" class="col16 tprefix2 tcol8 mcol4 last">
             <h2>PC 주요부품</h2>
+            <span class="prev"></span>
+            <span class="next"></span>
             <article class="mainParts clearfix tcenter">
                 <article class="parts">
                     <a href="error404.html"><img src="images/mainParts1.jpg" alt="mainParts"></a>
@@ -340,6 +344,8 @@
         </section>
         <section id="peripherals" class="col16 tprefix2 tcol8 mcol4 last">
             <h2>PC 주변기기</h2>
+            <span class="prev"></span>
+            <span class="next"></span>
             <article class="peripherals clearfix tcenter">
                 <article class="peri">
                     <a href="error404.html"><img src="images/peri1.jpg" alt="peripherals"></a>
@@ -371,21 +377,21 @@
             <h2>추천 PC 빌드</h2>
             <article class="recomnBuild clearfix">
                 <a href="error404.html"><img src="images/recomnBuild1.jpg" alt="추천견적1"></a>
-                <h3><a href="error404.html">FHD 배그 가성비 100프레임 방어</a></h3>
+                <h3><a href="error404.html">FHD 배그 가성비 60프레임 방어</a></h3>
                 <p><span class="date">2024.12.16</span><span class="nickname">5600x5년차</span></p>
-                <p class="detail">내용</p>
+                <p class="detail">Cpu : r5 5600x / gpu : rx 7600 / ram : 삼성 시금치 3200mhz / M/B : msi mag b550m 박격포 / 쿨러 : PCCOOLER PALADIN 400 / PSU : 마이크로닉스 classic II 풀체인지 600w bronze</p>
             </article>
             <article class="recomnBuild clearfix">
                 <a href="error404.html"><img src="images/recomnBuild2.jpg" alt="추천견적2"></a>
                 <h3><a href="error404.html">FHD 검은신화 :오공 풀옵션</a></h3>
                 <p><span class="date">2024.12.16</span><span class="nickname">외쳐리사수</span></p>
-                <p class="detail">내용</p>
+                <p class="detail">Cpu : r7 7800x3D / gpu : rtx 4080super / ram : 하이닉스 시금치 4800mhz / M/B : msi mag b650m 토마호크 / 쿨러 : pentawave Z06D / PSU : 시소닉 NEW FOCUS V4 GX-850 GOLD 풀모듈러 ATX3.1</p>
             </article>
             <article class="recomnBuild clearfix">
                 <a href="error404.html"><img src="images/recomnBuild3.jpg" alt="추천견적3"></a>
                 <h3><a href="error404.html">UHD GTA5 풀옵 144프레임 방어</a></h3>
                 <p><span class="date">2024.12.15</span><span class="nickname">바로그래픽정상화</span></p>
-                <p class="detail">내용</p>
+                <p class="detail">Cpu : r7 9800x3D / gpu : rtx 4090 / ram : 하이닉스 시금치 5600mhz / M/B : gigabyte asus 870e hero / 쿨러 : NZXT KRAKEN ELITE V2 360 RGB / PSU : 시소닉 NEW FOCUS V4 GX-850 GOLD 풀모듈러 ATX3.1</p>
             </article>
         </section>
         <section id="pcBuild" class="col16 tcol2 mcol4">
