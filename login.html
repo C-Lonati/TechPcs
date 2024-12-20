@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+</head>
+<body>
+    <div id="login">
+    <form method="post" id="loginForm">
+        <h2>로그인</h2>
+        <p class="underLine"><label for="reId">ID</label><input id="reId" type="text" placeholder="ID"></p>
+        <p class="underLine"><label for="rePw">Pw</label><input id="rePw" type="password" placeholder="Password"></p>
+        <ul class="loginSns">
+            <li><a href="http://www.facebook.com"><img src="images/sns1.svg" alt="facebook" title="faceBook 로그인"></a>
+            </li>
+            <li><a href="http://www.instagram.com"><img src="images/sns2.svg" alt="intagram" title="instagram 로그인"></a>
+            </li>
+            <li><a href="http://www.google.com"><img src="images/sns5.svg" alt="google" title="google 로그인"></a></li>
+            <li><a href="http://www.X.com"><img src="images/sns4.svg" alt="X" title="X 로그인"></a></li>
+        </ul><button type="submit" class="formBtn">로그인</button>
+    </form>
+    <form method="post" id="registerForm">
+        <h2>회원가입</h2>
+        <p class="underLine"><label for="reId">ID</label><input id="reId" type="text" placeholder="ID"></p>
+        <p class="underLine"><label for="rePw">Pw</label><input id="rePw" type="password" placeholder="Password"></p>
+        <p class="underLine"><label for="reName">Name</label><input id="reName" type="text" placeholder="Name"></p>
+        <p class="underLine"><label for="reEmail">Email</label><input id="reEmail" type="email" placeholder="Email"></p>
+        <button type="submit" class="formBtn">회원가입</button>
+    </form>
+    <div class="loginTextBox textBoxRight">
+        <div class="loginText loginTextRight">
+            <h2>안녕하세요.</h2>
+            <p>로그인에 문제가 있으신가요?</p>
+            <p><a href="error404.html">아이디/비밀번호 찾기</a></p>
+            <p>계정이 없으신가요?</p><button class="formBtn formToggle">회원가입</button>
+        </div>
+        <div class="loginText loginTextLeft hidden">
+            <h2>어서오세요.</h2>
+            <p>소셜 회원가입을 찾고 계신가요?</p>
+            <ul class="loginSns">
+                <li><a href="http://www.facebook.com"><img src="images/sns1.svg" alt="facebook"
+                            title="faceBook 로그인"></a></li>
+                <li><a href="http://www.instagram.com"><img src="images/sns2.svg" alt="intagram"
+                            title="instagram 로그인"></a></li>
+                <li><a href="http://www.google.com"><img src="images/sns5.svg" alt="google" title="google 로그인"></a></li>
+                <li><a href="http://www.X.com"><img src="images/sns4.svg" alt="X" title="X 로그인"></a></li>
+            </ul>
+            <p>이미 계정이 있으신가요?</p><button class="formBtn formToggle">회원가입</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
