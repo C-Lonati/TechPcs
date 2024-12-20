@@ -20,6 +20,33 @@
     padding : 0;
     box-sizing : border-box;
 }
+#header .langBox{
+    left : 10%;
+}
+#footer .langBox{
+    left : 10%;
+}
+.langBox{
+    width : 80%;
+    padding : 5vw !important;
+    position : absolute;
+    background : white;
+    border-radius: 3vw;
+    z-index : 97;
+}
+.langBox>ul{
+    display: flex;
+    gap : 2vw;
+    flex-wrap: wrap;
+}
+.langBox>ul>li{
+    flex : 1 1 23vw;
+    line-height : 5vw;
+}
+.langBox>ul>li>img{
+    width : 7vw;
+    height : 5vw;
+}
 #banner{
     max-height : 600px;
     overflow : hidden;
@@ -55,9 +82,6 @@ h4{font-size : 1.3em;}
 #footer .row{
     height : 80px;
     padding : 10px 5%;
-}
-#footer div{
-    padding : 20px 0;
 }
 #footer .lang>img{
     max-height : 20px;
@@ -347,6 +371,12 @@ section>h2{
         background : url('../images/pcBuild.jpg')no-repeat 0 70%;
         overflow : hidden;
     }
+    #footer div{
+        padding : 15px 0;
+    }
+    #footer .sns{
+        padding : 25px 0;
+    }
 }
 @media screen and (max-width:1199px){
     .lnb, .login{
@@ -520,15 +550,25 @@ section>h2{
     .news{
         gap : 3vh;
     }
-    .recomnGpu{
-        overflow: hidden;
+    .fhd, .qhd{
         margin-bottom : 3vh;
+        display : flex;
+        justify-content: space-between;
+        gap : 5vw;
+    }
+    .fhd .gpu:last-child, .qhd .gpu:last-child{
+        display : none;
+        position : absolute;
+        right : 0;
+    }
+    .fhd p, .qhd p{
+        max-width : 26.66vw;
     }
     .gpu>p{
         text-align: center;
         font-size : 0.8em;
-        overflow : hidden;
         text-overflow : ellipsis;
+        overflow : hidden;
         white-space : nowrap;
     }
     .hitHw{
@@ -555,7 +595,7 @@ section>h2{
     .recomnBuild img{
         float : left;
         padding-right : 2vw;
-        max-width : 20%
+        max-width : 30%;
     }
     .recomnBuild .detail{
         display : none;
@@ -563,17 +603,19 @@ section>h2{
     #footer>.row{
         display : flex;
         flex-direction: row;
+        flex-wrap : wrap;
         gap : 3vw;
         font-size : 4vw;
+        height : 100px;
     }
     .footerInfo{
-        flex : 4;
+        flex : 45vw;
     }
     .contact{
-        flex : 3;
+        flex : 35vw;
     }
     .sns{
-        flex : 1;
+        flex : 90vw;
     }
     #footer>.row img{
         max-width : 5vw;
@@ -587,11 +629,19 @@ section>h2{
         gap : 1vw 0;
     }
     .sns>ul>li{flex : 0 1 5vw !important;}
+    .recomnBuild .nickname{
+        display : block;
+        max-width : 100%;
+        width : 100%;
+    }
     .pcBuild{
         width : 100%;
         height : 60vw;
         background : url('../images/pcBuild.jpg')no-repeat 0 0;
         overflow : hidden;
         background-size : 100% 100%;
+    }
+    .mlast{
+        margin-right : 0;
     }
 }
