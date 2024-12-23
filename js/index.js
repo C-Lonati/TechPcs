@@ -132,10 +132,12 @@ $(document).ready(function () {
             });
             $('#mainParts, #mainParts *').on('touchend', function (event) {
                 endX = event.originalEvent.changedTouches[0].screenX;
-                distance = (startX - endX)/5;
+                distance = (startX - endX)/10;
+                if(distantce > 300)
+                    distance = 300;
                 $parts = $('#mainParts>.mainParts');
                 $partsTemp = $partsTemp - distance;
-                $parts.css('left', $partsTemp);
+                $parts.css('left', $partsTemp + 'px');
                 if ($partsTemp > 0) {
                     $parts.css('left', '0');
                     $partsTemp = 0;
@@ -150,15 +152,17 @@ $(document).ready(function () {
             });
             $('#peripherals, #peripherals *').on('touchend', function (event) {
                 endX = event.originalEvent.changedTouches[0].screenX;
-                distance = (startX - endX)/5;
+                distance = (startX - endX)/10;
+                if(distantce > 300)
+                    distance = 300;
                 $peri = $('#peripherals>.peripherals');
                 $periTemp = $periTemp - distance;
-                $peri.css('left', $periTemp);
+                $peri.css('left', $periTemp + 'px');
                 if ($periTemp > 0) {
                     $peri.css('left', '0');
                     $periTemp = 0;
                 } else if ($periTemp < $peri.parent().width() - $peri.width()) {
-                    $peri.css('left', $peri.parent().width() - $peri.width());
+                    $peri.css('left', $peri.parent().width() - $peri.width() + 'px');
                     $periTemp = $peri.parent().width() - $peri.width();
                 }
             });
