@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var winWidth = $(window).width();
+    let winWidth = $(window).width();
     if(winWidth > 1199){
         $('.recomnGpu').on('click', function(){
             if($(this).hasClass('gpuToggle')){

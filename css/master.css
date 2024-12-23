@@ -20,13 +20,8 @@
     padding : 0;
     box-sizing : border-box;
 }
-.lbHead{
+#langBox{
     top : 60px;
-}
-.lbFoot{
-    bottom : 100px;
-}
-.langBox{
     left : 10%;
     width : 80%;
     padding : 5vw !important;
@@ -36,16 +31,16 @@
     z-index : 97;
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
-.langBox>ul{
+#langBox>ul{
     display: flex;
     gap : 2vw;
     flex-wrap: wrap;
 }
-.langBox>ul>li{
+#langBox>ul>li{
     flex : 1 1 23vw;
     line-height : 5vw;
 }
-.langBox>ul>li>img{
+#langBox>ul>li>img{
     width : 7vw;
     height : 5vw;
 }
@@ -101,6 +96,20 @@ h4{font-size : 1.3em;}
 }
 .tcenter{
     text-align: center;
+}
+#header{
+    z-index: 200;
+    top : 0;
+    left : 0;
+    width : 100%;
+    display : flex;
+    gap : 20px;
+    position : fixed;
+    transition : .3s;
+    background : white;
+}
+#header.up{
+    transform : translateY(-100%);
 }
 #headLang{
     cursor : pointer;
@@ -411,9 +420,15 @@ section>h2{
         margin-bottom : 100px;
     }
     #header{
-        width : 1200px;
+        z-index: 200;
+        top : 0;
+        left : 0;
+        width : 100%;
         display : flex;
         gap : 20px;
+        position : fixed;
+        transition : 0.3s;
+        background : white;
     }
     .hamburger{
         display : none;
