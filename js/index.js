@@ -35,6 +35,6 @@ $(document).ready(function(){
             $('.peripherals').css('left',periLeft + 'px');
         });
     }else {
-        
+        $(window).scroll
     }
 });

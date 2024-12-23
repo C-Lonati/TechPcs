@@ -8,18 +8,18 @@ $modal = $('<div id="modal"></div>');
     $searchToggle='off';
     $('#header>.logo').ready(function(){
         $('#langBox').hide()
-        $('#headLang').on('click touchstart',function(){
+        $('#headLang').on('click',function(){
             $('#langBox').show();
             if($('#langBox').hasClass('lbHead')){
                 $('#langBox').removeClass('lbHead');
                 $('#langBox').hide();
             }else $('#langBox').addClass('lbHead');
         });
-        $('.login').on('click touchstart' ,function(){
+        $('.login').on('click focus' ,function(){
             $modal.prependTo($('body'));
             $('#login').removeClass('hidden');
         });
-        $('.search').on('click touchstart' ,function(){
+        $('.search').on('click focus' ,function(){
             if($searchToggle=='off'){
                 $search.prependTo($('#header'));
                 $searchToggle='on';
@@ -29,8 +29,11 @@ $modal = $('<div id="modal"></div>');
                 $searchToggle='off';
             } 
         });
-        $('#langBox img').on('click touchstart', function(){
-            //클릭시 국기 바뀌게
+        $('#langBox img').on('click focus', function(){
+            $('#headLang').html('');
+            $(this).clone().appendTo('#headLang');
+            $('#langBox').removeClass('lbHead');
+            $('#langBox').hide();
         });
         $lastScrollY = 0;
         $(window).on('scroll', function(){
@@ -44,14 +47,14 @@ $modal = $('<div id="modal"></div>');
             $lastScrollY = scrollY;
         });
     });
-    $modal.on('click touchstart' ,function(){
+    $modal.on('click focus' ,function(){
         $modal.detach();
         $('#login').addClass('hidden');
     });
     let winWidth = $(window).width();
     if(winWidth > 1199){
         $('.formToggle').ready(function(){
-            $('.formToggle').on('click touchstart', function(){
+            $('.formToggle').on('click focus', function(){
                 if($('.loginTextBox').hasClass('textBoxRight')){
                     $('.loginTextBox').removeClass('textBoxRight');
                     $('.loginTextBox').addClass('textBoxLeft');
