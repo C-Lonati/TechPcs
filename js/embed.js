@@ -6,7 +6,7 @@ $(document).ready(function(){
 $search = $('<div id="searchBox"><form method="post"><p class="underLine"><input type="search"><input type="image" src="images/search.svg" alt="찾아보기"></p></form></div>');
 $modal = $('<div id="modal"></div>');
     $searchToggle='off';
-    $('#header>.logo').ready(function(){
+    $('#header>.hamburger').ready(function(){
         $('#langBox').hide()
         $('#headLang').on('click tap',function(){
             $('#langBox').show();
@@ -48,10 +48,20 @@ $modal = $('<div id="modal"></div>');
             }
             $lastScrollY = scrollY;
         });
+        $lnbInner = $('.lnb');
+        $('.slideLnb').html($lnbInner);
+        $('.hamburger').on('click tap', function(){
+            $modal.prependTo($('body'));
+            $('#slideMenu').css('left', '0');
+        });
+        $('#slideMenu .slideLnb>li').on('click tap', function(){
+            console.log('클릭');
+        });
     });
     $modal.on('click tap' ,function(){
         $modal.detach();
         $('#login').hide();
+        $('#slideMenu').css('left', '-80%');
     });
     let winWidth = $(window).width();
     if(winWidth > 1199){

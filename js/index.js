@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let startX, endX;
     let $winWidth = $(window).width();
     if ($winWidth > 1199) {
         $('.recomnGpu').on('click', function () {
@@ -34,117 +35,135 @@ $(document).ready(function () {
             if (periLeft > 0) periLeft = 0;
             $('.peripherals').css('left', periLeft + 'px');
         });
-    } else if ($winWidth < 768){
+    } else if ($winWidth > 767) { //tablet
+        $('.news>article').on('click tap', function () {
+            if ($(this).hasClass('newsFocus')) {
+                $(this).removeClass('newsFocus');
+            } else $(this).addClass('newsFocus');
+        });
+        $('#pcBuild').hide();
+        $(window).on('scroll', function () {
+            if (window.scrollY < 2600) {
+                $('#pcBuild').hide();
+            } else {
+                $('#pcBuild').show();
+                $('#pcBuild').css('top', (window.scrollY + 200) + 'px');
+            }
+        });
+        $partsTemp = 0;
+        $('#mainParts, #mainParts *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
+        });
+        $('#mainParts, #mainParts *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            distance = startX - endX;
+            $parts = $('#mainParts>.mainParts');
+            $partsTemp = $partsTemp - distance;
+            $parts.css('left', $partsTemp);
+            if ($partsTemp > 0) {
+                $parts.css('left', '0');
+                $partsTemp = 0;
+            } else if ($partsTemp < $parts.parent().width() - $parts.width()) {
+                $parts.css('left', $parts.parent().width() - $parts.width());
+                $partsTemp = $parts.parent().width() - $parts.width();
+            }
+        });
+        $periTemp = 0;
+        $('#peripherals, #peripherals *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
+        });
+        $('#peripherals, #peripherals *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            distance = startX - endX;
+            $peri = $('#peripherals>.peripherals');
+            $periTemp = $periTemp - distance;
+            $peri.css('left', $periTemp);
+            if ($periTemp > 0) {
+                $peri.css('left', '0');
+                $periTemp = 0;
+            } else if ($periTemp < $peri.parent().width() - $peri.width()) {
+                $peri.css('left', $peri.parent().width() - $peri.width());
+                $periTemp = $peri.parent().width() - $peri.width();
+                console.log($peri.parent().css('paddingLeft'));
+            }
+        });
+    } else if ($winWidth < 768) { //mobile
         $('.news>article').on('click tap', function () {
             if ($(this).hasClass('newsFocus')) {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');
         });
         let temp = 0;
-        $('#subMenu>.snb').swipe({swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-                if (direction == 'left') {
-                    temp = temp - distance;
-                    $(this).css('left', temp);
-                } else if (direction == "right") {
-                    temp = temp + distance;
-                    $(this).css('left', temp);
-                }
-                if(temp>0){
-                    $(this).css('left', '0');
-                    temp = 0;
-                }else if(temp<$(this).parent().width() - $(this).width()){
-                    $(this).css('left', $(this).parent().width() - $(this).width());
-                    temp = $(this).parent().width() - $(this).width();
-                }
-            },
-            threshold: 0
+        $('#subMenu, #subMenu *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
+        });
+        $('#subMenu, #subMenu *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            distance = startX - endX;
+            $snb = $('#subMenu>.snb');
+            temp = temp - distance;
+            $snb.css('left', temp);
+            if (temp > 0) {
+                $snb.css('left', '0');
+                temp = 0;
+            } else if (temp < $snb.parent().width() - $snb.width()) {
+                $snb.css('left', $snb.parent().width() - $snb.width());
+                temp = $snb.parent().width() - $snb.width();
+            }
         });
         $cpuTemp = 0;
-        $('#recomnCpu>.recomnCpu').swipe({swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-                console.log('cpuswipe');
-                if (direction == 'left') {
-                    $cpuTemp = $cpuTemp - distance;
-                    $(this).css('left', $cpuTemp);
-                } else if (direction == "right") {
-                    $cpuTemp = $cpuTemp + distance;
-                    $(this).css('left', $cpuTemp);
-                }
-                if($cpuTemp>0){
-                    $(this).css('left', '0');
-                    $cpuTemp = 0;
-                }else if($cpuTemp<$(this).parent().width() - $(this).width()){
-                    $(this).css('left', $(this).parent().width() - $(this).width());
-                    $cpuTemp = $(this).parent().width() - $(this).width();
-                }
-                console.log(temp);
-            },
-            threshold: 0
+        $('#recomnCpu, #recomnCpu *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
         });
-        /*$('#recomnCpu>.recomnCpu *').swipe({
-            swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-                console.log('swipe');
-                $cpu = $('#recomnCpu>.recomnCpu *');
-                if (direction == 'left') {
-                    $cpuTemp = $cpuTemp - distance;
-                    $cpu.css('left', $cpuTemp);
-                } else if (direction == "right") {
-                    $cpuTemp = $cpuTemp + distance;
-                    $cpu.css('left', $cpuTemp);
-                }
-                if($cpuTemp>0){
-                    $cpu.css('left', '0');
-                    $cpuTemp = 0;
-                }else if($cpuTemp<$cpu.parent().width() - $cpu.width()){
-                    $cpu.css('left', $cpu.parent().width() - $cpu.width());
-                    $cpuTemp = $cpu.parent().width() - $cpu.width();
-                }
-                console.log(temp);
-            },
-            threshold: 0
-        });*/
-        
-        $partsTemp = 0;
-        $('#mainParts>.mainParts').swipe({swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-                console.log('partsswipe');
-                if (direction == 'left') {
-                    $partsTemp = $partsTemp - distance;
-                    $(this).css('left', $partsTemp);
-                } else if (direction == "right") {
-                    $partsTemp = $partsTemp + distance;
-                    $(this).css('left', $partsTemp);
-                }
-                if($partsTemp>0){
-                    $(this).css('left', '0');
+        $('#recomnCpu, #recomnCpu *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            distance = startX - endX;
+            $cpu = $('#recomnCpu>.recomnCpu');
+            $cpuTemp = $cpuTemp - distance;
+            $cpu.css('left', $cpuTemp);
+            if ($cpuTemp > 0) {
+                $cpu.css('left', '0');
+                $cpuTemp = 0;
+            } else if ($cpuTemp < $cpu.width() * -1.1) {
+                $cpu.css('left', $cpu.width() * -1.1);
+                $cpuTemp = $cpu.width() * -1.1;
+            }
+            $partsTemp = 0;
+            $('#mainParts, #mainParts *').on('touchstart', function (event) {
+                startX = event.originalEvent.changedTouches[0].screenX;
+            });
+            $('#mainParts, #mainParts *').on('touchend', function (event) {
+                endX = event.originalEvent.changedTouches[0].screenX;
+                distance = startX - endX;
+                $parts = $('#mainParts>.mainParts');
+                $partsTemp = $partsTemp - distance;
+                $parts.css('left', $partsTemp);
+                if ($partsTemp > 0) {
+                    $parts.css('left', '0');
                     $partsTemp = 0;
-                }else if($partsTemp<$(this).parent().width() - $(this).width()){
-                    $(this).css('left', $(this).parent().width() - $(this).width());
-                    $partsTemp = $(this).parent().width() - $(this).width();
+                } else if ($partsTemp < $parts.parent().width() - $parts.width()) {
+                    $parts.css('left', $parts.parent().width() - $parts.width());
+                    $partsTemp = $parts.parent().width() - $parts.width();
                 }
-                console.log(temp);
-            },
-            threshold: 0
-        });
-        
-        $periTemp = 0;
-        $('#peripherals>.peripherals').swipe({swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-                console.log('swipe');
-                if (direction == 'left') {
-                    $periTemp = $periTemp - distance;
-                    $(this).css('left', $periTemp);
-                } else if (direction == "right") {
-                    $periTemp = $periTemp + distance;
-                    $(this).css('left', $periTemp);
-                }
-                if($periTemp>0){
-                    $(this).css('left', '0');
+            });
+            $periTemp = 0;
+            $('#peripherals, #peripherals *').on('touchstart', function (event) {
+                startX = event.originalEvent.changedTouches[0].screenX;
+            });
+            $('#peripherals, #peripherals *').on('touchend', function (event) {
+                endX = event.originalEvent.changedTouches[0].screenX;
+                distance = startX - endX;
+                $peri = $('#peripherals>.peripherals');
+                $periTemp = $periTemp - distance;
+                $peri.css('left', $periTemp);
+                if ($periTemp > 0) {
+                    $peri.css('left', '0');
                     $periTemp = 0;
-                }else if($periTemp<$(this).parent().width() - $(this).width()){
-                    $(this).css('left', $(this).parent().width() - $(this).width());
-                    $periTemp = $(this).parent().width() - $(this).width();
+                } else if ($periTemp < $peri.parent().width() - $peri.width()) {
+                    $peri.css('left', $peri.parent().width() - $peri.width());
+                    $periTemp = $peri.parent().width() - $peri.width();
                 }
-                console.log(temp);
-            },
-            threshold: 0
+            });
         });
     }
 });

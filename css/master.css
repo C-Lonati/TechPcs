@@ -20,6 +20,15 @@
     padding : 0;
     box-sizing : border-box;
 }
+#modal{
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    top : 0;
+    left : 0;
+    z-index : 98;
+    background : rgba(0,0,0,0.6);
+}
 #langBox{
     top : 60px;
     left : 10%;
@@ -101,7 +110,7 @@ h4{font-size : 1.3em;}
 }
 #header{
     padding : 0 5%;
-    z-index: 200;
+    z-index: 95;
     top : 0;
     left : 0;
     width : 100%;
@@ -201,11 +210,9 @@ section>h2{
 }
 .recomnCpu{
     width : 100%;
-    overflow: hidden;
     display : flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding : 10px;
 }
 #recomnGpu>h2{
     float : none;
@@ -260,21 +267,6 @@ section>h2{
     background : url('../images/rightBtn.svg')no-repeat 50% 50%;
     right : 10px;
 }
-#mainParts:hover .prev, #mainParts:hover .next{
-    opacity: 100%;
-}
-#mainParts .prev, #mainParts .next{
-    bottom : 35%;
-}
-#peripherals{
-    position : relative;
-}
-#peripherals .prev, #peripherals .next{
-    bottom : 40%;
-}
-#peripherals:hover .prev, #peripherals:hover .next{
-    opacity: 100%;
-}
 .mainParts>.parts{
     display : flex;
     gap : 5px;
@@ -319,17 +311,26 @@ section>h2{
 }
 
 @media screen and (min-width:1200px){
+    #mainParts:hover .prev, #mainParts:hover .next{
+        opacity: 100%;
+    }
+    #mainParts .prev, #mainParts .next{
+        bottom : 35%;
+    }
+    #peripherals{
+        position : relative;
+    }
+    #peripherals .prev, #peripherals .next{
+        bottom : 40%;
+    }
+    #peripherals:hover .prev, #peripherals:hover .next{
+        opacity: 100%;
+    }
+    #slideMenu{
+        display : none;
+    }
     #searchBox{
         right : 200px !important;
-    }
-    #modal{
-        width : 100%;
-        height : 100%;
-        position : fixed;
-        top : 0;
-        left : 0;
-        z-index : 98;
-        background : rgba(0,0,0,0.6);
     }
     #login{
         width : 60%;
@@ -500,7 +501,7 @@ section>h2{
 
     #hardwareNews>.news{
         gap : 60px;
-        height : 745px;
+        height : 760px;
     }
     #hardwareNews>.news img{
         border-radius : 20px 0 0 20px;
@@ -589,8 +590,41 @@ section>h2{
     }
 }
 @media screen and (max-width:1199px){
+    #slideMenu{
+        z-index : 99;
+        position : fixed;
+        left : -80%;
+        top : 0;
+        width : 80%;
+        height : 100%;
+        background : white;
+        transition : .3s;
+    }
+    #slideMenu>.userInfo{
+        height : 80px;
+        border-bottom : 2px solid #ccc;
+        padding : 20px 0 20px 5%;
+    }
+    #slideMenu>.userInfo img{
+        max-height : 100%;
+    }
+    #slideMenu>.userInfo span{
+        font-size : 30px;
+    }
     .lnb, .login{
         display : none;
+    }
+    #slideMenu .lnb{
+        display : block;
+        padding : 10px 5%;
+    }
+    #slideMenu .lnb>li>a{
+        display : block;
+        font-size : 1.5em;
+        margin : 15px 0 10px;
+    }
+    #slideMenu .subLnb{
+        padding-left : 5%;
     }
     #footer .logo{
         display : none;
@@ -692,6 +726,7 @@ section>h2{
     }
     .mainParts{
         gap : 3vw;
+        max-width : 120vw;
     }
     .mainParts>.parts{
         flex : 0 0 21vw;
@@ -703,6 +738,7 @@ section>h2{
     }
     .peripherals{
         gap : 3vw;
+        max-width : 148vw;
     }
     .peri{
         flex : 0 0 22vw;
@@ -720,6 +756,7 @@ section>h2{
         position : absolute;
         top : 200px;
         left : 5%;
+        transition : .1s;
     }
     #pcBuild h2{
         display : none;
@@ -755,11 +792,15 @@ section>h2{
         display : none;
     }
     .recomnCpu{
-        gap : 4%;
+        gap : 4vw;
+        width : max-content;
+        max-width : 204vw;
+        position : relative;
         flex-wrap : nowrap;
+        transition : .3s;
     }
     .recomnCpu>article{
-        flex : 0 0 48%;
+        flex : 0 0 48vw;
     }
     #subMenu{
         position : relative;
@@ -822,15 +863,21 @@ section>h2{
     }
     .mainParts{
         gap : 5vw;
+        max-width : 233vw;
     }
     .parts{
         flex : 0 0 42.5vw;
     }
     .peripherals{
         gap : 5vw;
+        max-width : 280vw;
     }
     .peri{
         flex : 0 0 42.5vw;
+    }
+    .peri img{
+        height : 100px;
+        width : 42.5vw;
     }
     .recomnBuild img{
         float : left;
