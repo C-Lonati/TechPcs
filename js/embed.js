@@ -51,7 +51,6 @@ $modal = $('<div id="modal"></div>');
         $lnbInner = $('.lnb');
         $('.slideLnb').html($lnbInner);
         $('.hamburger').on('click tap', function(){
-            console.log('클릭');
             $modal.prependTo($('body'));
             $('#slideMenu').css('left', '0');
         });

@@ -41,12 +41,11 @@ $(document).ready(function () {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');
         });
-        $('#pcBuild').hide();
+        $('#pcBuild').css('top', '2800px');
         $(window).on('scroll', function () {
             if (window.scrollY < 2600) {
-                $('#pcBuild').hide();
+                $('#pcBuild').css('top', '2800px');
             } else {
-                $('#pcBuild').show();
                 $('#pcBuild').css('top', (window.scrollY + 200) + 'px');
             }
         });
@@ -56,7 +55,7 @@ $(document).ready(function () {
         });
         $('#mainParts, #mainParts *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/10;
+            distance = (startX - endX)/3;
             $parts = $('#mainParts>.mainParts');
             $partsTemp = $partsTemp - distance;
             $parts.css('left', $partsTemp);
@@ -74,7 +73,7 @@ $(document).ready(function () {
         });
         $('#peripherals, #peripherals *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/10;
+            distance = (startX - endX)/3;
             $peri = $('#peripherals>.peripherals');
             $periTemp = $periTemp - distance;
             $peri.css('left', $periTemp);
@@ -98,7 +97,7 @@ $(document).ready(function () {
         });
         $('#subMenu, #subMenu *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/10;
+            distance = (startX - endX)/3;
             $snb = $('#subMenu>.snb');
             temp = temp - distance;
             $snb.css('left', temp);
@@ -116,7 +115,7 @@ $(document).ready(function () {
         });
         $('#recomnCpu, #recomnCpu *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/10;
+            distance = (startX - endX)/3;
             $cpu = $('#recomnCpu>.recomnCpu');
             $cpuTemp = $cpuTemp - distance;
             $cpu.css('left', $cpuTemp);
@@ -133,7 +132,7 @@ $(document).ready(function () {
             });
             $('#mainParts, #mainParts *').on('touchend', function (event) {
                 endX = event.originalEvent.changedTouches[0].screenX;
-                distance = (startX - endX)/10;
+                distance = (startX - endX)/3;
                 $parts = $('#mainParts>.mainParts');
                 $partsTemp = $partsTemp - distance;
                 $parts.css('left', $partsTemp);
@@ -151,7 +150,7 @@ $(document).ready(function () {
             });
             $('#peripherals, #peripherals *').on('touchend', function (event) {
                 endX = event.originalEvent.changedTouches[0].screenX;
-                distance = (startX - endX)/10;
+                distance = (startX - endX)/3;
                 $peri = $('#peripherals>.peripherals');
                 $periTemp = $periTemp - distance;
                 $peri.css('left', $periTemp);
