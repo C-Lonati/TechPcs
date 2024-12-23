@@ -8,18 +8,18 @@ $modal = $('<div id="modal"></div>');
     $searchToggle='off';
     $('#header>.logo').ready(function(){
         $('#langBox').hide()
-        $('#headLang').on('click',function(){
+        $('#headLang').on('click tap',function(){
             $('#langBox').show();
             if($('#langBox').hasClass('lbHead')){
                 $('#langBox').removeClass('lbHead');
                 $('#langBox').hide();
             }else $('#langBox').addClass('lbHead');
         });
-        $('.login').on('click focus' ,function(){
+        $('.login').on('click tap' ,function(){
             $modal.prependTo($('body'));
-            $('#login').removeClass('hidden');
+            $('#login').show();
         });
-        $('.search').on('click focus' ,function(){
+        $('.search').on('click tap' ,function(){
             if($searchToggle=='off'){
                 $search.prependTo($('#header'));
                 $searchToggle='on';
@@ -29,7 +29,7 @@ $modal = $('<div id="modal"></div>');
                 $searchToggle='off';
             } 
         });
-        $('#langBox img').on('click focus', function(){
+        $('#langBox img').on('click tap', function(){
             $('#headLang').html('');
             $(this).clone().appendTo('#headLang');
             $('#langBox').removeClass('lbHead');
@@ -39,7 +39,9 @@ $modal = $('<div id="modal"></div>');
         $(window).on('scroll', function(){
             const scrollY = window.scrollY;
             const scrollDown = scrollY < $lastScrollY;
-            if (scrollDown) {
+            if(scrollY<500){
+                $('#header').show();
+            }else if (scrollDown && scrollY) {
                 $('#header').slideDown();
             } else {
                 $('#header').slideUp();
@@ -47,14 +49,14 @@ $modal = $('<div id="modal"></div>');
             $lastScrollY = scrollY;
         });
     });
-    $modal.on('click focus' ,function(){
+    $modal.on('click tap' ,function(){
         $modal.detach();
-        $('#login').addClass('hidden');
+        $('#login').hide();
     });
     let winWidth = $(window).width();
     if(winWidth > 1199){
         $('.formToggle').ready(function(){
-            $('.formToggle').on('click focus', function(){
+            $('.formToggle').on('click tap', function(){
                 if($('.loginTextBox').hasClass('textBoxRight')){
                     $('.loginTextBox').removeClass('textBoxRight');
                     $('.loginTextBox').addClass('textBoxLeft');

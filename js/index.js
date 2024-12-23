@@ -35,6 +35,11 @@ $(document).ready(function(){
             $('.peripherals').css('left',periLeft + 'px');
         });
     }else {
-        $(window).scroll
+        $('.news>article').on('click', function(){
+            if($(this).hasClass('newsFocus')){
+                $(this).removeClass('newsFocus');
+            }else $(this).addClass('newsFocus');
+        });
+        $('.snb').on('swipe')
     }
 });
