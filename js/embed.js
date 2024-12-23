@@ -7,7 +7,7 @@ $search = $('<div id="searchBox"><form method="post"><p class="underLine"><input
 $modal = $('<div id="modal"></div>');
     $searchToggle='off';
     $('#login').hide();
-    $('#header>.logo').ready(function(){
+    $('#langBox>*').ready(function(){     
         $('#langBox').hide()
         $('#headLang').on('click tap',function(){
             $('#langBox').show();
@@ -16,10 +16,20 @@ $modal = $('<div id="modal"></div>');
                 $('#langBox').hide();
             }else $('#langBox').addClass('lbHead');
         });
-        $('.login').on('click tap' ,function(){
-            $modal.prependTo($('body'));
-            $('#login').show();
+        $('#langBox img').on('click tap', function(){
+            $('#headLang').html('');
+            $(this).clone().appendTo('#headLang');
+            $('#langBox').removeClass('lbHead');
+            $('#langBox').hide();
         });
+        $('#header>.login').ready(function(){
+            $('.login').on('click tap' ,function(){
+                $modal.prependTo($('body'));
+                $('#login').show();
+            });
+        });
+    });
+    $('#header>.search').ready(function(){
         $('.search').on('click tap' ,function(){
             if($searchToggle=='off'){
                 $search.prependTo($('#header'));
@@ -30,34 +40,33 @@ $modal = $('<div id="modal"></div>');
                 $searchToggle='off';
             } 
         });
-        $('#langBox img').on('click tap', function(){
-            $('#headLang').html('');
-            $(this).clone().appendTo('#headLang');
-            $('#langBox').removeClass('lbHead');
-            $('#langBox').hide();
-        });
-        $lastScrollY = 0;
-        $(window).on('scroll', function(){
-            const scrollY = window.scrollY;
-            const scrollDown = scrollY < $lastScrollY;
-            if(scrollY<500){
-                $('#header').show();
-            }else if (scrollDown && scrollY) {
-                $('#header').slideDown();
-            } else {
-                $('#header').slideUp();
-            }
-            $lastScrollY = scrollY;
-        });
+    }); 
+    $('#header>.lnb').ready(function(){ 
         $lnbInner = $('.lnb').clone();
         $('.slideLnb').html($lnbInner);
         $('.hamburger').on('click tap', function(){
             $modal.prependTo($('body'));
             $('#slideMenu').css('left', '0');
         });
-        $('#slideMenu .slideLnb>li').on('click tap', function(){
-            console.log('클릭');
+    });
+    $('#header>.hamburger').ready(function(){
+        $('.hamburger').on('click tap', function(){
+            $modal.prependTo($('body'));
+            $('#slideMenu').css('left', '0');
         });
+    });
+    $lastScrollY = 0;
+    $(window).on('scroll', function(){
+        const scrollY = window.scrollY;
+        const scrollDown = scrollY < $lastScrollY;
+        if(scrollY<500){
+            $('#header').show();
+        }else if (scrollDown && scrollY) {
+            $('#header').slideDown();
+        } else {
+            $('#header').slideUp();
+        }
+        $lastScrollY = scrollY;
     });
     $modal.on('click tap' ,function(){
         $modal.detach();
