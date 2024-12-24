@@ -41,7 +41,6 @@ $(document).ready(function () {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');
         });
-        $('#pcBuild').css('top', '2800px');
         $(window).on('scroll', function () {
             if (window.scrollY < 2600) {
                 $('#pcBuild').css('top', '2800px');

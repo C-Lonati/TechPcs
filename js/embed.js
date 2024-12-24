@@ -7,53 +7,43 @@ $search = $('<div id="searchBox"><form method="post"><p class="underLine"><input
 $modal = $('<div id="modal"></div>');
     $searchToggle='off';
     $('#login').hide();
-    $('#langBox>*').ready(function(){     
-        $('#langBox').hide()
-        $('#headLang').on('click tap',function(){
-            $('#langBox').show();
-            if($('#langBox').hasClass('lbHead')){
-                $('#langBox').removeClass('lbHead');
-                $('#langBox').hide();
-            }else $('#langBox').addClass('lbHead');
-        });
-        $('#langBox img').on('click tap', function(){
-            $('#headLang').html('');
-            $(this).clone().appendTo('#headLang');
+    $('#langBox').hide();
+    $(document).on('click tap', '#headLang', function (){
+        $('#langBox').show();
+        if ($('#langBox').hasClass('lbHead')) {
             $('#langBox').removeClass('lbHead');
             $('#langBox').hide();
-        });
-        $('#header>.login').ready(function(){
-            $('.login').on('click tap' ,function(){
-                $modal.prependTo($('body'));
-                $('#login').show();
-            });
-        });
+        } else $('#langBox').addClass('lbHead');
     });
-    $('#header>.search').ready(function(){
-        $('.search').on('click tap' ,function(){
-            if($searchToggle=='off'){
-                $search.prependTo($('#header'));
-                $searchToggle='on';
-            }
-            else{
-                $search.detach();
-                $searchToggle='off';
-            } 
-        });
-    }); 
-    $('#header>.lnb').ready(function(){ 
+    $(document).on('click tap','#langBox img', function () {
+        $('#headLang').html('');
+        $(this).clone().appendTo('#headLang');
+        $('#langBox').removeClass('lbHead');
+        $('#langBox').hide();
+    });
+    $(document).on('click tap', '.login' ,function(){
+        $modal.prependTo($('body'));
+        $('#login').show();
+    });
+    $(document).on('click tap', '#header .search', function () {
+        if ($searchToggle == 'off') {
+            $search.prependTo($('#header'));
+            $searchToggle = 'on';
+        }
+        else {
+            $search.detach();
+            $searchToggle = 'off';
+        }
+    });
+    $(document).on('click tap', '#header>.lnb', function(){
+        $modal.prependTo($('body'));
+        $('#slideMenu').css('left', '0');
+    });
+    $(document).on('click tap', '#header>.hamburger', function () {
         $lnbInner = $('.lnb').clone();
         $('.slideLnb').html($lnbInner);
-        $('.hamburger').on('click tap', function(){
-            $modal.prependTo($('body'));
-            $('#slideMenu').css('left', '0');
-        });
-    });
-    $('#header>.hamburger').ready(function(){
-        $('.hamburger').on('click tap', function(){
-            $modal.prependTo($('body'));
-            $('#slideMenu').css('left', '0');
-        });
+        $modal.prependTo($('body'));
+        $('#slideMenu').css('left', '0');
     });
     $lastScrollY = 0;
     $(window).on('scroll', function(){
@@ -74,21 +64,19 @@ $modal = $('<div id="modal"></div>');
         $('#slideMenu').css('left', '-80%');
     });
     let winWidth = $(window).width();
-    if(winWidth > 1199){
-        $('.formToggle').ready(function(){
-            $('.formToggle').on('click tap', function(){
-                if($('.loginTextBox').hasClass('textBoxRight')){
-                    $('.loginTextBox').removeClass('textBoxRight');
-                    $('.loginTextBox').addClass('textBoxLeft');
-                    $('.loginTextRight').addClass('hidden');
-                    $('.loginTextLeft').removeClass('hidden');
-                }else {
-                    $('.loginTextBox').removeClass('textBoxLeft');
-                    $('.loginTextBox').addClass('textBoxRight');
-                    $('.loginTextLeft').addClass('hidden');
-                    $('.loginTextRight').removeClass('hidden');
-                }
-            });
+    if (winWidth > 1199) {
+        $(document).on('click tap', '.formToggle', function () {
+            if ($('.loginTextBox').hasClass('textBoxRight')) {
+                $('.loginTextBox').removeClass('textBoxRight');
+                $('.loginTextBox').addClass('textBoxLeft');
+                $('.loginTextRight').addClass('hidden');
+                $('.loginTextLeft').removeClass('hidden');
+            } else {
+                $('.loginTextBox').removeClass('textBoxLeft');
+                $('.loginTextBox').addClass('textBoxRight');
+                $('.loginTextLeft').addClass('hidden');
+                $('.loginTextRight').removeClass('hidden');
+            }
         });
     }
 });
