@@ -55,9 +55,9 @@ $(document).ready(function () {
         });
         $('#mainParts, #mainParts *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/5;
+            $distance = (startX - endX)/5;
             $parts = $('#mainParts>.mainParts');
-            $partsTemp = $partsTemp - distance;
+            $partsTemp = $partsTemp - $distance;
             $parts.css('left', $partsTemp);
             if ($partsTemp > 0) {
                 $parts.css('left', '0');
@@ -73,9 +73,9 @@ $(document).ready(function () {
         });
         $('#peripherals, #peripherals *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/5;
+            $distance = (startX - endX)/5;
             $peri = $('#peripherals>.peripherals');
-            $periTemp = $periTemp - distance;
+            $periTemp = $periTemp - $distance;
             $peri.css('left', $periTemp);
             if ($periTemp > 0) {
                 $peri.css('left', '0');
@@ -97,9 +97,9 @@ $(document).ready(function () {
         });
         $('#subMenu, #subMenu *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/3;
+            $distance = (startX - endX)/3;
             $snb = $('#subMenu>.snb');
-            temp = temp - distance;
+            temp = temp - $distance;
             $snb.css('left', temp);
             if (temp > 0) {
                 $snb.css('left', '0');
@@ -115,9 +115,9 @@ $(document).ready(function () {
         });
         $('#recomnCpu, #recomnCpu *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
-            distance = (startX - endX)/3;
+            $distance = (startX - endX)/3;
             $cpu = $('#recomnCpu>.recomnCpu');
-            $cpuTemp = $cpuTemp - distance;
+            $cpuTemp = $cpuTemp - $distance;
             $cpu.css('left', $cpuTemp);
             if ($cpuTemp > 0) {
                 $cpu.css('left', '0');
@@ -132,11 +132,11 @@ $(document).ready(function () {
             });
             $('#mainParts, #mainParts *').on('touchend', function (event) {
                 endX = event.originalEvent.changedTouches[0].screenX;
-                distance = (startX - endX)/10;
-                if(distantce > 300)
-                    distance = 300;
+                $distance = (startX - endX)/10;
+                if($distance > 300)
+                    $distance = 300;
                 $parts = $('#mainParts>.mainParts');
-                $partsTemp = $partsTemp - distance;
+                $partsTemp = $partsTemp - $distance;
                 $parts.css('left', $partsTemp + 'px');
                 if ($partsTemp > 0) {
                     $parts.css('left', '0');
@@ -152,11 +152,11 @@ $(document).ready(function () {
             });
             $('#peripherals, #peripherals *').on('touchend', function (event) {
                 endX = event.originalEvent.changedTouches[0].screenX;
-                distance = (startX - endX)/10;
-                if(distantce > 300)
-                    distance = 300;
+                $distance = (startX - endX)/10;
+                if($distance > 300)
+                    $distance = 300;
                 $peri = $('#peripherals>.peripherals');
-                $periTemp = $periTemp - distance;
+                $periTemp = $periTemp - $distance;
                 $peri.css('left', $periTemp + 'px');
                 if ($periTemp > 0) {
                     $peri.css('left', '0');
