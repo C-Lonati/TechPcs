@@ -40,6 +40,7 @@ $modal = $('<div id="modal"></div>');
         $('#slideMenu').css('left', '0');
     });
     $(document).on('click tap', '#header>.hamburger', function () {
+        $('.slideLnb').html('');
         $lnbInner = $('.lnb').clone();
         $('.slideLnb').html($lnbInner);
         $modal.prependTo($('body'));

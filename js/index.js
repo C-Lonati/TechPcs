@@ -125,46 +125,50 @@ $(document).ready(function () {
                 $cpu.css('left', $cpu.width() * -1.1);
                 $cpuTemp = $cpu.width() * -1.1;
             }
-            $partsTemp = 0;
-            $('#mainParts, #mainParts *').on('touchstart', function (event) {
-                startX = event.originalEvent.changedTouches[0].screenX;
-            });
-            $('#mainParts, #mainParts *').on('touchend', function (event) {
-                endX = event.originalEvent.changedTouches[0].screenX;
-                $distance = (startX - endX)/10;
-                if($distance > 300)
-                    $distance = 300;
-                $parts = $('#mainParts>.mainParts');
-                $partsTemp = $partsTemp - $distance;
-                $parts.css('left', $partsTemp + 'px');
-                if ($partsTemp > 0) {
-                    $parts.css('left', '0');
-                    $partsTemp = 0;
-                } else if ($partsTemp < $parts.parent().width() - $parts.width()) {
-                    $parts.css('left', $parts.parent().width() - $parts.width());
-                    $partsTemp = $parts.parent().width() - $parts.width();
-                }
-            });
-            $periTemp = 0;
-            $('#peripherals, #peripherals *').on('touchstart', function (event) {
-                startX = event.originalEvent.changedTouches[0].screenX;
-            });
-            $('#peripherals, #peripherals *').on('touchend', function (event) {
-                endX = event.originalEvent.changedTouches[0].screenX;
-                $distance = (startX - endX)/10;
-                if($distance > 300)
-                    $distance = 300;
-                $peri = $('#peripherals>.peripherals');
-                $periTemp = $periTemp - $distance;
-                $peri.css('left', $periTemp + 'px');
-                if ($periTemp > 0) {
-                    $peri.css('left', '0');
-                    $periTemp = 0;
-                } else if ($periTemp < $peri.parent().width() - $peri.width()) {
-                    $peri.css('left', $peri.parent().width() - $peri.width() + 'px');
-                    $periTemp = $peri.parent().width() - $peri.width();
-                }
-            });
+        });
+        $partsTemp = 0;
+        $('#mainParts, #mainParts *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
+        });
+        $('#mainParts, #mainParts *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            $distance = startX - endX;
+            if($distance < -60)
+                $distance = -60;
+            else if($distance > 60)
+                $distance = 60;
+            $parts = $('#mainParts>.mainParts');
+            $partsTemp = $partsTemp - $distance;
+            $parts.css('left', $partsTemp + 'px');
+            if ($partsTemp > 0) {
+                $parts.css('left', '0');
+                $partsTemp = 0;
+            } else if ($partsTemp < $parts.parent().width() - $parts.width()) {
+                $parts.css('left', $parts.parent().width() - $parts.width());
+                $partsTemp = $parts.parent().width() - $parts.width();
+            }
+        });
+        $periTemp = 0;
+        $('#peripherals, #peripherals *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
+        });
+        $('#peripherals, #peripherals *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            $distance = startX - endX;
+            if($distance < -70)
+                $distance = -70;
+            else if($distance > 70)
+                $distance = 70;
+            $peri = $('#peripherals>.peripherals');
+            $periTemp = $periTemp - $distance;
+            $peri.css('left', $periTemp + 'px');
+            if ($periTemp > 0) {
+                $peri.css('left', '0');
+                $periTemp = 0;
+            } else if ($periTemp < $peri.parent().width() - $peri.width()) {
+                $peri.css('left', $peri.parent().width() - $peri.width() + 'px');
+                $periTemp = $peri.parent().width() - $peri.width();
+            }
         });
     }
 });

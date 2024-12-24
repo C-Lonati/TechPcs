@@ -596,7 +596,6 @@ section>h2{
         left : -80%;
         top : 0;
         width : 80%;
-        max-width : 400px;
         height : 100%;
         background : white;
         transition : .3s;
@@ -608,6 +607,7 @@ section>h2{
     }
     #slideMenu>.userInfo img{
         max-height : 100%;
+        float : left;
     }
     #slideMenu>.userInfo span{
         font-size : 30px;
@@ -652,9 +652,6 @@ section>h2{
         display : flex;
         gap : 5px;
         justify-content: flex-end;
-    }
-    .newsFocus{
-        height : 500px;
     }
 }
 @media screen and (max-width:1199px) and (min-width:768px){
@@ -824,23 +821,20 @@ section>h2{
         gap : 3vh;
     }
     .fhd, .qhd{
-        margin-bottom : 3vh;
+        margin-bottom : 4vh;
         display : flex;
         justify-content: space-between;
         gap : 5vw;
+        flex-wrap : wrap;
     }
-    .fhd .gpu:last-child, .qhd .gpu:last-child{
-        display : none;
-        position : absolute;
-        right : 0;
-    }
-    .fhd p, .qhd p{
-        max-width : 26.66vw;
+    .fhd>.gpu, .qhd>.gpu{
+        flex : 1 1 42.5vw;
     }
     .uhd>.gpu:first-child{
         box-shadow: 0 0 3px rgba(0,0,0,0.3);
         margin-bottom : 20px;
         width : 100%;
+        padding-bottom : 10px;
     }
     .uhd{
         display : flex;
