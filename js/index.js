@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function(){
     let startX, endX;
     let $winWidth = $(window).width();
     if ($winWidth > 1199) {

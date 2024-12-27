@@ -107,9 +107,10 @@ img, iframe { height: auto; }
 	.row {
 		box-sizing : content-box;
 		width: 90%;
-		min-width: 320px;
+		min-width: 700px;
 		padding : 0 5%;
 		overflow : hidden;
+		position : relative;
 	}
 
 
@@ -155,6 +156,7 @@ img, iframe { height: auto; }
 		min-width: 320px;
 		padding : 0 5%;
 		overflow : hidden;
+		position : relative;
 	}
 
 	.row .mcol1{width : 20.37%;}

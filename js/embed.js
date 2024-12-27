@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
     $('#login').load('https://c-lonati.github.io/TechPcs/login.html');
     $('#langBox').load('https://c-lonati.github.io/TechPcs/lang.html');
     $('#header').load('https://c-lonati.github.io/TechPcs/header.html');
@@ -46,10 +46,10 @@ $modal = $('<div id="modal"></div>');
         $modal.prependTo($('body'));
         $('#slideMenu').css('left', '0');
     });
-    $lastScrollY = 0;
+    let $lastScrollY = 0;
     $(window).on('scroll', function(){
-        const scrollY = window.scrollY;
-        const scrollDown = scrollY < $lastScrollY;
+        let scrollY = window.scrollY;
+        let scrollDown = scrollY < $lastScrollY;
         if(scrollY<500){
             $('#header').show();
         }else if (scrollDown && scrollY) {

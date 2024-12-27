@@ -87,6 +87,7 @@
 }
 body{
     font-family: 'payboocM';
+    color : #333;
 }
 a{
     text-decoration : none;
@@ -117,11 +118,7 @@ h4{font-size : 1.3em;}
     display : flex;
     gap : 20px;
     position : fixed;
-    transition : .3s;
     background : white;
-}
-#header.up{
-    transform : translateY(-100%);
 }
 #headLang{
     cursor : pointer;
@@ -154,8 +151,10 @@ h4{font-size : 1.3em;}
 #banner .bannerImg img{
     width : 100%;
 }
-section>h2{
+#index section>h2{
     float : left;
+}
+section>h2{
     margin-bottom : 4vh;
 }
 .more{
@@ -212,12 +211,17 @@ section>h2{
     width : 100%;
     display : flex;
     flex-wrap: wrap;
+}
+#index .recomnCpu{
     justify-content: space-between;
+}
+#compare .recomnCpu{
+    gap : 16px;
 }
 #recomnGpu>h2{
     float : none;
 }
-.recomnCpu>article{
+#index .recomnCpu>article{
     flex : 0 0 46%;
     box-shadow : 0 0 3px rgba(0,0,0,0.3);
     border-radius: 10px;
@@ -284,13 +288,13 @@ section>h2{
 
 .recomnBuild{
     overflow : hidden;
-    padding : 20px 10px;
+    padding : 20px 1vw;
 }
 .recomnBuild:nth-child(even){
     border-bottom : 1px solid #ccc;
     border-top : 1px solid #ccc;
 }
-.recomnBuild img{
+#index .recomnBuild img{
     float : left;
     padding-right : 3%;
 }
@@ -310,6 +314,106 @@ section>h2{
     white-space : nowrap;
 }
 
+
+#compare #wrap{
+    padding-top : 80px;
+}
+#compareCpu {
+    position : absolute;
+    top : 0;
+    z-index : 3;
+    padding-top : 10px;
+}
+#compareCpu>div{
+    text-align: center;
+    background : white;
+    height : 40px;
+    line-height : 40px;
+    box-shadow : 0 0 3px rgba(0,0,0,0.3);
+}
+#compareIndex{
+    box-shadow : 0 0 3px rgba(0,0,0,0.3);
+    padding : 1em;
+}
+.indexList li{
+    line-height : 30px;
+}
+#diff{
+    box-shadow : 0 0 3px rgba(0,0,0,0.3);
+    padding : 2vh 0;
+}
+#diff>*{
+    text-indent : 1em;
+    margin : 10px 0;
+}
+#diff li{
+    margin-top : 2vh;
+}
+#score{
+    margin-bottom : 0;
+    box-shadow : 0 -1px 3px rgba(0,0,0,0.3);
+    border-radius: 2vw 2vw 0 0;
+}
+#benchmark{
+    box-shadow : 0 1px 3px rgba(0,0,0,0.3);
+    
+    border-radius: 0 0 2vw 2vw;
+}
+#score, #benchmark{
+    padding : 20px;
+}
+#compare .recomnBuild{
+    display : flex;
+}
+#compare .recomnBuild>div{
+    display : flex;
+    flex-wrap : wrap;
+    flex : 1 1 40%;
+}
+#compare .recomnBuild .build{
+    flex : 1 1 40%;
+    text-align: center;
+    transition : .3s;
+}
+.buy{
+    display : flex;
+}
+.buy>div{
+    flex : 1 1 40%;
+    text-align: center;
+}
+.buy>div img{
+    width : 100%;
+}
+.buy>div button{
+    width : 100%;
+    height : 3vh;
+    min-height : 30px;
+    margin-top : 10px;
+    text-shadow : 0 0 2px rgba(0,0,0,0.3);
+    border : none;
+    outline-style : none;
+    border-radius : 1em;
+    color : white;
+    cursor : pointer;
+}
+.buy .amazon{
+    background : #f49303;
+}
+.buy .danawa{
+    background : #68c91c;
+}
+.highBuild{
+    display : flex;
+}
+.highBuild>.high{
+    position : relative;
+}
+.highBuild>.high>.highBtn{
+    position : absolute;
+    right : 0;
+    bottom : 0;
+}
 @media screen and (min-width:1200px){
     #mainParts:hover .prev, #mainParts:hover .next{
         opacity: 100%;
@@ -521,7 +625,7 @@ section>h2{
         line-clamp : 12;
         -webkit-line-clamp: 12;
     }
-    .recomnCpu{
+    #index .recomnCpu{
         gap : 60px 0;
     }
     .recomnGpu{
@@ -588,6 +692,49 @@ section>h2{
     #footer .sns{
         padding : 25px 0;
     }
+
+    
+    #compare #wrap{
+        margin-top : 60px;
+    }
+    #compareIndex {
+        transition : .1s;
+        position: absolute;
+        right: 20px;
+        top: 80px;
+    }
+    #compareCpu{
+        width : 1200px;
+    }
+    #compareCpu{
+        left : 20px;
+    }
+    #compare .recomnCpu>div{
+        flex : 1 1 440px;
+    }
+    #compare .recomnBuild>div{
+        gap:16px;
+    }
+    #compare .recomnBuild .build:hover{
+        margin-top : -3px;
+        box-shadow : 0 3px 3px rgba(0,0,0,0.3);
+    }
+    .buy{
+        gap : 16px;
+    }
+    .highBuild{
+        gap : 16px;
+    }
+    .highBuild>.high>.highBtn{
+        width : 45px;
+        height : 45px;
+        background : url('../images/highBtn.png')no-repeat 50% 50%;
+        cursor: pointer;
+        border-radius : 50%;
+    }
+    #compare .recomnBuild{
+        gap : 16px;
+    }
 }
 @media screen and (max-width:1199px){
     #slideMenu{
@@ -630,8 +777,10 @@ section>h2{
     #footer .logo{
         display : none;
     }
+    #footer{
+        font-size : 1.5em;
+    }
     #header{
-        display : flex;
         justify-content : space-between;
         flex-direction: row;
     }
@@ -652,6 +801,19 @@ section>h2{
         display : flex;
         gap : 5px;
         justify-content: flex-end;
+    }
+
+    
+    #compare #wrap{
+        margin-top : 80px;
+    }
+    .highBtn{
+        background : url('../images/highBtn.png')no-repeat 50% 50%;
+        border-radius : 50%;
+        background-size : 100% 100%;
+    }
+    .buy{
+        gap : 5vw;
     }
 }
 @media screen and (max-width:1199px) and (min-width:768px){
@@ -679,7 +841,7 @@ section>h2{
         line-clamp : 13;
         -webkit-line-clamp: 13;
     }
-    .recomnCpu{
+    #index .recomnCpu{
         gap : 4vh 0;
     }
     .recomnGpu{
@@ -747,7 +909,7 @@ section>h2{
         border-radius: 2vh;
         box-shadow: 0 0 3px rgba(0,0,0,0.3);
     }
-    .recomnBuild img{
+    #index .recomnBuild img{
         max-width : 30%;
     }
     #pcBuild{
@@ -766,8 +928,33 @@ section>h2{
         overflow : hidden;
         background-size : 200% 100%;
     }
-    #footer .sns{
+    #footer .sns>li{
         margin-top : 20px;
+    }
+    #compareCpu{
+        width : 88vw;
+    }
+    #compare .recomnBuild {
+        gap : 5vw;
+    }
+    #compare .recomnBuild>div{
+        gap : 5vw;
+    }
+    .highBuild{
+        gap : 5vw;
+    }
+    .highBuild>.high{
+        flex : 1 1 40vw;   
+    }
+    .high img{
+        width : 100%;
+    }
+    .highBtn{
+        width : 8vw;
+        height : 8vw;
+    }
+    .highBuild>.high:last-child{
+        display : none;
     }
 }
 @media screen and (max-width:767px){
@@ -789,7 +976,7 @@ section>h2{
     .subSnb{
         display : none;
     }
-    .recomnCpu{
+    #index .recomnCpu{
         gap : 4vw;
         width : max-content;
         max-width : 204vw;
@@ -797,7 +984,7 @@ section>h2{
         flex-wrap : nowrap;
         transition : .3s;
     }
-    .recomnCpu>article{
+    #index .recomnCpu>article{
         flex : 0 0 48vw;
     }
     #subMenu{
@@ -874,7 +1061,7 @@ section>h2{
         height : 100px;
         width : 42.5vw;
     }
-    .recomnBuild img{
+    #index .recomnBuild img{
         float : left;
         padding-right : 2vw;
         max-width : 30%;
@@ -927,5 +1114,31 @@ section>h2{
     }
     .mlast{
         margin-right : 0;
+    }
+    #compareCpu{
+        width : 90vw;
+    }
+    #compare .recomnBuild {
+        gap : 5vw;
+    }
+    #compare .recomnBuild>div{
+        gap : 5vw;
+    }
+    #compare .recomnBuild>div>.build:nth-child(n+3){
+        display : none;
+    }
+    .highBuild{
+        gap : 5vw;
+        flex-direction: column;
+    }
+    .highBuild img{
+        width : 100%;
+    }
+    .highBtn{
+        width : 15vw;
+        height : 15vw;
+    }
+    .buy>div button{
+        min-height : 50px;
     }
 }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compare</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/master.css">
+    <script src="js/lib/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body id="compare">
+    <div id="slideMenu">
+        <div class="userInfo">
+            <img src="images/login.svg" alt="로그인/회원가입">
+            <span>로그인해주세요</span>
+        </div>
+        <div class="slideLnb"></div>
+    </div>
+    <div id="login"></div>
+    <div id="langBox"></div>
+    <header id="header" class="center">
+    </header>
+    <div id="wrap" class="row">
+        <div id="compareCpu">
+            <div class="col6 tcol4 mcol2">Ryzen 7 9700x</div>
+            <div class="col6 tcol4 mcol2 last">Ryzen 9 7900x3D</div>
+        </div>
+        <section id="compareIndex" class="col3 tcol8 mcol4 last">
+            <ul class="indexList">
+                <li><a href="#diff">1. 주요 차이점</a></li>
+                <li><a href="#score">2. 점수</a></li>
+                <li><a href="#benchmark">3. 벤치마크</a></li>
+                <li><a href="#recomnBuild">4. 해당 cpu를 사용한 PC견적</a></li>
+                <li><a href="#high">5. 고성능 빌드 추천</a></li>
+                <li><a href="#buy">6. 구매하기</a></li>
+            </ul>
+        </section>
+        <section id="diff" class="col12">
+            <h2>주요 차이점</h2>
+            <div class="recomnCpu">
+                <div class="leftCpu">
+                    <h3>ryzen7 9700x</h3>
+                    <ul>
+                        <li>메모리의 높은 사양 (5600 vs 5200)</li>
+                        <li>더 큰 메모리 대역폭 (89.6GB/s vs 83.2GB/s)</li>
+                        <li>더 현대적인 제조 공정 (4nm vs 5nm)</li>
+                        <li>TDP가 낮음 (65W vs 120W)</li>
+                        <li>출시가격이 낮음 ($359 vs $549)</li>
+                    </ul>
+                </div>
+                <div class="rightCpu">
+                    <h3>ryzen9 7900x3D</h3>
+                    <ul>
+                        <li>더 높은 기본 주파수 (4.4GHz vs 3.8GHz)</li>
+                        <li>더 큰 L3 캐시 크기 (128MB vs 32MB)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="score" class="col12">
+            <h2>점수</h2>
+            <canvas id="chartScore"></canvas>
+        </section>
+        <section id="benchmark" class="col12">
+            <h2>벤치마크</h2>
+            <canvas id="chartBench"></canvas>
+        </section>
+        <section id="recomnBuild" class="col12">
+            <h2>해당 cpu를 사용한 PC견적</h2>
+            <div class="recomnBuild">
+                <div class="leftCpu">
+                    <article class="build">
+                        <img src="images/cpuUse1.jpg" alt="cpu 추천 빌드">
+                        <p>QHD 로스트아크</p>
+                        <p>₩2,070,000</p>
+                    </article>
+                    <article class="build">
+                        <img src="images/cpuUse2.jpg" alt="cpu 추천 빌드">
+                        <p>QHD GTA5</p>
+                        <p>₩2,370,000</p>
+                    </article>
+                    <article class="build">
+                        <img src="images/cpuUse3.jpg" alt="cpu 추천 빌드">
+                        <p>FHD 배틀그라운드</p>
+                        <p>₩1,520,000</p>
+                    </article>
+                    <article class="build">
+                        <img src="images/cpuUse4.jpg" alt="cpu 추천 빌드">
+                        <p>UHD 사이버펑크</p>
+                        <p>₩2,740,000</p>
+                    </article>
+                </div>
+                <div class="rightCpu">
+                    <article class="build">
+                        <img src="images/cpuUse5.jpg" alt="cpu 추천 빌드">
+                        <p>FHD 철권8</p>
+                        <p>₩1,900,000</p>
+                    </article>
+                    <article class="build">
+                        <img src="images/cpuUse6.jpg" alt="cpu 추천 빌드">
+                        <p>1080p 영상작업용</p>
+                        <p>₩1,620,000</p>
+                    </article>
+                    <article class="build">
+                        <img src="images/cpuUse7.jpg" alt="cpu 추천 빌드">
+                        <p>QHD 발더스게이트</p>
+                        <p>₩2,770,000</p>
+                    </article>
+                    <article class="build">
+                        <img src="images/cpuUse8.jpg" alt="cpu 추천 빌드">
+                        <p>FHD 포르자</p>
+                        <p>₩1,820,000</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="high" class="col12">
+            <h2>고사양 PC견적 추천</h2>
+            <div class="highBuild">
+                <article class="high">
+                    <div class="highImg">
+                        <img src="images/high1.png" alt="게이밍 컴퓨터">
+                    </div>
+                    <div class="highBtn">
+                    </div>
+                </article>
+                <article class="high">
+                    <div class="highImg">
+                        <img src="images/high2.png" alt="AI연구용 컴퓨터">
+                    </div>
+                    <div class="highBtn">
+                    </div>
+                </article>
+                <article class="high">
+                    <div class="highImg">
+                        <img src="images/high3.png" alt="영상 편집용">
+                    </div>
+                    <div class="highBtn">
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="buy" class="col12">
+            <h2>구매하러가기</h2>
+            <section class="buy">
+                <div class="leftCpu">
+                    <img src="images/leftCpu.jpg" alt="cpu이미지">
+                    <p>$359</p>
+                    <a href="https://www.amazon.com/"><button class="amazon">구매하러 가기(Amazone)</button></a>
+                    <a href="https://www.danawa.com/"><button class="danawa">최저가 비교하러 가기(Danawa)</button></a>
+                </div>
+                <div class="rightCpu">
+                    <img src="images/rightCpu.jpg" alt="cpu이미지">
+                    <p>$549</p>
+                    <a href="https://www.amazon.com/"><button class="amazon">구매하러 가기(Amazone)</button></a>
+                    <a href="https://www.danawa.com/"><button class="danawa">최저가 비교하러 가기(Danawa)</button></a>
+                </div>
+            </section>
+        </section>
+    </div>
+    <footer id="footer" class="clearfix col16 tcol8 mcol4 last">
+    </footer>
+    <script src="js/embed.js"></script>
+    <script src="js/compare.js"></script>
+</body>
+</html>
