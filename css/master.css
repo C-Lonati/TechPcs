@@ -111,7 +111,7 @@ h4{font-size : 1.3em;}
 }
 #header{
     padding : 0 5%;
-    z-index: 95;
+    z-index: 90;
     top : 0;
     left : 0;
     width : 100%;
@@ -151,7 +151,7 @@ h4{font-size : 1.3em;}
 #banner .bannerImg img{
     width : 100%;
 }
-#index section>h2{
+section>h2{
     float : left;
 }
 section>h2{
@@ -211,17 +211,22 @@ section>h2{
     width : 100%;
     display : flex;
     flex-wrap: wrap;
-}
-#index .recomnCpu{
     justify-content: space-between;
 }
-#compare .recomnCpu{
+.diff{
+    display : flex;
+    flex-wrap : wrap;
+}
+#diff>h2{
+    padding-left : 1vw;
+}
+#compare .diff{
     gap : 16px;
 }
 #recomnGpu>h2{
     float : none;
 }
-#index .recomnCpu>article{
+.recomnCpu>article{
     flex : 0 0 46%;
     box-shadow : 0 0 3px rgba(0,0,0,0.3);
     border-radius: 10px;
@@ -342,7 +347,7 @@ section>h2{
     box-shadow : 0 0 3px rgba(0,0,0,0.3);
     padding : 2vh 0;
 }
-#diff>*{
+.diff>*{
     text-indent : 1em;
     margin : 10px 0;
 }
@@ -356,8 +361,7 @@ section>h2{
 }
 #benchmark{
     box-shadow : 0 1px 3px rgba(0,0,0,0.3);
-    
-    border-radius: 0 0 2vw 2vw;
+    border-radius: 0 0 1vw 1vw;
 }
 #score, #benchmark{
     padding : 20px;
@@ -414,6 +418,37 @@ section>h2{
     right : 0;
     bottom : 0;
 }
+
+.benchSub>li{
+    overflow : hidden;
+    margin-top : 1em;
+}
+span.cpuName{
+    float : left;
+    width : 20%;
+}
+.chartBack{
+    background : #ccc;
+    height : 20px;
+    margin-left : 20%;
+    border-radius: 5px;
+    padding : 3px 2px;
+    overflow : hidden;
+}
+.chartBar{
+    background : #3b82f9;
+    height : 14px;
+    border-radius: 4px;
+    color : white;
+    line-height : 14px;
+    font-size : 12px;
+    padding-right : 5px;
+}
+.benchScore>li{
+    margin-top : 20px;
+}
+
+
 @media screen and (min-width:1200px){
     #mainParts:hover .prev, #mainParts:hover .next{
         opacity: 100%;
@@ -527,7 +562,6 @@ section>h2{
         margin-bottom : 100px;
     }
     #header{
-        z-index: 200;
         top : 0;
         left : 0;
         width : 100%;
@@ -625,7 +659,7 @@ section>h2{
         line-clamp : 12;
         -webkit-line-clamp: 12;
     }
-    #index .recomnCpu{
+    .recomnCpu{
         gap : 60px 0;
     }
     .recomnGpu{
@@ -709,7 +743,7 @@ section>h2{
     #compareCpu{
         left : 20px;
     }
-    #compare .recomnCpu>div{
+    .diff>div{
         flex : 1 1 440px;
     }
     #compare .recomnBuild>div{
@@ -841,7 +875,7 @@ section>h2{
         line-clamp : 13;
         -webkit-line-clamp: 13;
     }
-    #index .recomnCpu{
+    .recomnCpu{
         gap : 4vh 0;
     }
     .recomnGpu{
@@ -976,7 +1010,7 @@ section>h2{
     .subSnb{
         display : none;
     }
-    #index .recomnCpu{
+    .recomnCpu{
         gap : 4vw;
         width : max-content;
         max-width : 204vw;
@@ -984,7 +1018,7 @@ section>h2{
         flex-wrap : nowrap;
         transition : .3s;
     }
-    #index .recomnCpu>article{
+    .recomnCpu>article{
         flex : 0 0 48vw;
     }
     #subMenu{
