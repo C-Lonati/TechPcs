@@ -20,6 +20,23 @@
     padding : 0;
     box-sizing : border-box;
 }
+body{
+    font-family: 'payboocM';
+    color : #333;
+}
+a{
+    text-decoration : none;
+    color : inherit;
+}
+img{
+    vertical-align: top;
+}
+ul{list-style: none;}
+h2{font-size : 2em;}
+h3{font-size : 1.5em;}
+h4{font-size : 1.3em;}
+
+
 #modal{
     width : 100%;
     height : 100%;
@@ -56,9 +73,6 @@
 #searchBox{
     position : fixed;
     top : 60px;
-    right : 5%;
-    width : 80%;
-    max-width : 500px;
     height : 600px;
     padding : 20px;
     background : white;
@@ -85,21 +99,6 @@
     max-height : 600px;
     overflow : hidden;
 }
-body{
-    font-family: 'payboocM';
-    color : #333;
-}
-a{
-    text-decoration : none;
-    color : inherit;
-}
-img{
-    vertical-align: top;
-}
-ul{list-style: none;}
-h2{font-size : 2em;}
-h3{font-size : 1.5em;}
-h4{font-size : 1.3em;}
 .hidden{
     display : none !important;
 }
@@ -320,9 +319,18 @@ section>h2{
 }
 
 
-#compare #wrap{
+#wrap{
     padding-top : 80px;
 }
+#index #wrap {
+    padding-top : 0 !important;
+    margin-top : 0 !important;
+}
+    
+
+
+
+
 #compareCpu {
     position : absolute;
     top : 0;
@@ -340,8 +348,9 @@ section>h2{
     box-shadow : 0 0 3px rgba(0,0,0,0.3);
     padding : 1em;
 }
-.indexList li{
-    line-height : 30px;
+.indexList li>a{
+    display : block;
+    line-height : 45px;
 }
 #diff{
     box-shadow : 0 0 3px rgba(0,0,0,0.3);
@@ -391,9 +400,9 @@ section>h2{
 }
 .buy>div button{
     width : 100%;
-    height : 3vh;
+    height : 6vh;
     min-height : 30px;
-    margin-top : 10px;
+    margin-top : 2vh;
     text-shadow : 0 0 2px rgba(0,0,0,0.3);
     border : none;
     outline-style : none;
@@ -403,6 +412,7 @@ section>h2{
 }
 .buy .amazon{
     background : #f49303;
+    margin-top : 4vh;
 }
 .buy .danawa{
     background : #68c91c;
@@ -432,15 +442,15 @@ span.cpuName{
     height : 20px;
     margin-left : 20%;
     border-radius: 5px;
-    padding : 3px 2px;
+    padding : 2px 2px;
     overflow : hidden;
 }
 .chartBar{
     background : #3b82f9;
-    height : 14px;
+    height : 16px;
     border-radius: 4px;
     color : white;
-    line-height : 14px;
+    line-height : 16px;
     font-size : 12px;
     padding-right : 5px;
 }
@@ -449,6 +459,43 @@ span.cpuName{
 }
 
 
+#cpuPage .underLine img{
+    float : left;
+    margin-right : 1vw;
+}
+#cpuPage .underLine .coreNum{
+    display : inline-block;
+    width : 8vw;
+}
+.feature{
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space: nowrap;
+}
+#cpuPage .moreBtn{
+    clear: both;
+    width : 40%;
+    min-width : 300px;
+    border-radius: 9999px;
+    height : 50px;
+    text-align: center;
+    line-height : 50px;
+    margin : 1vh auto;
+    background: #eee;
+    cursor: pointer;
+}
+.noneLine{
+    border : none !important;
+}
+.entryCpu{
+    display : flex;
+}
+.entryCpu>.cpu{
+    flex : 1 1 30%;
+}
+#cpuPage .underLine .clock{
+    display : inline-block;
+}
 @media screen and (min-width:1200px){
     #mainParts:hover .prev, #mainParts:hover .next{
         opacity: 100%;
@@ -470,6 +517,7 @@ span.cpuName{
     }
     #searchBox{
         right : 200px !important;
+        width : 500px;
     }
     #login{
         width : 60%;
@@ -603,7 +651,7 @@ span.cpuName{
         box-sizing : content-box;
         position : absolute;
         background : white;
-        top : 40px;
+        top : 50px;
         left : -10px;
         padding : 5px 15px 5px 5px;
         display : none;
@@ -614,6 +662,7 @@ span.cpuName{
     .subLnb>li{
         width : max-content;
         padding : 5px;
+        line-height : 30px;
     }
     .lnb>li:hover>.subLnb{
         display : block;
@@ -713,6 +762,7 @@ span.cpuName{
     }
     .recomnBuild img{
         max-height : 300px;
+        margin-bottom : 5px;
     }
     .pcBuild{
         width : 100%;
@@ -728,7 +778,7 @@ span.cpuName{
     }
 
     
-    #compare #wrap{
+    #wrap{
         margin-top : 60px;
     }
     #compareIndex {
@@ -769,8 +819,43 @@ span.cpuName{
     #compare .recomnBuild{
         gap : 16px;
     }
+
+
+
+    #cpuPage .underLine img{
+        float : left;
+        margin-right : 1vw;
+        max-height : 109px;
+    }
+    #cpuPage .underLine .coreNum{
+        max-width : 15%;
+    }
+    #newCpu .cpuName{
+        padding : 15px 0;
+    }
+    .entryCpu{
+        gap : 16px;
+    }
+    .recomnFlagshipCpu>.cpu.col10 img{
+        width : 100%;
+        margin-bottom : 7px;
+    }
+    .recomnFlagshipCpu>.cpu.col6 .bench{
+        display : none;
+    }
+
+    #cpuPage .more{
+        display : none;
+    }
 }
 @media screen and (max-width:1199px){
+    .lnb, .login{
+        display : none;
+    }
+    #searchBox{
+        right : 5%;
+        width : 90%;
+    }
     #slideMenu{
         z-index : 99;
         position : fixed;
@@ -791,10 +876,8 @@ span.cpuName{
         float : left;
     }
     #slideMenu>.userInfo span{
-        font-size : 30px;
-    }
-    .lnb, .login{
-        display : none;
+        font-size : 24px;
+        line-height : 30px;
     }
     #slideMenu .lnb{
         display : block;
@@ -838,7 +921,7 @@ span.cpuName{
     }
 
     
-    #compare #wrap{
+    #wrap{
         margin-top : 80px;
     }
     .highBtn{
@@ -849,8 +932,19 @@ span.cpuName{
     .buy{
         gap : 5vw;
     }
+
+
+    .mainstreamCpu{
+        display : flex;
+        flex-wrap: nowrap;
+        gap : 2%;
+    }
 }
 @media screen and (max-width:1199px) and (min-width:768px){
+    #slideMenu .subLnb{
+        padding-left : 5%;
+        line-height : 30px;
+    }
     section{
         margin-bottom : 12vh;
     }
@@ -978,16 +1072,25 @@ span.cpuName{
         gap : 5vw;
     }
     .highBuild>.high{
-        flex : 1 1 40vw;   
+        flex : 1 1 20vw;   
     }
     .high img{
         width : 100%;
     }
     .highBtn{
-        width : 8vw;
-        height : 8vw;
+        width : 4.5vw;
+        height : 4.5vw;
     }
-    .highBuild>.high:last-child{
+
+
+    
+    #cpuPage .underLine img{
+        max-height : 104px;
+    }
+    .recomnFlagshipCpu>.cpu:last-child{
+        display : none;
+    }
+    #cpuPage .more{
         display : none;
     }
 }
@@ -1149,6 +1252,15 @@ span.cpuName{
     .mlast{
         margin-right : 0;
     }
+
+
+
+
+
+
+    #compareIndex{
+        margin-bottom : 4vh !important;
+    }
     #compareCpu{
         width : 90vw;
     }
@@ -1163,16 +1275,60 @@ span.cpuName{
     }
     .highBuild{
         gap : 5vw;
-        flex-direction: column;
     }
-    .highBuild img{
-        width : 100%;
+    .highBuild .high:last-child{
+        display: none;
     }
     .highBtn{
-        width : 15vw;
-        height : 15vw;
+        width : 8vw;
+        height : 8vw;
     }
     .buy>div button{
         min-height : 50px;
+    }
+
+
+
+    
+    #cpuPage .underLine img{
+        max-height : 60px;
+    }
+    #newCpu .cpu:nth-child(n+5){
+        display : none;
+    }
+    #newCpu .cpu:nth-child(4){
+        border : none;
+    }
+    #cpuPage .moreBtn{
+        display : none;
+    }
+
+
+    .coreNum{
+        min-width: 80px;
+    }
+    .bench, .feature{
+        display : none;
+    }
+    .work{
+        display : none;
+    }
+    .recomnFlagshipCpu .mcol1 h3{
+        font-size : 1em;
+        overflow : hidden;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+    }
+    .recomnFlagshipCpu .mcol1 p{
+        font-size : 0.7em;
+    }
+    .mainstreamCpu{
+        position : relative;
+        transition : .3s;
+        width : max-content;
+        max-width : 200%;
+    }
+    .mainstreamCpu .cpu{
+        flex : 0 1 42.5vw;
     }
 }

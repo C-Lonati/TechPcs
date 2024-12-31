@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recommendCPU</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/master.css">
+    <script src="js/lib/jquery-3.6.0.js"></script>
+</head>
+<body id="cpuPage">
+    <div id="slideMenu">
+        <div class="userInfo">
+            <img src="images/login.svg" alt="로그인/회원가입">
+            <span>로그인해주세요</span>
+        </div>
+        <div class="slideLnb"></div>
+    </div>
+    <div id="login"></div>
+    <div id="langBox"></div>
+    <header id="header" class="center">
+    </header>
+    <div id="wrap" class="row">
+        <section id="newCpu">
+            <h2>최신 CPU</h2>
+            <div class="more">더보기</div>
+            <div class="newCpu clearfix">
+                <article class="cpu underLine col8 tcol4 mcol4">
+                    <a href="error404.html"><img src="images/newCpu1.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 7 9800x3d</a></h3>
+                    <p class="coreNum">8C 16T</p>
+                    <p class="clock">@ 4.7 GHz</p>
+                    <p class="cache">L2 캐시 : 8MB L3 캐시 : 96MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 last">
+                    <a href="error404.html"><img src="images/newCpu2.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">core ultra 5 245k</a></h3>
+                    <p class="coreNum">14C 14T</p>
+                    <p class="clock">@ 4.2GHz</p>
+                    <p class="cache">L2 캐시 : 26MB L3 캐시 : 24MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4">
+                    <a href="error404.html"><img src="images/newCpu3.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">core ultra 7 265k</a></h3>
+                    <p class="coreNum">20C 20T</p>
+                    <p class="clock">@ 3.9 GHz</p>
+                    <p class="cache">L2 캐시 : 36MB L3 캐시 : 30MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 last">
+                    <a href="error404.html"><img src="images/newCpu4.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">core ultra 9 285k</a></h3>
+                    <p class="coreNum">24C 24T</p>
+                    <p class="clock">@3.7 GHz</p>
+                    <p class="cache">L2 캐시 : 40MB L3 캐시 : 36MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4">
+                    <a href="error404.html"><img src="images/newCpu5.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 9 9950x</a></h3>
+                    <p class="coreNum">16C 32T</p>
+                    <p class="clock">@ 4.3 GHz</p>
+                    <p class="cache">L2 캐시 : 16MB L3 캐시 : 64MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 last">
+                    <a href="error404.html"><img src="images/newCpu6.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 9 9900x</a></h3>
+                    <p class="coreNum">12C 24T</p>
+                    <p class="clock">@ 4.4 GHz</p>
+                    <p class="cache">L2 캐시 : 12MB L3 캐시 : 64MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 line noneLine">
+                    <a href="error404.html"></a><img src="images/newCpu7.jpg" alt="cpu사진">
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 7 9700x</a></h3>
+                    <p class="coreNum">8C 16T</p>
+                    <p class="clock">@ 3.8 GHz</p>
+                    <p class="cache">L2 캐시 : 8MB L3 캐시 : 32MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 last line noneLine">
+                    <a href="error404.html"><img src="images/newCpu8.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 5 9600x</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 3.9 GHz</p>
+                    <p class="cache">L2 캐시 : 6MB L3 캐시 : 32MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 hidden">
+                    <a href="error404.html"><img src="images/newCpu9.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 5 5600XT</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 3.7 GHz</p>
+                    <p class="cache">L2 캐시 : 6MB L3 캐시 : 32MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 last hidden">
+                    <a href="error404.html"><img src="images/newCpu10.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 5 5600T</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 3.5 GHz</p>
+                    <p class="cache">L2 캐시 : 6MB L3 캐시 : 32MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 hidden noneLine">
+                    <a href="error404.html"><img src="images/newCpu11.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 5 7600x3D</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 3.8 GHz</p>
+                    <p class="cache">L2 캐시 : 6MB L3 캐시 : 96MB</p>
+                </article>
+                <article class="cpu underLine col8 tcol4 mcol4 last hidden noneLine">
+                    <a href="error404.html"><img src="images/newCpu12.jpg" alt="cpu사진"></a>
+                    <h3 class="cpuName"><a href="error404.html">Ryzen 5 5600x3D</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 3.3 GHz</p>
+                    <p class="cache">L2 캐시 : 6MB L3 캐시 : 96MB</p>
+                </article>
+                <div class="moreBtn">더보기</div>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <section id="popularGamingCpu">
+            <h2>인기 CPU(게이밍)</h2>
+            <div class="more">더보기</div>
+            <div class="popularGamingCpu clearfix">
+                <article class="cpu underLine">
+                    <a href="error404.html"><img src="images/popGaming1.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">Ryzen 7 7800x3d</a></h3>
+                    <p class="coreNum">8C 16T</p>
+                    <p class="clock">@ 4.2 GHz</p>
+                    <p class="cache">L2 캐시 : 8MB L3 캐시 : 96MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 1788, 시네벤치R23(멀티) : 18208</p>
+                    <p class="feature">주요 특징 : 3D v-캐시 기술로 L3캐시 용량이 크게 증가해 작업 일치율이 낮은 게이밍 환경에서 높은 성능이 특징</p>
+                </article>
+                <article class="cpu underLine">
+                    <a href="error404.html"><img src="images/popGaming2.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">Ryzen 7 9800x3d</a></h3>
+                    <p class="coreNum">8C 16T</p>
+                    <p class="clock">@ 4.7 GHz</p>
+                    <p class="cache">L2 캐시 : 8MB L3 캐시 : 96MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 2073, 시네벤치R23(멀티) : 23334</p>
+                    <p class="feature" title="주요 특징 : 3D v-캐시2세대 기술로 L3캐시 용량이 크게 증가해 작업 일치율이 낮은 게이밍 환경에서 높은 성능을 보이며 구조 변경으로 인해 전작 대비 발열 해소에 강점을 보이는 것이 특징">주요 특징 : 3D v-캐시2세대 기술로 L3캐시 용량이 크게 증가해 작업 일치율이 낮은 게이밍 환경에서 높은 성능을 보이며 구조 변경으로 인해 전작 대비 발열 해소에 강점을 보이는 것이 특징</p>
+                </article>
+                <article class="cpu underLine noneLine line">
+                    <a href="error404.html"><img src="images/popGaming3.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">Ryzen 7 5700x3d</a></h3>
+                    <p class="coreNum">8C 16T</p>
+                    <p class="clock">@ 3.0 GHz</p>
+                    <p class="cache">L2 캐시 : 8MB L3 캐시 : 96MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 1367, 시네벤치R23(멀티) : 13788</p>
+                    <p class="feature">주요 특징 : 3D v-캐시 기술로 L3캐시 용량이 크게 증가해 작업 일치율이 낮은 게이밍 환경에서 높은 성능이 특징</p>
+                </article>
+                <article class="cpu underLine noneLine hidden">
+                    <a href="error404.html"><img src="images/recomnMainstream2.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">Ryzen 5 7500f</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 3.7 GHz</p>
+                    <p class="cache">L2 캐시 : 6MB L3 캐시 : 32MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 1824, 시네벤치R23(멀티) : 13824</p>
+                    <p class="feature">주요 특징 : 가성비 픽으로 인기가 많은것이 특징</p>
+                </article>
+                <div class="moreBtn">더보기</div>
+            </div>
+        </section>
+        <section id="popularWalkingCpu">
+            <h2>인기 Cpu(영상 작업)</h2>
+            <div class="more">더보기</div>
+            <div class="popularWalkingCpu clearfix">
+                <article class="cpu underLine">
+                    <a href="error404.html"><img src="images/popWalking1.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">core ultra 9 285k</a></h3>
+                    <p class="coreNum">24C 24T</p>
+                    <p class="clock">@ 3.7 GHz</p>
+                    <p class="cache">L2 캐시 : 40MB L3 캐시 : 36MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 2320, 시네벤치R23(멀티) : 41558</p>
+                    <p class="feature">주요 특징 : 인텔 딥러닝부스트 기술로 인해 AI작업 성능이 뛰어나고, 퀵싱크 기술로 인해 영상 작업 시 뛰어난 성능을 제공합니다.</p>
+                </article>
+                <article class="cpu underLine noneLine line">
+                    <a href="error404.html"><img src="images/popWalking2.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">core i9 13900k</a></h3>
+                    <p class="coreNum">24C 36T</p>
+                    <p class="clock">@ 3.0 GHz</p>
+                    <p class="cache">L2 캐시 : 32MB L3 캐시 : 36MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 2251, 시네벤치R23(멀티) : 38207</p>
+                    <p class="feature">주요 특징 : 인텔 딥러닝부스트 기술로 인해 AI작업 성능이 뛰어나고, 퀵싱크 기술로 인해 영상 작업 시 뛰어난 성능을 제공합니다.</p>
+                </article>
+                <article class="cpu underLine noneLine hidden">
+                    <img src="images/popWalking3.jpg" alt="cpu사진">
+                    <h3>core i7 14700k</h3>
+                    <p class="coreNum">20C 28T</p>
+                    <p class="clock">@ 3.4 GHz</p>
+                    <p class="cache">L2 캐시 : 28MB L3 캐시 : 33MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 2069, 시네벤치R23(멀티) : 34818</p>
+                    <p class="feature">주요 특징 : 인텔 딥러닝부스트 기술로 인해 AI작업 성능이 뛰어나고, 퀵싱크 기술로 인해 영상 작업 시 뛰어난 성능을 제공합니다.</p>
+                </article>
+                <div class="moreBtn">더보기</div>
+            </div>
+        </section>
+        <section id="mainstreamCpu">
+            <h2>저사양 Cpu 추천(게이밍)</h2>
+            <div class="mainstreamCpu clearfix tcenter">
+                <article class="cpu col4 tcol2">
+                    <a href="error404.html"><img src="images/recomnMainstream1.jpg" alt="cpu사진"></a>
+                    <p><a href="error404.html">Ryzen5 5600</a></p>
+                    <p>₩ 120,000</p>
+                </article>
+                <article class="cpu col4 tcol2">
+                    <a href="error404.html"><img src="images/recomnMainstream2.jpg" alt="cpu사진"></a>
+                    <p><a href="error404.html">Ryzen5 7500f</a></p>
+                    <p>₩ 195,000</p>
+                </article>
+                <article class="cpu col4 tcol2">
+                    <a href="error404.html"><img src="images/recomnMainstream3.jpg" alt="cpu사진"></a>
+                    <p><a href="error404.html">Ryzen5 7600x</a></p>
+                    <p>₩ 243,000</p>
+                </article>
+                <article class="cpu col4 tcol2 last">
+                    <a href="error404.html"><img src="images/recomnMainstream4.jpg" alt="cpu사진"></a>
+                    <p><a href="error404.html">core I5 12400f</a></p>
+                    <p>₩ 112,000</p>
+                </article>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+        <section id="entryCpu">
+            <h2>저사양 Cpu 추천(사무용)</h2>
+            <div class="entryCpu clearfix">
+                <article class="cpu tcenter">
+                    <a href="error404.html"><img src="images/recomnEntry1.jpg" alt="cpu사진"></a>
+                    <p><a href="error404.html">Ryzen5 5600G</a></p>
+                    <p>₩ 160,000</p>
+                </article>
+                <article class="cpu tcenter">
+                    <a href="error404.html"><img src="images/recomnEntry2.jpg" alt="cpu사진"></a>
+                    <p><a href="error404.html">core I3 10100</a></p>
+                    <p>₩ 73,000</p>
+                </article>
+                <article class="cpu tcenter">
+                    <a href="error404.html"><img src="images/recomnEntry3.jpg" alt="cpu사진"></a>
+                    <p><a href="error404.html">Ryzen5 5300G</a></p>
+                    <p>₩ 112,000</p>
+                </article>
+            </div>
+        </section>
+        <section id="recomnHighCpu">
+            <h2>고사양 CPU 추천(게이밍)</h2>
+            <div class="recomnHighCpu clearfix">
+                <article class="cpu underLine">
+                    <a href="error404.html"><img src="images/recomnGaming1.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">Ryzen 7 7600x3d</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 4.1 GHz</p>
+                    <p class="cache">L2 캐시 : 8MB L3 캐시 : 96MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 1701, 시네벤치R23(멀티) : 13469</p>
+                    <p class="feature" title="주요 특징 : FHD 게이머에게 필요한 모든것을 갖춘 CPU입니다. amd v-cache 기술을 통해 L3캐시 용량을 상승시켰습니다. 국내 정식 발매 제품이 아니므로 해외 직구를 통해 구매하여야 합니다.">주요 특징 : FHD 게이머에게 필요한 모든것을 갖춘 CPU입니다. amd v-cache 기술을 통해 L3캐시 용량을 상승시켰습니다. 국내 정식 발매 제품이 아니므로 해외 직구를 통해 구매하여야 합니다.</p>
+                </article>
+                <article class="cpu underLine">
+                    <a href="error404.html"><img src="images/recomnGaming2.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">core I5 14600KF</a></h3>
+                    <p class="coreNum">14C 20T</p>
+                    <p class="clock">@ 3.5 GHz</p>
+                    <p class="cache">L2 캐시 : 20MB L3 캐시 : 24MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 2054, 시네벤치R23(멀티) : 24086</p>
+                    <p class="feature">주요 특징 : 낮은 가격 대비 뛰어난 성능을 보여주는 CPU입니다.</p>
+                </article>
+                <article class="cpu underLine noneLine">
+                    <a href="error404.html"><img src="images/recomnGaming3.jpg" alt="cpu사진"></a>
+                    <h3><a href="error404.html">Ryzen 7 9700x</a></h3>
+                    <p class="coreNum">6C 12T</p>
+                    <p class="clock">@ 3.7 GHz</p>
+                    <p class="cache">L2 캐시 : 8MB L3 캐시 : 32MB</p>
+                    <p class="bench">시네벤치R23(싱글) : 2260, 시네벤치R23(멀티) : 21436</p>
+                    <p class="feature">주요 특징 : QHD이상의 해상도를 사용하는 게이머에게 좋은 선택이 될 수 있는 CPU입니다.</p>
+                </article>
+            </div>
+        </section>
+        <section id="recomnFlagshipCpu">
+            <div class="recomnFlagshipCpu tcenter">
+                <article class="cpu col10 tcol4 mcol3">
+                    <a href="error404.html"><img src="images/recomnFlag1.jpg" alt="cpu 사진"></a>
+                    <h3><a href="error404.html">Ryzen 9 9950x</a></h3>
+                    <p class="core">16C 32T</p>
+                    <p class="clock">4.3GHz ~ 5.7GHz</p>
+                    <p class="bench">cinebench r23(싱글) : 2309</p>
+                    <p class="bench">cinebench r23(멀티) : 42045</p>
+                    <p>₩ 988,000(국내)</p>
+                    <p>$ 604.49(해외)</p>
+                    <p class="work">추천 작업 : adobe Photoshop, DaVinci</p>
+                </article>
+                <article class="cpu col6 prefix1 tcol4 mcol1 last">
+                    <a href="error404.html"><img src="images/recomnFlag2.jpg" alt="cpu 사진"></a>
+                    <h3><a href="error404.html">core ultra 9 285K</a></h3>
+                    <p class="core">24C 24T</p>
+                    <p class="clock">3.7GHz ~ 5.7GHz</p>
+                    <p class="bench">cinebench r23(싱글) : 2320</p>
+                    <p class="bench">cinebench r23(멀티) : 41558</p>
+                    <p>₩ 988,000(국내)</p>
+                    <p>$ 604.49(해외)</p>
+                    <p class="work">추천 작업 : adobe Premiere Pro 등</p>
+                </article>
+                <article class="cpu col6 prefix1 mcol1 last">
+                    <a href="error404.html"><img src="images/recomnFlag3.jpg" alt="cpu 사진"></a>
+                    <h3><a href="error404.html">Thredripper 7960x</a></h3>
+                    <p class="core">24C 48T</p>
+                    <p class="clock">4.2GHz ~ 5.3GHz</p>
+                    <p class="bench">cinebench r23(싱글) : 1943</p>
+                    <p class="bench">cinebench r23(멀티) : 71512</p>
+                    <p>₩ 9,900,000(국내)</p>
+                    <p>$ 1,398(해외)</p>
+                    <p class="work">추천 작업 : 서버 구축, AI연구 등</p>
+                </article>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+    </div>
+    <footer id="footer">
+    </footer>
+    <script src="js/embed.js"></script>
+    <script src="js/cpuPage.js"></script>
+</body>

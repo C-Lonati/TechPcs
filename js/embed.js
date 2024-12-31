@@ -35,10 +35,6 @@ $modal = $('<div id="modal"></div>');
             $searchToggle = 'off';
         }
     });
-    $(document).on('click tap', '#header>.lnb', function(){
-        $modal.prependTo($('body'));
-        $('#slideMenu').css('left', '0');
-    });
     $(document).on('click tap', '#header>.hamburger', function () {
         $('.slideLnb').html('');
         $lnbInner = $('.lnb').clone();
