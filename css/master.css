@@ -159,31 +159,31 @@ section>h2{
 .more{
     float : right;
 }
-#hardwareNews>.news{
+#index .hardwareNews{
     width : 100%;
     display : flex;
     flex-direction: column;
     flex-wrap : wrap;
     position : relative;
 }
-.news h3{
+#index .news h3{
     max-width : 100%;
     white-space : nowrap;
     overflow : hidden;
     text-overflow : ellipsis;
     margin-bottom : 5px;
 }
-.news>article>.article{
+.news>.article{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.news>*>.time{
+#index .news>.time{
     text-align: right;
     margin-bottom : 1.5em;
 }
-.news>*{
+#index .news{
     background : white;
     box-shadow : 0 0 0.2em rgba(0,0,0,0.3);
     border-radius : 1.5vh;
@@ -191,7 +191,7 @@ section>h2{
     cursor: pointer;
     max-width : 100%;
 }
-#hardwareNews>.news img{
+.news img{
     float : left;
 }
 .snb>li{
@@ -496,6 +496,24 @@ span.cpuName{
 #cpuPage .underLine .clock{
     display : inline-block;
 }
+
+
+
+#news .news{
+    overflow: hidden;
+    margin-bottom : 3vh;
+}
+#news .news img{
+    margin-right : 20px;
+}
+#news .news h3{
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+}
+#news .news .time{
+    margin-bottom : 10px;
+}
 @media screen and (min-width:1200px){
     #mainParts:hover .prev, #mainParts:hover .next{
         opacity: 100%;
@@ -686,27 +704,31 @@ span.cpuName{
         height : 80px;
     }
 
-    #hardwareNews>.news{
+    #index .hardwareNews{
         gap : 60px;
         height : 760px;
     }
-    #hardwareNews>.news img{
+    #index .news img{
         border-radius : 20px 0 0 20px;
         height : 320px;
         padding-right : 20px;
     }
-    .news>article:hover{
+    #index .news:hover{
         position : absolute;
         top : 0;
         bottom : 0;
     }
-    .news>article:hover>.article{
+    #index .news:hover>.article{
         line-clamp : 32;
         -webkit-line-clamp: 32;
     }
-    .news>article>.article{
+    #index .news>.article{
         line-clamp : 12;
         -webkit-line-clamp: 12;
+    }
+    #news .news>.article{
+        line-clamp : 13;
+        -webkit-line-clamp: 13;
     }
     .recomnCpu{
         gap : 60px 0;
@@ -847,6 +869,9 @@ span.cpuName{
     #cpuPage .more{
         display : none;
     }
+
+
+    
 }
 @media screen and (max-width:1199px){
     .lnb, .login{
@@ -953,15 +978,15 @@ span.cpuName{
         -webkit-line-clamp: 21 !important;
     }
 
-    .news{
+    #index .hardwareNews{
         display : flex;
         flex-direction : column;
         gap : 5vh;
     }
-    .news>article>img{
+    .news>img{
         padding-right : 1.5vw;
     }
-    .news>article>.article{
+    .news>.article{
         overflow : hidden;
         text-overflow : ellipsis;
         display: -webkit-box;
@@ -1141,7 +1166,7 @@ span.cpuName{
         color : white;
         padding : 3px;
     }
-    .news{
+    .hardwareNews{
         gap : 3vh;
     }
     .fhd, .qhd{
