@@ -3,7 +3,7 @@ $(function(){
     $('#langBox').load('https://c-lonati.github.io/TechPcs/lang.html');
     $('#header').load('https://c-lonati.github.io/TechPcs/header.html');
     $('#footer').load('https://c-lonati.github.io/TechPcs/footer.html');
-$search = $('<div id="searchBox"><form method="post"><p class="underLine"><input type="search"><input type="image" src="images/search.svg" alt="찾아보기"></p></form></div>');
+$search = $('<div id="searchBox"><form method="post"><p class="underLine"><input type="search"><input type="image" src="images/search.svg" alt="찾아보기"></p><p class="gray"><a href="error404.html">팻 겔싱어 사임</a><img src="images/xBtn.png"></p><p class="gray"><a href="error404.html">인텔 cpu</a><img src="images/xBtn.png"></p><p class="gray"><a href="error404.html">리사 수</a><img src="images/xBtn.png"></p><p class="gray"><a href="error404.html">RTX 5090</a><img src="images/xBtn.png"></p></form></div>');
 $modal = $('<div id="modal"></div>');
     $searchToggle='off';
     $('#login').hide();

@@ -1098,7 +1098,7 @@ span.cpuName{
         border-radius : 2vw;
         margin-bottom : 1vh;
     }
-    .gpu{
+    #index .gpu{
         text-align: center;
     }
     .uhd>.gpu:last-child{
@@ -1205,7 +1205,9 @@ span.cpuName{
         margin-right : 0;
     }
 
-    
+    .recentNews>li:nth-child(n+3){
+        display: none;
+    }
 }
 @media screen and (max-width:767px){
     .newsFocus>.article{
@@ -1277,7 +1279,7 @@ span.cpuName{
         display : flex;
         flex-wrap : wrap;
     }
-    .gpu>p{
+    #index .gpu>p{
         text-align: center;
         font-size : 0.8em;
         text-overflow : ellipsis;
