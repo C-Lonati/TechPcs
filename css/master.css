@@ -498,10 +498,24 @@ span.cpuName{
 }
 
 
+#category{
+    overflow : hidden;
+}
+.category>li{
+    text-align: center;
+    border : 1px solid #333;
+    padding : 8px 0;
+    cursor : pointer;
+    margin-bottom : 10px;
+}
+.cateSelect{
+    background : lightgreen;
+    font-family : 'payboocEB';
+}
 
 #news .news{
     overflow: hidden;
-    margin-bottom : 3vh;
+    margin-bottom : 8vh;
 }
 #news .news img{
     margin-right : 20px;
@@ -514,7 +528,24 @@ span.cpuName{
 #news .news .time{
     margin-bottom : 10px;
 }
+
+#news .articleTitle{
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+    line-height : 30px;
+    max-width : 100%;
+}
+#news .hotNews, #news .recentNews{
+    margin-top : 2vh;
+}
+.recentNews>li a, .recentNews>li p{
+    display : block;
+}
 @media screen and (min-width:1200px){
+    .dlast {
+        margin-right : 0;
+    }
     #mainParts:hover .prev, #mainParts:hover .next{
         opacity: 100%;
     }
@@ -872,6 +903,41 @@ span.cpuName{
 
 
     
+    
+
+    #news #hotNews{
+        margin-bottom : 0;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        padding : 0.5em;
+        max-width: 100%;
+    }
+    #news #recentNews{
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        padding : 0.5em;
+        max-width: 100%;
+    }
+    .recentNews{
+        display : flex;
+        flex-wrap : wrap;
+        justify-content : space-between;
+    }
+    .recentNews>li{
+        flex : 0 1 45%;
+    }
+    .recentNews>li a, .recentNews>li p{
+        display : block;
+        max-width : 96px;
+        font-size : 0.75em;
+    }
+    #otherNews{
+        transition : .3s;
+        position: absolute;
+        right: 20px;
+        top : 180px;
+        width: 17.67%;
+    }
 }
 @media screen and (max-width:1199px){
     .lnb, .login{
@@ -972,6 +1038,9 @@ span.cpuName{
     }
     section{
         margin-bottom : 12vh;
+    }
+    #news section{
+        margin-bottom : 8vh;
     }
     .newsFocus>.article{
         line-clamp: 21 !important;
@@ -1117,6 +1186,20 @@ span.cpuName{
     }
     #cpuPage .more{
         display : none;
+    }
+    
+    .tlast{
+        margin-right : 0;
+    }
+
+    
+    .recentNews{
+        display : flex;
+        flex-wrap : wrap;
+        justify-content : space-between;
+    }
+    .recentNews>li{
+        max-width : 45%;
     }
 }
 @media screen and (max-width:767px){
