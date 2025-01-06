@@ -94,6 +94,11 @@ h4{font-size : 1.3em;}
     border-bottom : 1px solid #333;
     margin-top : 10px;
 }
+.gray{
+    color : gray;
+}
+#header .gray{line-height : 50px; font-size : 1.2em;}
+#header .gray img{float : right; height : 20px; cursor: pointer; margin-top : 15px;}
 #banner{
     margin-top : 60px;
     max-height : 600px;
@@ -118,6 +123,7 @@ h4{font-size : 1.3em;}
     gap : 20px;
     position : fixed;
     background : white;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
 #headLang{
     cursor : pointer;
@@ -515,7 +521,9 @@ span.cpuName{
 
 #news .news{
     overflow: hidden;
-    margin-bottom : 8vh;
+    margin-bottom: 4vh;
+    padding-bottom: 4vh;
+    border-bottom: 1px solid #ccc;
 }
 #news .news img{
     margin-right : 20px;
@@ -1030,6 +1038,11 @@ span.cpuName{
         flex-wrap: nowrap;
         gap : 2%;
     }
+
+    
+    #news .articleTitle{
+        line-height : 50px;
+    }
 }
 @media screen and (max-width:1199px) and (min-width:768px){
     #slideMenu .subLnb{
@@ -1193,14 +1206,6 @@ span.cpuName{
     }
 
     
-    .recentNews{
-        display : flex;
-        flex-wrap : wrap;
-        justify-content : space-between;
-    }
-    .recentNews>li{
-        max-width : 45%;
-    }
 }
 @media screen and (max-width:767px){
     .newsFocus>.article{
