@@ -93,6 +93,7 @@ h4{font-size : 1.3em;}
     padding : 10px 5px;
     border-bottom : 1px solid #333;
     margin-top : 10px;
+    overflow: hidden;
 }
 .gray{
     color : gray;
@@ -550,6 +551,91 @@ span.cpuName{
 .recentNews>li a, .recentNews>li p{
     display : block;
 }
+
+
+
+
+
+
+#build .row{
+    margin-top : 0 !important;
+    padding-top : 20px !important;
+    overflow : hidden;
+    padding-bottom : 10px;
+}
+#build .underLine input[type="search"]{
+    border : none;
+    outline-style : none;
+    font-size : 1.5em;
+    width : 80%;
+}
+#build input[type="image"]{
+    max-height : 30px;
+    float : right;
+}
+#totalBox>p:first-child{
+    float : left;
+    margin-right : 10px;
+}
+.totalPrice{
+    float : left;
+    color : #110000;
+}
+.totalPrice+span{
+    float : right;
+}
+.totalButton{
+    display : flex;
+    flex-wrap : wrap;
+    gap : 5%;
+    padding-top : 10px;
+}
+.totalButton button{
+    flex : 1 1 40%;
+    padding : 10px 0;
+    margin-top : 10px;
+    background : white;
+    border : 1px solid #333;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.totalButton button:hover{
+    margin-top : 7px;
+    margin-bottom : 3px;
+    box-shadow : 0 0 3px rgba(0,0,0,0.3);
+}
+#classification, #partsList, #partMenu, #totalBox{
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    padding : 10px;
+}
+#classification ul{
+    display : flex;
+    gap : 1vw;
+}
+#classification .underLine:last-child{
+    border : 0px !important;
+}
+#classification ul>li{
+    cursor: pointer;
+}
+.partsList .partsName, .partsList .specs{
+    overflow: hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+}
+.partsList .price{
+    float : left;
+}
+.partsList img:first-child{
+    float : left;
+}
+.partsList img:last-child{
+    height : 1.5em;
+    float : right;
+    cursor: pointer;
+}
+
+
 @media screen and (min-width:1200px){
     .dlast {
         margin-right : 0;
@@ -946,6 +1032,39 @@ span.cpuName{
         top : 180px;
         width: 17.67%;
     }
+
+
+
+
+    #build form>img{
+        display: none;
+    }
+    #build #part{
+        display : none;
+    }
+
+    #classification, #partMenu, #totalBox{
+        margin-bottom : 0 !important;
+    }
+    .partSelect{
+        background : lightgreen;
+    }
+    .partMenu>li{
+        padding : 10px;
+        box-shadow: 0 0 1px rgba(0,0,0,0.3);
+        cursor: pointer;
+        margin-bottom : 5px;
+    }
+    .partMenu>li:hover{
+        box-shadow : 0 0 3px rgba(0,0,0,0.3);
+    }
+    .partsList img:first-child{
+        height : 74px;
+    }
+    .partsList{
+        height : 405px;
+        overflow : auto;
+    }
 }
 @media screen and (max-width:1199px){
     .lnb, .login{
@@ -1042,6 +1161,35 @@ span.cpuName{
     
     #news .articleTitle{
         line-height : 50px;
+    }
+
+
+
+    #build section{
+        margin-bottom : 4vh !important;
+    }
+    #build #part{overflow : hidden; padding : 3px;}
+    #build .part{
+        display : flex;
+        gap : 4vw;
+        flex-wrap : nowrap;
+        width : max-content;
+    }
+    #build .part>li{
+        text-align : center;
+        padding : 5px;
+        border-radius : 5px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    }
+    #partMenu, #totalBox{
+        display : none;
+    }
+    .partSelect{
+        text-decoration: underline;
+        font-family : 'payboocEB';
+    }
+    #partsList{
+        clear : both;
     }
 }
 @media screen and (max-width:1199px) and (min-width:768px){
@@ -1207,6 +1355,20 @@ span.cpuName{
 
     .recentNews>li:nth-child(n+3){
         display: none;
+    }
+
+
+    
+    
+    #build form{
+        margin-top : 80px;
+    }
+    #build .part>li{
+        min-width : 11vw;
+    }
+    
+    .partsList img:first-child{
+        height : 71px;
     }
 }
 @media screen and (max-width:767px){
@@ -1445,5 +1607,19 @@ span.cpuName{
     }
     .mainstreamCpu .cpu{
         flex : 0 1 42.5vw;
+    }
+
+    #build form>img{
+        margin-top : 10px;
+    }
+    #build .part>li{
+        min-width : 20vw;
+    }
+    .partsList img:first-child{
+        height : 66px;
+    }
+    #searchBar{
+        padding : 10px;
+        overflow: hidden;
     }
 }
