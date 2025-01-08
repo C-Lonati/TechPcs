@@ -92,7 +92,6 @@ h4{font-size : 1.3em;}
 .underLine{
     padding : 10px 5px;
     border-bottom : 1px solid #333;
-    margin-top : 10px;
     overflow: hidden;
 }
 .gray{
@@ -324,6 +323,32 @@ section>h2{
     text-overflow : ellipsis;
     white-space : nowrap;
 }
+.pcBuild {
+    position: relative;
+    text-align: center;
+}
+.pcBuild h3{
+    width : max-content;
+    padding : 20px 0;
+    text-shadow : 0 0 3px rgba(0,0,0,0.6);
+    margin : 0 auto;
+    color : white;
+}
+.pcBuild .buildBtn{
+    padding : 20px 0;
+    width : 20em;
+    text-align: right;
+    border-radius : 10px;
+    position : absolute;
+    bottom : 10px;
+    right : 1em;
+    font-size : 1.3em;
+}
+.pcBuild .buildBtn img{
+    height : 1.3em;
+    margin-left : 10px;
+    cursor: pointer;
+}
 
 
 #wrap{
@@ -418,11 +443,11 @@ section>h2{
     cursor : pointer;
 }
 .buy .amazon{
-    background : #f49303;
+    background : #004849;
     margin-top : 4vh;
 }
 .buy .danawa{
-    background : #68c91c;
+    background : #49B591;
 }
 .highBuild{
     display : flex;
@@ -637,9 +662,19 @@ span.cpuName{
 }
 
 .partsList img:first-child{
-    height : 4.8em;
+    height : 6.1em;
 }
+.partsList .partsName, .partsList .specs{
+    margin-bottom : 0.5em;
+}
+.liSelect{
+    text-decoration : underline;
 
+}
+#searchBar{
+    padding : 10px;
+    overflow: hidden;
+}
 @media screen and (min-width:1200px){
     .dlast {
         margin-right : 0;
@@ -709,6 +744,9 @@ span.cpuName{
     .loginSns img{
         width : 100%;
         height : 100%;
+    }
+    #login .underLine{
+        margin-top : 10px;
     }
     .formBtn{
         position : absolute;
@@ -918,7 +956,7 @@ span.cpuName{
     .pcBuild{
         width : 100%;
         height : 500px;
-        background : url('../images/pcBuild.jpg')no-repeat 0 70%;
+        background : url('../images/pcBuild.jpg')no-repeat 50% 70%;
         overflow : hidden;
     }
     #footer div{
@@ -1066,6 +1104,9 @@ span.cpuName{
         height : 405px;
         overflow : auto;
     }
+    #build #partsList{
+        margin-bottom : 0 !important;
+    }
 }
 @media screen and (max-width:1199px){
     .lnb, .login{
@@ -1139,6 +1180,16 @@ span.cpuName{
         justify-content: flex-end;
     }
 
+
+    
+    #pcBuild .buildBtn{
+        bottom : 10px;
+        right : 5%;
+        padding : 0;
+        color : white;
+        text-shadow : 0 0 3px rgba(0,0,0,0.6);
+    }
+
     
     #wrap{
         margin-top : 80px;
@@ -1169,12 +1220,17 @@ span.cpuName{
     #build section{
         margin-bottom : 4vh !important;
     }
-    #build #part{overflow : hidden; padding : 3px;}
+    #build #part{
+        overflow : hidden; 
+        padding : 3px; 
+    }
     #build .part{
         display : flex;
         gap : 4vw;
         flex-wrap : nowrap;
         width : max-content;
+        position : relative;
+        transition : .3s;
     }
     #build .part>li{
         text-align : center;
@@ -1191,6 +1247,11 @@ span.cpuName{
     }
     #partsList{
         clear : both;
+    }
+    #build form>img{
+        margin-top : 20px;
+        max-height: 30px;
+        margin-right : 20px;
     }
 }
 @media screen and (max-width:1199px) and (min-width:768px){
@@ -1298,7 +1359,7 @@ span.cpuName{
     }
     #pcBuild{
         position : absolute;
-        top : 2800px;
+        top : 2200px;
         left : 5%;
         transition : .1s;
     }
@@ -1361,12 +1422,11 @@ span.cpuName{
 
     
     
-    #build form{
-        margin-top : 80px;
-    }
+    
     #build .part>li{
         min-width : 11vw;
     }
+
     
 }
 @media screen and (max-width:767px){
@@ -1607,14 +1667,15 @@ span.cpuName{
         flex : 0 1 42.5vw;
     }
 
-    #build form>img{
-        margin-top : 10px;
-    }
+    
     #build .part>li{
         min-width : 20vw;
     }
-    #searchBar{
-        padding : 10px;
-        overflow: hidden;
+    .partsList .specs{
+        display : none;
     }
+    .partsList img:first-child{
+        height : 4.3em;
+    }
+    
 }

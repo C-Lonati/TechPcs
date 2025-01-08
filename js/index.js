@@ -2,6 +2,9 @@ $(function(){
     let startX, endX;
     let $winWidth = $(window).width();
     if ($winWidth > 1199) {
+        $('#pcBuild .buildBtn img').on('click tap', function(){
+            window.open('pcBuild.html','bookPage', 'width = 1400px, height = 850px, scrollbars=no location = no, toolbar = no, statusbar = no');
+        });
         $('.recomnGpu').on('click', function () {
             if ($(this).hasClass('gpuToggle')) {
                 $(this).removeClass('gpuToggle');
@@ -36,16 +39,19 @@ $(function(){
             $('.peripherals').css('left', periLeft + 'px');
         });
     } else if ($winWidth > 767) { //tablet
+        $('#pcBuild .buildBtn img').on('click tap', function(){
+            window.open('pcBuild.html');
+        });
         $('.news>article').on('click tap', function () {
             if ($(this).hasClass('newsFocus')) {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');
         });
         $(window).on('scroll', function () {
-            if (window.scrollY < 2600) {
-                $('#pcBuild').css('top', '2800px');
+            if (window.scrollY < 2700) {
+                $('#pcBuild').css('top', '2200px');
             } else {
-                $('#pcBuild').css('top', (window.scrollY + 200) + 'px');
+                $('#pcBuild').css('top', window.scrollY-500 + 'px');
             }
         });
         $partsTemp = 0;
@@ -85,6 +91,9 @@ $(function(){
             }
         });
     } else if ($winWidth < 768) { //mobile
+        $('#pcBuild .buildBtn img').on('click tap', function(){
+            window.open('pcBuild.html');
+        });
         $('.news>article').on('click tap', function () {
             if ($(this).hasClass('newsFocus')) {
                 $(this).removeClass('newsFocus');
@@ -126,7 +135,7 @@ $(function(){
                 $cpuTemp = $cpu.width() * -1.1;
             }
         });
-        $partsTemp = 0;
+        let $partsTemp = 0;
         $('#mainParts, #mainParts *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
         });
