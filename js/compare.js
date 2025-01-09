@@ -109,7 +109,7 @@ $(function(){
     },
     });
     function tofix(a, b){
-        let re = (a/b).toFixed(4)*100 + "%" ;
+        let re = (Number(a/b*100)).toFixed(2) + "%" ;
         return re;
     }
 
