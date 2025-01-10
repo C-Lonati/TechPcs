@@ -2,7 +2,7 @@ $(function(){
     let startX, endX;
     let $winWidth = $(window).width();
     if ($winWidth > 1199) {
-        $('#pcBuild .buildBtn img').on('click tap', function(){
+        $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', ()=>{
             window.open('pcBuild.html','bookPage', 'width = 1400px, height = 850px, scrollbars=no location = no, toolbar = no, statusbar = no');
         });
         $('.recomnGpu').on('click', function () {
@@ -39,7 +39,7 @@ $(function(){
             $('.peripherals').css('left', periLeft + 'px');
         });
     } else if ($winWidth > 767) { //tablet
-        $('#pcBuild .buildBtn img').on('click tap', function(){
+        $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', function(){
             window.open('pcBuild.html');
         });
         $('.news>article').on('click tap', function () {
@@ -91,7 +91,7 @@ $(function(){
             }
         });
     } else if ($winWidth < 768) { //mobile
-        $('#pcBuild .buildBtn img').on('click tap', function(){
+        $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', function(){
             window.open('pcBuild.html');
         });
         $('.news>article').on('click tap', function () {

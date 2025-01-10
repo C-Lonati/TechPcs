@@ -99,11 +99,6 @@ h4{font-size : 1.3em;}
 }
 #header .gray{line-height : 50px; font-size : 1.2em;}
 #header .gray img{float : right; height : 20px; cursor: pointer; margin-top : 15px;}
-#banner{
-    margin-top : 60px;
-    max-height : 600px;
-    overflow : hidden;
-}
 .hidden{
     display : none !important;
 }
@@ -153,9 +148,22 @@ h4{font-size : 1.3em;}
     max-width : 30px;
     max-height : 30px;
 }
-#banner .bannerImg img{
+
+#banner .bannerImg{
     width : 100%;
+    height: 100%;
+    position : relative;
 }
+#banner .bannerBtn{
+    text-align: center;
+    border-radius: 99999px;
+    background : #49B591;
+    position : absolute;
+    color : white;
+    border : 2px solid rgba(34,92,73,0.3);
+    cursor: pointer;
+}
+
 section>h2{
     float : left;
 }
@@ -871,6 +879,30 @@ span.cpuName{
         height : 80px;
     }
 
+    #banner{
+        margin-top : 60px;
+        width : 100%;
+        max-width : 1920px;
+        height : 600px;
+        overflow : hidden;
+    }
+    #banner .img1{
+        background : white url('../images/banner1FHD.png')no-repeat 50% 50%;
+    }
+    #banner .img2{
+        background : black url('../images/banner2FHD.png')no-repeat 50% 50%;
+    }
+    #banner .img3{
+        background : black url('../images/banner3FHD.png')no-repeat 50% 50%;
+    }
+    #banner .bannerBtn{
+        width: 435px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 1.5em;
+        bottom: 132px;
+        right: 461px;
+    }
     #index .hardwareNews{
         gap : 60px;
         height : 760px;
@@ -1180,6 +1212,16 @@ span.cpuName{
         justify-content: flex-end;
     }
 
+    
+    #banner .bannerBtn{
+        width : 30vw;
+        min-width : 150px;
+        height : 4vh;
+        line-height : 3.5vh;
+        bottom : 25%;
+        right : 18vw;
+    }
+
 
     
     #pcBuild .buildBtn{
@@ -1261,6 +1303,23 @@ span.cpuName{
     }
     section{
         margin-bottom : 12vh;
+    }
+    
+    
+    #banner{
+        margin-top : 60px;
+        width : 100%;
+        height : 430px;
+        overflow : hidden;
+    }
+    #banner .img1{
+        background : white url('../images/banner1tab.png')no-repeat 50% 50%;
+    }
+    #banner .img2{
+        background : black url('../images/banner2tab.png')no-repeat 50% 50%;
+    }
+    #banner .img3{
+        background : black url('../images/banner3tab.png')no-repeat 50% 50%;
     }
     #news section{
         margin-bottom : 8vh;
@@ -1437,6 +1496,24 @@ span.cpuName{
     section{
         margin-bottom : 8vh;
     }
+    
+    
+    #banner{
+        margin-top : 60px;
+        width : 100%;
+        height : 200px;
+        overflow : hidden;
+    }
+    #banner .img1{
+        background : white url('../images/banner1mobile.png')no-repeat 50% 50%;
+    }
+    #banner .img2{
+        background : black url('../images/banner2mobile.png')no-repeat 50% 50%;
+    }
+    #banner .img3{
+        background : black url('../images/banner3mobile.png')no-repeat 50% 50%;
+    }
+
     .news img{
         max-width : 100px;
         padding-right : 10px;
