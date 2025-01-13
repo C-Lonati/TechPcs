@@ -148,11 +148,17 @@ h4{font-size : 1.3em;}
     max-width : 30px;
     max-height : 30px;
 }
-
+#banner{
+    position : relative;
+}
 #banner .bannerImg{
     width : 100%;
     height: 100%;
-    position : relative;
+    position : absolute;
+    z-index : 1;
+}
+#banner .bannerImg.img2,#banner .bannerImg.img3{
+    left : 100%;
 }
 #banner .bannerBtn{
     text-align: center;
@@ -162,6 +168,10 @@ h4{font-size : 1.3em;}
     color : white;
     border : 2px solid rgba(34,92,73,0.3);
     cursor: pointer;
+}
+#banner .prev, #banner .next{
+    top : 50%;
+    margin-top : -15px;
 }
 
 section>h2{
@@ -902,6 +912,9 @@ span.cpuName{
         font-size: 1.5em;
         bottom: 132px;
         right: 461px;
+    }
+    #banner:hover .prev, #banner:hover .next{
+        opacity: 100;
     }
     #index .hardwareNews{
         gap : 60px;

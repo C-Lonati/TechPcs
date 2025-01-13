@@ -1,7 +1,55 @@
 $(function(){
     let startX, endX;
     let $winWidth = $(window).width();
+    let $bannerPrev, $bannerNext, $bannerNow;
+    let $bannerLen = $('#banner .bannerImg').length;
+    let $bannerIndex = 1;
+    let bannerLeft = function() {
+        $bannerNow = $('#banner .img' + $bannerIndex);
+        $bannerNext = $('#banner .img' + $bannerIndex + 1);
+        $bannerIndex--;
+        if ($bannerIndex <= 0) {
+            $bannerIndex = $bannerLen;
+            $bannerPrev = $('#banner .img' + $bannerIndex);
+            $bannerPrev.css('left', '-100%');
+        } else {
+            $bannerPrev = $('#banner .img' + $bannerIndex);
+            $bannerPrev.css('left', '-100%');
+        }
+        $bannerNow.animate({
+            'left': '0',
+            'left': '100%',
+        }, 1000);
+        $bannerPrev.animate({
+            'left': '-100%',
+            'left': '0',
+        }, 999);
+        return false;
+    }
+    let bannerRight = function() {
+        $bannerNow = $('#banner .img' + $bannerIndex);
+        $bannerIndex++;
+        if ($bannerIndex > $bannerLen) {
+            $bannerIndex = 1;
+            $bannerNext = $('#banner .img' + $bannerIndex);
+            $bannerNext.css('left', '100%');
+        } else {
+            $bannerNext = $('#banner .img' + $bannerIndex);
+            $bannerNext.css('left', '100%');
+        }
+        $bannerNow.animate({
+            'left': '0',
+            'left': '-100%',
+        }, 1000);
+        $bannerNext.animate({
+            'left': '100%',
+            'left': '0',
+        }, 999);
+        return false;
+    }
     if ($winWidth > 1199) {
+        $('#banner .prev').on('click', bannerLeft);
+        $('#banner .next').on('click', bannerRight);
         $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', ()=>{
             window.open('pcBuild.html','bookPage', 'width = 1400px, height = 850px, scrollbars=no location = no, toolbar = no, statusbar = no');
         });
@@ -39,6 +87,20 @@ $(function(){
             $('.peripherals').css('left', periLeft + 'px');
         });
     } else if ($winWidth > 767) { //tablet
+        $('#banner *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
+        });
+        $('#banner *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            $distance = (startX - endX);
+            console.log($distance);
+            if($distance >= 100){
+                bannerRight();
+            }
+            if($distance <= -100){
+                bannerLeft();
+            }
+        });
         $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', function(){
             window.open('pcBuild.html');
         });
@@ -91,6 +153,19 @@ $(function(){
             }
         });
     } else if ($winWidth < 768) { //mobile
+        $('#banner *').on('touchstart', function (event) {
+            startX = event.originalEvent.changedTouches[0].screenX;
+        });
+        $('#banner *').on('touchend', function (event) {
+            endX = event.originalEvent.changedTouches[0].screenX;
+            $distance = (startX - endX);
+            if($distance >= 100){
+                bannerRight();
+            }
+            if($distance <= -100){
+                bannerLeft();
+            }
+        });
         $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', function(){
             window.open('pcBuild.html');
         });
