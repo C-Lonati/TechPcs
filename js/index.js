@@ -93,7 +93,6 @@ $(function(){
         $('#banner *').on('touchend', function (event) {
             endX = event.originalEvent.changedTouches[0].screenX;
             $distance = (startX - endX);
-            console.log($distance);
             if($distance >= 100){
                 bannerRight();
             }
