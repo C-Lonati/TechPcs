@@ -190,7 +190,7 @@ section>h2{
     flex-wrap : wrap;
     position : relative;
 }
-#index .news h3{
+#index .news h4{
     max-width : 100%;
     white-space : nowrap;
     overflow : hidden;
@@ -361,6 +361,7 @@ section>h2{
     bottom : 10px;
     right : 1em;
     font-size : 1.3em;
+    text-shadow : 0 0 3px rgba(0,0,0,0.6);
 }
 .pcBuild .buildBtn img{
     height : 1.3em;
@@ -401,6 +402,9 @@ section>h2{
 .indexList li>a{
     display : block;
     line-height : 45px;
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
 }
 #diff{
     box-shadow : 0 0 3px rgba(0,0,0,0.3);
@@ -1242,7 +1246,6 @@ span.cpuName{
         right : 5%;
         padding : 0;
         color : white;
-        text-shadow : 0 0 3px rgba(0,0,0,0.6);
     }
 
     
@@ -1434,6 +1437,9 @@ span.cpuName{
         top : 2200px;
         left : 5%;
         transition : .1s;
+    }
+    #pcBuild .buildBtn img{
+        display : none;
     }
     #pcBuild h2{
         display : none;

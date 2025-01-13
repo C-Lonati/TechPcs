@@ -100,7 +100,7 @@ $(function(){
                 bannerLeft();
             }
         });
-        $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', function(){
+        $('#pcBuild .buildBtn, .bannerBtn').on('click tap', function(){
             window.open('pcBuild.html');
         });
         $('.news>article').on('click tap', function () {
