@@ -6,7 +6,7 @@ $(function(){
             else $('#otherNews').css('top','180px');
         });
     }
-    $('.category>li').on('click tap', function(){
+    $('.category>li').on('click', function(){
         $('.cateSelect').removeClass('cateSelect');
         $(this).addClass('cateSelect');
         $cate = $(this).text();

@@ -8,24 +8,24 @@ $modal = $('<div id="modal"></div>');
     $searchToggle='off';
     $('#login').hide();
     $('#langBox').hide();
-    $(document).on('click tap', '#headLang', function (){
+    $(document).on('click', '#headLang', function (){
         $('#langBox').show();
         if ($('#langBox').hasClass('lbHead')) {
             $('#langBox').removeClass('lbHead');
             $('#langBox').hide();
         } else $('#langBox').addClass('lbHead');
     });
-    $(document).on('click tap','#langBox img', function () {
+    $(document).on('click','#langBox img', function () {
         $('#headLang').html('');
         $(this).clone().appendTo('#headLang');
         $('#langBox').removeClass('lbHead');
         $('#langBox').hide();
     });
-    $(document).on('click tap', '.login' ,function(){
+    $(document).on('click', '.login' ,function(){
         $modal.prependTo($('body'));
         $('#login').show();
     });
-    $(document).on('click tap', '#header .search', function () {
+    $(document).on('click', '#header .search', function () {
         if ($searchToggle == 'off') {
             $search.prependTo($('#header'));
             $searchToggle = 'on';
@@ -35,7 +35,7 @@ $modal = $('<div id="modal"></div>');
             $searchToggle = 'off';
         }
     });
-    $(document).on('click tap', '#header>.hamburger', function () {
+    $(document).on('click', '#header>.hamburger', function () {
         $('.slideLnb').html('');
         $lnbInner = $('.lnb').clone();
         $('.slideLnb').html($lnbInner);
@@ -55,14 +55,14 @@ $modal = $('<div id="modal"></div>');
         }
         $lastScrollY = scrollY;
     });
-    $modal.on('click tap' ,function(){
+    $modal.on('click' ,function(){
         $modal.detach();
         $('#login').hide();
         $('#slideMenu').css('left', '-80%');
     });
     let winWidth = $(window).width();
     if (winWidth > 1199) {
-        $(document).on('click tap', '.formToggle', function () {
+        $(document).on('click', '.formToggle', function () {
             if ($('.loginTextBox').hasClass('textBoxRight')) {
                 $('.loginTextBox').removeClass('textBoxRight');
                 $('.loginTextBox').addClass('textBoxLeft');

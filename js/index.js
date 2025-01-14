@@ -4,7 +4,9 @@ $(function(){
     let $bannerPrev, $bannerNext, $bannerNow;
     let $bannerLen = $('#banner .bannerImg').length;
     let $bannerIndex = 1;
-    let bannerLeft = function() {
+    let banner = true;
+    let bannerLeft = function(timeout = 1000) {
+        if(!banner) return 0;
         $bannerNow = $('#banner .img' + $bannerIndex);
         $bannerNext = $('#banner .img' + $bannerIndex + 1);
         $bannerIndex--;
@@ -24,9 +26,11 @@ $(function(){
             'left': '-100%',
             'left': '0',
         }, 999);
-        return false;
+        banner = false;
+        setTimeout(timeout, banner = true);
     }
-    let bannerRight = function() {
+    let bannerRight = function(timeout = 1000) {
+        if(!banner) return 0;
         $bannerNow = $('#banner .img' + $bannerIndex);
         $bannerIndex++;
         if ($bannerIndex > $bannerLen) {
@@ -45,12 +49,13 @@ $(function(){
             'left': '100%',
             'left': '0',
         }, 999);
-        return false;
+        banner = false;
+        setTimeout(timeout, banner = true);
     }
     if ($winWidth > 1199) {
         $('#banner .prev').on('click', bannerLeft);
         $('#banner .next').on('click', bannerRight);
-        $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', ()=>{
+        $('#pcBuild .buildBtn img, .bannerBtn').on('click', ()=>{
             window.open('pcBuild.html','bookPage', 'width = 1400px, height = 850px, scrollbars=no location = no, toolbar = no, statusbar = no');
         });
         $('.recomnGpu').on('click', function () {
@@ -100,10 +105,10 @@ $(function(){
                 bannerLeft();
             }
         });
-        $('#pcBuild .buildBtn, .bannerBtn').on('click tap', function(){
+        $('#pcBuild .buildBtn, .bannerBtn').on('click', function(){
             window.open('pcBuild.html');
         });
-        $('.news>article').on('click tap', function () {
+        $('.news>article').on('click', function () {
             if ($(this).hasClass('newsFocus')) {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');
@@ -165,10 +170,10 @@ $(function(){
                 bannerLeft();
             }
         });
-        $('#pcBuild .buildBtn img, .bannerBtn').on('click tap', function(){
+        $('#pcBuild .buildBtn img, .bannerBtn').on('click', function(){
             window.open('pcBuild.html');
         });
-        $('.news>article').on('click tap', function () {
+        $('.news>article').on('click', function () {
             if ($(this).hasClass('newsFocus')) {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');

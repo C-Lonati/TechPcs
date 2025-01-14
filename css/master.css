@@ -665,6 +665,9 @@ span.cpuName{
 #classification ul>li{
     cursor: pointer;
 }
+.partsList>li:last-child{
+    border : none !important;
+}
 .partsList .partsName, .partsList .specs{
     overflow: hidden;
     text-overflow : ellipsis;
