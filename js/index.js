@@ -4,7 +4,7 @@ $(function(){
     let $bannerPrev, $bannerNext, $bannerNow;
     let $bannerLen = $('#banner .bannerImg').length;
     let $bannerIndex = 1;
-    let banner = true;
+    //let banner = true;
     let bannerLeft = function(timeout = 1000) {
         if(!banner) return 0;
         $bannerNow = $('#banner .img' + $bannerIndex);
@@ -26,8 +26,8 @@ $(function(){
             'left': '-100%',
             'left': '0',
         }, 999);
-        banner = false;
-        setTimeout(timeout, banner = true);
+        //banner = false;
+        //setTimeout(timeout, banner = true);
     }
     let bannerRight = function(timeout = 1000) {
         if(!banner) return 0;
@@ -49,8 +49,8 @@ $(function(){
             'left': '100%',
             'left': '0',
         }, 999);
-        banner = false;
-        setTimeout(timeout, banner = true);
+        //banner = false;
+        //setTimeout(timeout, banner = true);
     }
     if ($winWidth > 1199) {
         $('#banner .prev').on('click', bannerLeft);

@@ -175,19 +175,14 @@ $(function(){
     cpuMake();
     $(document).on('click','.highBtn', function(){
         let par = $(this).parent();
-        console.log(par);
         price = Number(par.attr('data-price'));
-        console.log(price);
-        console.log(typeof(price));
         totalPrice += price;
-        console.log(totalPrice);
-        console.log(typeof(totalPrice));
         $('.totalPrice').text(totalPrice.toLocaleString());
         let copy = par.clone();
         copy.append(`
             <img src="images/xBtn.png" class="xBtn" alt="취소">
         `);
-        $('.partSelect').append(copy);
+        $('#partMenu .partSelect').append(copy);
     });
     $(document).on('click','.xBtn', function(){
         let par = $(this).parent();

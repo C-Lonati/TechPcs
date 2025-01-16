@@ -94,16 +94,29 @@ $(function(){
                 grid: {
                     display: true,
                 },
-                ticks:{ 
+                ticks:{
                     display: false,
                 },
                 min : 0,
                 max : 1,
+                pointLabels: {
+                  font: {
+                    size: 14
+                  }
+                }
             },
         },
         plugins:{
             tooltip: {
                 enabled: false
+            },
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 14
+                    }
+                }
             }
         },
     },
