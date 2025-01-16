@@ -1136,12 +1136,33 @@ span.cpuName{
     #build #part{
         display : none;
     }
-
+    
+    #classification{
+        height: 161px;
+    }
     #classification, #partMenu, #totalBox{
         margin-bottom : 0 !important;
     }
     .partSelect{
         background : #49B591;
+    }
+    #partMenu li>li{
+        background : white;
+    }
+    #partMenu li img:first-child, #partMenu li img.highBtn, #partMenu li .specs{
+        display : none;
+    }
+    #partMenu li h3{
+        overflow : hidden;
+        text-overflow : ellipsis;
+        white-space: nowrap;
+    }
+    #partMenu li .price{
+        float : left;
+    }
+    .partMenu{
+        height : 405px;
+        overflow : auto;
     }
     .partMenu>li{
         padding : 10px;
@@ -1151,6 +1172,11 @@ span.cpuName{
     }
     .partMenu>li:hover{
         box-shadow : 0 0 3px rgba(0,0,0,0.3);
+    }
+    .partMenu>li .xBtn{
+        height : 1.3em;
+        float : right;
+        margin-right : 10px;
     }
     .partsList{
         height : 405px;
