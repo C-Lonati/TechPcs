@@ -4,6 +4,7 @@ $(function(){
     let cpuProcess = [], gpuProcess = [];
     let cpuCore = [];
     let totalPrice = 0, price = 0;
+    let cartCount = 0;
     $('#modal').hide();
     function cpuMake(){
         for (let i = 0; i < cpu.length; i++) {
@@ -192,6 +193,8 @@ $(function(){
             <img src="images/xBtn.png" class="xBtn" alt="취소">
         `);
         $('#partMenu .partSelect, #cart .cartList').append(copy);
+        cartCount++;
+        counting();
     });
     $(document).on('click','.xBtn', function(){
         let par = $(this).parent();
@@ -199,5 +202,16 @@ $(function(){
         totalPrice -= price;
         $('.totalPrice').text((Number(totalPrice)).toLocaleString());
         par.remove();
+        cartCount--;
+        counting();
     });
+    let cartCounting = $(`<div class="redBall">0</div>`);
+    $('#searchBar>form').append(cartCounting);
+    function counting(){
+        if(cartCount>0) {
+            $('.redBall').text(cartCount);
+            $('.redBall').show();
+        }
+        else $('.redBall').hide();
+    }
 });
