@@ -56,7 +56,7 @@ $(function(){
         $('#banner .prev').on('click', bannerLeft);
         $('#banner .next').on('click', bannerRight);
         $('#pcBuild .buildBtn img, .bannerBtn').on('click', ()=>{
-            window.open('pcBuild.html','bookPage', 'width = 1400px, height = 850px, scrollbars=no location = no, toolbar = no, statusbar = no');
+            window.open('pcBuild.html','bookPage', 'width = 1400px, height = 950px, scrollbars=no location = no, toolbar = no, statusbar = no');
         });
         $('.recomnGpu').on('click', function () {
             if ($(this).hasClass('gpuToggle')) {

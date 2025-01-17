@@ -29,7 +29,7 @@
                     <input type="search">
                     <input type="image" src="images/search.svg">
                 </div>
-                <img src="images/cart.png" alt="장바구니" class="fr">
+                <img src="images/cart.png" alt="장바구니" class="fr cart">
             </form>
         </section>
         <section id="classification" class="col12 tcol8 mcol4">
@@ -63,6 +63,16 @@
             </ul>
         </section>
     </div>
+    <div id="modal"></div>
+    <section id="cart">
+        <h2>상품 목록</h2>
+        <ul class="cartList partsList">
+
+        </ul>
+        <div class="totalBox">
+            <p>합계 금액 : </p><h3 class="totalPrice">0</h3><span>원</span>
+        </div>
+    </section>
     <script src="js/pcBuildData.js"></script>
     <script src="js/pcBuild.js"></script>
 </body>

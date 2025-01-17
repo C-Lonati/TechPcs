@@ -4,6 +4,7 @@ $(function(){
     let cpuProcess = [], gpuProcess = [];
     let cpuCore = [];
     let totalPrice = 0, price = 0;
+    $('#modal').hide();
     function cpuMake(){
         for (let i = 0; i < cpu.length; i++) {
             $cpuMaker[i] = $(`
@@ -16,7 +17,7 @@ $(function(){
                     <img src="images/highBtn.png" class="highBtn" alt="장바구니">
                 </li>`
             );
-            $('.partsList').append($cpuMaker[i]);
+            $('#partsList .partsList').append($cpuMaker[i]);
             cpuCompnay[i] = cpu[i].company;
             cpuProcess[i] = cpu[i].process;
             cpuCore[i] = cpu[i].core;
@@ -69,7 +70,7 @@ $(function(){
                     <img src="images/highBtn.png" class="highBtn" alt="장바구니">
                 </li>`
             );
-            $('.partsList').append($gpuMaker[i]);
+            $('#partsList .partsList').append($gpuMaker[i]);
             gpuCompnay[i] = gpu[i].company;
             gpuProcess[i] = gpu[i].process;
         }
@@ -135,13 +136,21 @@ $(function(){
             //getData = [];
             //$('#classification li').removeClass('liSelect');
             $text = $(this).text();
-            $('.partsList *').remove();
+            $('#partsList .partsList *').remove();
             switch($text){
                 case 'CPU': cpuMake(); break;
                 case 'GPU': gpuMake(); break;
-                default : $('.partsList').append(`<p>제품이 없습니다</p>`);
+                default : $('#partsList .partsList').append(`<p>제품이 없습니다</p>`);
             }
         });
+        $('#searchBar .cart').on('click',function(){
+            $('#cart').css('bottom','0');
+            $('#modal').show();
+        }); 
+        $('#modal').on('click',function(){
+            $('#cart').css('bottom','-100%');
+            $('#modal').hide();
+        }); 
     }else {
         $('#partMenu>.partMenu>li').on('click', function(){
             $('#partMenu>.partMenu>li').removeClass('partSelect');
@@ -150,11 +159,11 @@ $(function(){
             //$('#classification li').removeClass('liSelect');
             $text = $(this).children('span').text();
             //console.log($text);
-            $('.partsList *').remove();
+            $('#partsList .partsList *').remove();
             switch($text){
                 case 'CPU': cpuMake(); break;
                 case 'GPU': gpuMake(); break;
-                default : $('.partsList').append(`<p>제품이 없습니다</p>`);
+                default : $('#partsList .partsList').append(`<p>제품이 없습니다</p>`);
             }
         });
     }
@@ -182,7 +191,7 @@ $(function(){
         copy.append(`
             <img src="images/xBtn.png" class="xBtn" alt="취소">
         `);
-        $('#partMenu .partSelect').append(copy);
+        $('#partMenu .partSelect, #cart .cartList').append(copy);
     });
     $(document).on('click','.xBtn', function(){
         let par = $(this).parent();

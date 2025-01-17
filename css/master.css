@@ -636,7 +636,7 @@ span.cpuName{
     max-height : 30px;
     float : right;
 }
-#totalBox>p:first-child{
+#totalBox>p:first-child, .totalBox>p:first-child{
     float : left;
     margin-right : 10px;
 }
@@ -1190,7 +1190,7 @@ span.cpuName{
         float : left;
     }
     .partMenu{
-        height : 405px;
+        height : 500px;
         overflow : auto;
     }
     .partMenu>li{
@@ -1208,11 +1208,15 @@ span.cpuName{
         margin-right : 10px;
     }
     .partsList{
-        height : 405px;
+        height : 500px;
         overflow : auto;
     }
     #build #partsList{
         margin-bottom : 0 !important;
+    }
+    
+    #cart{
+        display : none;
     }
 }
 @media screen and (max-width:1199px){
@@ -1334,7 +1338,7 @@ span.cpuName{
 
 
     #build section{
-        margin-bottom : 4vh !important;
+        margin-bottom : 4vh;
     }
     #build #part{
         overflow : hidden; 
@@ -1367,7 +1371,46 @@ span.cpuName{
     #build form>img{
         margin-top : 10px;
         max-height: 30px;
-        margin-right : 20px;
+        margin-right : 
+        20px;
+    }
+    #cart{
+        position : fixed;
+        width: 100%;
+        height : 90%;
+        margin-bottom : 0 !important;
+        background : white;
+        margin-bottom : 0 !important;
+        z-index: 100;
+        bottom : -100%;
+        box-shadow: 0 -3px 3px rgba(0,0,0,0.3);
+        transition : .3s;
+    }
+    #cart>h2{
+        float : none;
+        display : block;
+        height : 8%;
+        width : 100%;
+        padding : 3% 5%;
+        margin-bottom : 0;
+        border-bottom : 2px solid #ccc;
+    }
+    .totalBox{
+        position : absolute;
+        bottom : 0;
+        left : 0;
+        padding : 20px 5%;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        width : 100%;
+        max-height : 7%;
+    }
+    .cartList{
+        height : 85%;
+        overflow : auto;
+        padding : 3% 5%;
+    }
+    .cartList .highBtn{
+        display: none;
     }
 }
 @media screen and (max-width:1199px) and (min-width:768px){
@@ -1387,7 +1430,7 @@ span.cpuName{
         overflow : hidden;
     }
     #banner .img1{
-        background : white url('../images/banner1tab.png')no-repeat 50% 50%;
+        background : black url('../images/banner1tab.png')no-repeat 50% 50%;
     }
     #banner .img2{
         background : black url('../images/banner2tab.png')no-repeat 50% 50%;
@@ -1585,7 +1628,7 @@ span.cpuName{
         overflow : hidden;
     }
     #banner .img1{
-        background : white url('../images/banner1mobile.png')no-repeat 50% 50%;
+        background : black url('../images/banner1mobile.png')no-repeat 50% 50%;
     }
     #banner .img2{
         background : black url('../images/banner2mobile.png')no-repeat 50% 50%;
