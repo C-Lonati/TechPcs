@@ -60,7 +60,6 @@ ul{list-style: none;}
     flex-wrap: wrap;
 }
 #langBox>ul>li{
-    flex : 0 1 23vw;
     line-height : 5vw;
 }
 #langBox>ul>li>img{
@@ -750,6 +749,7 @@ span.cpuName{
     }
     #langBox>ul>li{
         line-height : 50px;
+        flex : 1 1 17vw;
     }
     #login{
         width : 60%;
@@ -1117,6 +1117,8 @@ span.cpuName{
     .recomnFlagshipCpu>.cpu.col10 img{
         width : 100%;
         margin-bottom : 7px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
     }
     .recomnFlagshipCpu>.cpu.col6 .bench{
         display : none;
@@ -1302,6 +1304,9 @@ span.cpuName{
         gap : 5px;
         justify-content: flex-end;
     }
+    #langBox>ul>li{
+        flex : 1 1 23vw;
+    }
 
     
     #banner .bannerBtn{
@@ -1336,6 +1341,10 @@ span.cpuName{
     }
 
 
+    
+    #newCpu .cpuName{
+        margin-bottom : 20px;
+    }
     .mainstreamCpu{
         display : flex;
         flex-wrap: nowrap;
@@ -1649,11 +1658,16 @@ span.cpuName{
     #banner{
         margin-top : 60px;
         width : 100%;
-        height : 200px;
+        height : 500px;
         overflow : hidden;
     }
     #banner .img1{
         background : black url('../images/banner1mobile.png')no-repeat 50% 50%;
+    }
+    #banner .bannerBtn{
+        bottom : 7%;
+        left : 50%;
+        margin-left : -25vw;
     }
     #banner .img2{
         background : black url('../images/banner2mobile.png')no-repeat 50% 50%;
