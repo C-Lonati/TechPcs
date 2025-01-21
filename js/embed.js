@@ -73,6 +73,7 @@ let account = $(`<div id="account"></div>`);
         if($('#slideMenu').hasClass('index97')){
             $('#slideMenu').css('z-index','99');
             $('#slideMenu').removeClass('index97');
+            $('#account').html('');
             return false;
         }
         $('#slideMenu').css('left', '-80%');
