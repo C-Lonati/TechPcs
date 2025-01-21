@@ -1712,7 +1712,7 @@ span.cpuName{
         margin-top : 30px;
     }
     #account{
-        padding : 1em 3em;
+        padding : 0 3em;
     }
     #account h2{
         display : none;
