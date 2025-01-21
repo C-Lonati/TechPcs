@@ -208,6 +208,7 @@ $(function(){
     let cartCounting = $(`<div class="redBall">0</div>`);
     $('#searchBar>form').append(cartCounting);
     function counting(){
+        if($winWidth>1199) return false;
         if(cartCount>0) {
             $('.redBall').text(cartCount);
             $('.redBall').show();

@@ -5,6 +5,7 @@ $(function(){
     $('#footer').load('https://c-lonati.github.io/TechPcs/footer.html');
 $search = $('<div id="searchBox"><form method="post"><p class="underLine"><input type="search"><input type="image" src="images/search.svg" alt="찾아보기"></p><p class="gray"><a href="error404.html">팻 겔싱어 사임</a><img src="images/xBtn.png"></p><p class="gray"><a href="error404.html">인텔 cpu</a><img src="images/xBtn.png"></p><p class="gray"><a href="error404.html">리사 수</a><img src="images/xBtn.png"></p><p class="gray"><a href="error404.html">RTX 5090</a><img src="images/xBtn.png"></p></form></div>');
 $modal = $('<div id="modal"></div>');
+let account = $(`<div id="account"></div>`);
     $searchToggle='off';
     $('#login').hide();
     $('#langBox').hide();
@@ -36,6 +37,7 @@ $modal = $('<div id="modal"></div>');
         }
     });
     $(document).on('click', '#header>.hamburger', function () {
+        $('#slideMenu').css('z-index','99');
         $('.slideLnb').html('');
         $lnbInner = $('.lnb').clone();
         $('.slideLnb').html($lnbInner);
@@ -55,13 +57,29 @@ $modal = $('<div id="modal"></div>');
         }
         $lastScrollY = scrollY;
     });
+    $('.userInfo *').on('click',function(){
+        $('#login').addClass('login');
+        $('#slideMenu').css('z-index','97');
+        $('#slideMenu').addClass('index97');
+        $('#login').show();
+        if($(window).width()<768){
+            let temp = $('.loginTextRight').html();
+            account.append(temp);
+            $('#login').append(account);
+        }
+    });
     $modal.on('click' ,function(){
-        $modal.detach();
         $('#login').hide();
+        if($('#slideMenu').hasClass('index97')){
+            $('#slideMenu').css('z-index','99');
+            $('#slideMenu').removeClass('index97');
+            return false;
+        }
         $('#slideMenu').css('left', '-80%');
+        $modal.detach();
     });
     let winWidth = $(window).width();
-    if (winWidth > 1199) {
+    if (winWidth > 767) {
         $(document).on('click', '.formToggle', function () {
             if ($('.loginTextBox').hasClass('textBoxRight')) {
                 $('.loginTextBox').removeClass('textBoxRight');
@@ -73,6 +91,27 @@ $modal = $('<div id="modal"></div>');
                 $('.loginTextBox').addClass('textBoxRight');
                 $('.loginTextLeft').addClass('hidden');
                 $('.loginTextRight').removeClass('hidden');
+            }
+        });
+    }else{
+        $(document).on('click', '.formToggle', function () {
+            if($('#login').hasClass('login')){
+                $('#login').removeClass('login');
+                $('#login').addClass('register');
+                $('#loginForm').hide();
+                $('#registerForm').show();
+                $('#account').html('');
+                let temp = $('.loginTextLeft').html();
+                $('#account').append(temp);
+            }else if($('#login').hasClass('register')){
+                $('#login').addClass('login');
+                $('#login').removeClass('register');
+                $('#loginForm').show();
+                $('#registerForm').hide();
+                $('#account').html('');
+                let temp = $('.loginTextRight').html();
+                account.append(temp);
+                $('#login').append(account);
             }
         });
     }
