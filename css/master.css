@@ -747,7 +747,7 @@ span.cpuName{
     justify-content :space-around;
 }
 #loginForm .loginSns{
-    margin-top : 60px;
+    margin-top : 40px;
 }
 .loginSns>li{
     flex : 0 0 2vw;
@@ -788,7 +788,7 @@ span.cpuName{
     margin-bottom : 150px;
 }
 .loginTextLeft p:nth-of-type(2){
-    margin-top : 112px;
+    margin-top : 90px;
 }
 .loginTextLeft .loginSns{
     margin-top : 20px;
@@ -1315,6 +1315,9 @@ span.cpuName{
     .formBtn{
         width : calc(100% - 6em);
     }
+    .loginSns>li{
+        flex : 1 1 2vw;
+    }
 
 
     #footer .logo{
@@ -1718,10 +1721,7 @@ span.cpuName{
         display : none;
     }
     .loginSns{
-        gap : 2.5em;
-    }
-    .loginSns>li{
-        flex : 1 1 2vw;
+        gap : 1.5em;
     }
     .loginTextBox{
         display : none;
