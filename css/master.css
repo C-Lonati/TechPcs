@@ -1296,6 +1296,7 @@ span.cpuName{
         padding-left : 5%;
     }
     #login{
+        display : flex;
         width : 90%;
         left : 5%;
         top : 100px;
@@ -1306,7 +1307,6 @@ span.cpuName{
         max-height : 600px;
         background : white;
         border-radius: 2vw;
-        display : block;
         gap : 5%;
     }
     #login>form, .loginTextBox{
@@ -1314,42 +1314,6 @@ span.cpuName{
     }
     .formBtn{
         width : calc(100% - 6em);
-    }
-    #login>Form{
-        padding : 2em 3em;
-        position : static;
-    }
-    #loginForm .loginSns{
-        margin-top : 30px;
-    }
-    #account{
-        padding : 1em 3em;
-    }
-    #account h2{
-        display : none;
-    }
-    #login.register #account p, #login.register #account ul{
-        display : none;
-    }
-    .loginSns{
-        gap : 2.5em;
-    }
-    .loginSns>li{
-        flex : 1 1 2vw;
-    }
-    .loginTextBox{
-        display : none;
-    }
-    .formBtn{
-        bottom : 2.5em;
-    }
-    .formToggle{
-        bottom : 100px;
-        background : #49B591;
-        color : white;
-    }
-    #registerForm{
-        display : none;
     }
 
 
@@ -1734,6 +1698,46 @@ span.cpuName{
     }
     
     
+    #login{
+        display : block;
+    }
+    #login>Form{
+        padding : 2em 3em;
+        position : static;
+    }
+    #loginForm .loginSns{
+        margin-top : 30px;
+    }
+    #account{
+        padding : 1em 3em;
+    }
+    #account h2{
+        display : none;
+    }
+    #login.register #account p, #login.register #account ul{
+        display : none;
+    }
+    .loginSns{
+        gap : 2.5em;
+    }
+    .loginSns>li{
+        flex : 1 1 2vw;
+    }
+    .loginTextBox{
+        display : none;
+    }
+    .formBtn{
+        bottom : 2.5em;
+    }
+    .formToggle{
+        bottom : 100px;
+        background : #49B591;
+        color : white;
+    }
+    #registerForm{
+        display : none;
+    }
+
     #banner{
         margin-top : 60px;
         width : 100%;
