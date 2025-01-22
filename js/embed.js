@@ -79,10 +79,6 @@ let account = $(`<div id="account"></div>`);
         $('#slideMenu').css('left', '-80%');
         $modal.detach();
     });
-    $(document).on('click','', ()=>{
-        window.open('pcBuild.html','bookPage', 'width = 1400px, height = 950px, scrollbars=no location = no, toolbar = no, statusbar = no');
-        return false;
-    });
     if (winWidth > 767) {
         $(document).on('click', '.formToggle', function () {
             if ($('.loginTextBox').hasClass('textBoxRight')) {
