@@ -79,6 +79,7 @@ let account = $(`<div id="account"></div>`);
         $('#slideMenu').css('left', '-80%');
         $modal.detach();
     });
+    let winWidth = $(window).width();
     if (winWidth > 767) {
         $(document).on('click', '.formToggle', function () {
             if ($('.loginTextBox').hasClass('textBoxRight')) {
