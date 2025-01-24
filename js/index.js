@@ -4,7 +4,8 @@ $(function(){
     let $bannerPrev, $bannerNext, $bannerNow;
     let $bannerLen = $('#banner .bannerImg').length;
     let $bannerIndex = 1;
-    //let banner = true;
+    
+    //배너 왼쪽이동 함수
     let bannerLeft = function(timeout = 1000) {
         if(!banner) return 0;
         $bannerNow = $('#banner .img' + $bannerIndex);
@@ -29,6 +30,8 @@ $(function(){
         //banner = false;
         //setTimeout(timeout, banner = true);
     }
+
+    //배너 오른쪽 이동 함수
     let bannerRight = function(timeout = 1000) {
         if(!banner) return 0;
         $bannerNow = $('#banner .img' + $bannerIndex);
@@ -52,12 +55,16 @@ $(function(){
         //banner = false;
         //setTimeout(timeout, banner = true);
     }
+
+    //데스크탑 해상도 설정
     if ($winWidth > 1199) {
         $('#banner .prev').on('click', bannerLeft);
         $('#banner .next').on('click', bannerRight);
+        //버튼누르면 버튼에 맞게 배너 슬라이드
         $('#pcBuild .buildBtn img, .bannerBtn').on('click', ()=>{
             window.open('pcBuild.html','bookPage', 'width = 1400px, height = 950px, scrollbars=no location = no, toolbar = no, statusbar = no');
         });
+        //성능대별 GPU추천 자세히보기 여닫기 제어
         $('.recomnGpu').on('click', function () {
             if ($(this).hasClass('gpuToggle')) {
                 $(this).removeClass('gpuToggle');
@@ -67,6 +74,8 @@ $(function(){
                 $(this).find('.hidden').addClass('block');
             }
         });
+
+        //PC주요 부품 슬라이드 버튼 제어
         let mainPartsLeft = 0;
         $mainParts = 1200 - $('.mainParts').width();
         $('#mainParts>.next').on('click', function () {
@@ -79,6 +88,9 @@ $(function(){
             if (mainPartsLeft > 0) mainPartsLeft = 0;
             $('.mainParts').css('left', mainPartsLeft + 'px');
         });
+
+        
+        //PC주변기기 슬라이드 버튼 제어
         let periLeft = 0;
         $peri = 1200 - $('.peripherals').width();
         $('#peripherals>.next').on('click', function () {
@@ -92,6 +104,7 @@ $(function(){
             $('.peripherals').css('left', periLeft + 'px');
         });
     } else if ($winWidth > 767) { //tablet
+        //배너 스와이프 감지
         $('#banner *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
         });
@@ -105,14 +118,20 @@ $(function(){
                 bannerLeft();
             }
         });
+
+        //pc빌드 클릭 감지 및 제어
         $('#pcBuild .buildBtn, .bannerBtn').on('click', function(){
             window.open('pcBuild.html');
         });
-        $('.news>article').on('click', function () {
+
+        //뉴스 클릭시 내용 더보기 제어
+        $('.news').on('click', function () {
             if ($(this).hasClass('newsFocus')) {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');
         });
+
+        //왼쪽 PC빌드 섹션 위치제어
         $(window).on('scroll', function () {
             if (window.scrollY < 2700) {
                 $('#pcBuild').css('top', '2200px');
@@ -120,6 +139,8 @@ $(function(){
                 $('#pcBuild').css('top', window.scrollY-500 + 'px');
             }
         });
+
+        //주요부품 좌우 슬라이드 제어
         $partsTemp = 0;
         $('#mainParts, #mainParts *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
@@ -138,6 +159,8 @@ $(function(){
                 $partsTemp = $parts.parent().width() - $parts.width();
             }
         });
+        
+        //주변기기 좌우 슬라이드 제어
         $periTemp = 0;
         $('#peripherals, #peripherals *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
@@ -157,6 +180,7 @@ $(function(){
             }
         });
     } else if ($winWidth < 768) { //mobile
+        //배너 슬라이드 감지 및 제어
         $('#banner *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
         });
@@ -173,11 +197,13 @@ $(function(){
         $('#pcBuild .buildBtn img, .bannerBtn').on('click', function(){
             window.open('pcBuild.html');
         });
-        $('.news>article').on('click', function () {
+        //뉴스 자세히보기 제어
+        $('.news').on('click', function () {
             if ($(this).hasClass('newsFocus')) {
                 $(this).removeClass('newsFocus');
             } else $(this).addClass('newsFocus');
         });
+        //상단 슬라이드 메뉴 제어
         let temp = 0;
         $('#subMenu, #subMenu *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
@@ -196,6 +222,7 @@ $(function(){
                 temp = $snb.parent().width() - $snb.width();
             }
         });
+        //Cpu섹션 슬라이드 제어
         $cpuTemp = 0;
         $('#recomnCpu, #recomnCpu *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
@@ -214,6 +241,7 @@ $(function(){
                 $cpuTemp = $cpu.width() * -1.1;
             }
         });
+        //주요부품 슬라이드 제어
         let $partsTemp = 0;
         $('#mainParts, #mainParts *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
@@ -236,6 +264,7 @@ $(function(){
                 $partsTemp = $parts.parent().width() - $parts.width();
             }
         });
+        //주변기기 슬라이드 제어
         $periTemp = 0;
         $('#peripherals, #peripherals *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;

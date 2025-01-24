@@ -6,6 +6,7 @@ $(function(){
     let totalPrice = 0, price = 0;
     let cartCount = 0;
     $('#modal').hide();
+    //cpu탭 클릭시 데이터 채워주는 함수
     function cpuMake(){
         for (let i = 0; i < cpu.length; i++) {
             $cpuMaker[i] = $(`
@@ -59,6 +60,7 @@ $(function(){
             $('#classification').append(classificationMaker);
         }
     }
+    //gpu탭 클릭시 데이터 채워주는 함수
     function gpuMake(){
         for (let i = 0; i < gpu.length; i++) {
             $gpuMaker[i] = $(`
@@ -105,10 +107,11 @@ $(function(){
             $('#classification').append(classificationMaker);
         }
     }
-    //var getData = [];
+    var getData = [];
     let startX, endX;
     let $winWidth = $(window).width();
     if ($winWidth < 1200){
+        //모바일/태블릿 상단 슬라이드메뉴 제어
         let $partsTemp = 0;
         $('#part, #part *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
@@ -131,6 +134,7 @@ $(function(){
                 $partsTemp = $parts.parent().width() - $parts.width();
             }
         });
+        //상단 슬라이드메뉴 탭 제어
         $('#part>.part>li').on('click', function(){
             $('#part>.part>li').removeClass('partSelect');
             $(this).addClass('partSelect');
@@ -144,15 +148,17 @@ $(function(){
                 default : $('#partsList .partsList').append(`<p>제품이 없습니다</p>`);
             }
         });
+        //장바구니 제어
         $('#searchBar .cart').on('click',function(){
             $('#cart').css('bottom','0');
             $('#modal').show();
-        }); 
+        });
         $('#modal').on('click',function(){
             $('#cart').css('bottom','-100%');
             $('#modal').hide();
         }); 
     }else {
+        //데스크탑 우측 탭메뉴 제어
         $('#partMenu>.partMenu>li').on('click', function(){
             $('#partMenu>.partMenu>li').removeClass('partSelect');
             $(this).addClass('partSelect');
@@ -168,21 +174,44 @@ $(function(){
             }
         });
     }
+    //상단 필터링 제어
     $(document).on('click','#classification li', function(){
+        let companyOk = $(this).parent().parent().hasClass('company')
         if($(this).hasClass('liSelect')){
             $(this).removeClass('liSelect');
-            /*for(let i = 0; i < getData.length; i++) {
-                if (getData[i] == $(this).text()) { //누른 버튼과 일치하는 텍스트 찾기
-                    getData.splice(i, 1); //일치하는 텍스트 삭제
-                    i--; //배열 인덱스넘버 재정렬
+            if(companyOk){
+                $('.partsList>li').hide();
+                for(let i = 0; i < $('.partsList>li').length;i++){
+                    for(let j = 0; j < getData.length; j++) {
+                        if (getData[j] == $(this).text()) { //누른 버튼과 일치하는 텍스트 찾기
+                            getData.splice(j, 1); //일치하는 텍스트 삭제
+                            j--; //배열 인덱스넘버 재정렬
+                        }
+                        if ($('.partsList>li').eq(i).hasClass(getData[j])) { 
+                            $('.partsList>li').eq(i).show();
+                        }
+                    }
                 }
-            }*/
+            }
+            if(getData.length == 0) $('.partsList>li').show();
         }else {
             $(this).addClass('liSelect');
-            //getData[getData.length] = $(this).text();
+            if(companyOk){
+                getData[getData.length] = $(this).text();
+                $('.partsList>li').hide();
+                for(let i = 0; i < $('.partsList>li').length;i++){
+                    for(let j = 0; j < getData.length; j++) {
+                        if ($('.partsList>li').eq(i).hasClass(getData[j])) { 
+                            $('.partsList>li').eq(i).show();
+                        }
+                    }
+                }
+            }
         }
+            
     });
     cpuMake();
+    //장바구니에 추가
     $(document).on('click','.highBtn', function(){
         let par = $(this).parent();
         price = Number(par.attr('data-price'));
@@ -196,6 +225,7 @@ $(function(){
         cartCount++;
         counting();
     });
+    //장바구니에서 제외
     $(document).on('click','.xBtn', function(){
         let par = $(this).parent();
         price = par.attr('data-price');
@@ -207,6 +237,7 @@ $(function(){
     });
     let cartCounting = $(`<div class="redBall">0</div>`);
     $('#searchBar>form').append(cartCounting);
+    //모바일/태블릿에서 현재 장바구니 개수 띄워주는 함수
     function counting(){
         if($winWidth>1199) return false;
         if(cartCount>0) {

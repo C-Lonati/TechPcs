@@ -1,4 +1,5 @@
 $(function(){
+    //우측 핫뉴스,추천뉴스 위치제어
     if($(window).width()>1199){
         $(window).on('scroll', function(){
             if(window.scrollY>100)
@@ -6,6 +7,7 @@ $(function(){
             else $('#otherNews').css('top','180px');
         });
     }
+    //카테고리 탭메뉴 제어
     $('.category>li').on('click', function(){
         $('.cateSelect').removeClass('cateSelect');
         $(this).addClass('cateSelect');

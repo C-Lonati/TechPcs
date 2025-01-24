@@ -1,7 +1,9 @@
 $(function(){
-    let yMinus = 80;
+    let yMinus = 60;
     let $winWidth = $(window).width();
     let $lastScrollY = 0;
+
+    //상단 cpu이름 뜨는 바 위치 제어
     $(window).on('scroll', function(){
         let scrollY = window.scrollY;
         let scrollDown = scrollY < $lastScrollY;
@@ -15,7 +17,6 @@ $(function(){
         $lastScrollY = scrollY;
     });
     if ($winWidth > 1199) {
-        yMinus = 60;
         $(window).on('scroll', function () {
             $('#compareIndex').css('top', (window.scrollY + 80) + 'px');
         });
@@ -51,6 +52,8 @@ $(function(){
     let cpu1 = [cpu9700x.singleScore,cpu9700x.multiScore,cpu9700x.memoryC,cpu9700x.date,cpu9700x.tdp];
     let cpu2 = [cpu7900x3d.singleScore,cpu7900x3d.multiScore,cpu7900x3d.memoryC,cpu7900x3d.date,cpu7900x3d.tdp];
     let compareCpu1 = new Array, compareCpu2 = new Array;
+
+    //두 cpu수치 정규화
     for(let i=0;i<highCpu.length-2;i++){
         if(cpu1[i]>cpu2[i]){
             compareCpu2[i] = cpu2[i]/cpu1[i];
@@ -69,6 +72,8 @@ $(function(){
         compareCpu2[highCpu.length-1] = cpu1[highCpu.length-1]/cpu2[highCpu.length-1];
         compareCpu1[highCpu.length-1] = 1;
     }
+
+    //차트생성
     let myChart = new Chart($('#chartScore'), {
     type: 'radar',
     data: {
@@ -126,6 +131,7 @@ $(function(){
         return re;
     }
 
+    //벤치마크 스코어 채우기
     $('.cine2024single .first .scoreNum').text(cpuTop.cine2024SingleScore);
     $('.cine2024single .second .scoreNum').text(cpu9700x.cine2024SingleScore);
     $('.cine2024single .second .chartBar').width(tofix(cpu9700x.cine2024SingleScore, cpuTop.cine2024SingleScore));

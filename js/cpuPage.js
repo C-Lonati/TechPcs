@@ -2,6 +2,7 @@ $(function(){
     let startX, endX;
     let $winWidth = $(window).width();
     if ($winWidth < 768) {
+        //저사양(게이밍) cpu 좌우 슬라이드 제어
         let temp = 0;
         $('.mainstreamCpu, .mainstreamCpu *').on('touchstart', function (event) {
             startX = event.originalEvent.changedTouches[0].screenX;
@@ -21,6 +22,7 @@ $(function(){
             }
         });
     }
+    //더보기 버튼 제어
     $('.moreBtn').on('click', function(){
         if($(this).hasClass('hide')){
             $(this).parent().find('.hidden').removeClass('block');
