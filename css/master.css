@@ -1764,16 +1764,15 @@ span.cpuName{
         padding-right : 10px;
     }
     .news .article{
-        line-clamp : 3;
-        -webkit-line-clamp: 3;
+        line-clamp : 4;
+        -webkit-line-clamp: 4;
     }
     .subSnb{
         display : none;
     }
     .recomnCpu{
         gap : 4vw;
-        width : max-content;
-        max-width : 204vw;
+        width : 102vw;
         position : relative;
         flex-wrap : nowrap;
         transition : .3s;

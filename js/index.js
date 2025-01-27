@@ -5,8 +5,8 @@ $(function(){
     let $bannerLen = $('#banner .bannerImg').length;
     let $bannerIndex = 1;
     
-    //배너 왼쪽이동 함수
-    let bannerLeft = function(timeout = 1000) {
+    //배너 왼쪽->오른쪽 이동 함수
+    let bannerLeft = function() {
         if(!banner) return 0;
         $bannerNow = $('#banner .img' + $bannerIndex);
         $bannerNext = $('#banner .img' + $bannerIndex + 1);
@@ -27,12 +27,10 @@ $(function(){
             'left': '-100%',
             'left': '0',
         }, 999);
-        //banner = false;
-        //setTimeout(timeout, banner = true);
     }
 
-    //배너 오른쪽 이동 함수
-    let bannerRight = function(timeout = 1000) {
+    //배너 오른쪽->왼쪽 이동 함수
+    let bannerRight = function() {
         if(!banner) return 0;
         $bannerNow = $('#banner .img' + $bannerIndex);
         $bannerIndex++;
@@ -52,9 +50,14 @@ $(function(){
             'left': '100%',
             'left': '0',
         }, 999);
-        //banner = false;
-        //setTimeout(timeout, banner = true);
     }
+    //배너 자동실행 관련 기능
+    let bannerMove = setInterval(bannerRight, 3000);
+    $('#banner').hover(function(){
+        clearInterval(bannerMove);
+    },function(){
+        bannerMove = setInterval(bannerRight, 3000);
+    });
 
     //데스크탑 해상도 설정
     if ($winWidth > 1199) {
