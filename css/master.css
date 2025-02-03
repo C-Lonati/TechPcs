@@ -623,7 +623,7 @@ span.cpuName{
 
 #build .row{
     margin-top : 0 !important;
-    padding-top : 20px !important;
+    padding-top : 90px !important;
     overflow : hidden;
     padding-bottom : 10px;
 }
@@ -717,6 +717,7 @@ span.cpuName{
     padding : 10px;
     overflow: hidden;
     position : relative;
+    margin-bottom : 20px;
 }
 
 
@@ -1490,6 +1491,16 @@ span.cpuName{
     .cartList .highBtn{
         display: none;
     }
+    
+    #searchBar{
+        position : fixed;
+        top : 0;
+        background : white;
+        left : 0;
+        width : 100%;
+        padding : 10px calc(10px + 5%);
+    }
+
 }
 @media screen and (max-width:1199px) and (min-width:768px){
     #slideMenu .subLnb{
