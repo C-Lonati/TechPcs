@@ -1450,7 +1450,7 @@ span.cpuName{
         color : white;
         text-align: center;
         position : absolute;
-        right : 20px;
+        right : calc(5% + 20px);
         display : none;
     }
     #cart{
