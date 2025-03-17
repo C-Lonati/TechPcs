@@ -202,8 +202,9 @@ section>h2{
     text-overflow : ellipsis;
     margin-bottom : 5px;
 }
-.news>.article{
-    display: -webkit-box;
+.article{
+    display : block;
+    display : -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -963,7 +964,7 @@ span.cpuName{
         margin-left : -11.46vw;
     }
     #banner:hover .prev, #banner:hover .next{
-        opacity: 100;
+        opacity: 1;
     }
     #index .hardwareNews{
         gap : 60px;
@@ -978,11 +979,6 @@ span.cpuName{
         position : absolute;
         top : 0;
         bottom : 0;
-    }
-    .article{
-        display : block;
-        display : -webkit-box;
-        -webkit-box-orient: vertical;
     }
     #index .news:hover>.article{
         line-clamp : 32;
@@ -1551,10 +1547,6 @@ span.cpuName{
         padding-right : 1.5vw;
     }
     .news>.article{
-        overflow : hidden;
-        text-overflow : ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
         line-clamp : 13;
         -webkit-line-clamp: 13;
     }
