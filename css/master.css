@@ -979,6 +979,11 @@ span.cpuName{
         top : 0;
         bottom : 0;
     }
+    .article{
+        display : block;
+        display : -webkit-box;
+        -webkit-box-orient: vertical;
+    }
     #index .news:hover>.article{
         line-clamp : 32;
         -webkit-line-clamp: 32;
@@ -1388,7 +1393,7 @@ span.cpuName{
 
     
     #newCpu .cpuName{
-        margin-bottom : 20px;
+        margin-bottom : 10px;
     }
     .mainstreamCpu{
         display : flex;
@@ -1567,7 +1572,7 @@ span.cpuName{
     .recomnGpu p{
         overflow: hidden;
         white-space : nowrap;
-        text-overflow : hidden;
+        text-overflow : ellipsis;
     }
     .recomnGpu img{
         max-height : 31vw;
