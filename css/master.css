@@ -868,8 +868,6 @@ span.cpuName{
         margin-bottom : 100px;
     }
     #header{
-        left : 50%;
-        margin-left: -960px;
         left : 0;
         top : 0;
         width : 100%;
