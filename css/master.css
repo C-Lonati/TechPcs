@@ -514,7 +514,7 @@ span.cpuName{
     overflow : hidden;
 }
 .chartBar{
-    background : #3b82f9;
+    background : #2e70db;
     height : 16px;
     border-radius: 4px;
     color : white;
@@ -740,7 +740,7 @@ span.cpuName{
     outline-style : none;
     padding : 10px;
 }
-#login label{
+#login label, #build label{
     display : none;
 }
 .loginSns{
@@ -803,6 +803,14 @@ span.cpuName{
     left : 50%;
     border-radius: 0 2vw 2vw 0;
 }
+
+
+@media screen and (min-width : 1921px){
+    #header{
+        left : 50% !important;
+        margin-left: -960px;
+    }
+}
 @media screen and (min-width:1200px){
     h2{font-size : 1.6em;}    
     h3{font-size : 1.3em;}
@@ -860,9 +868,10 @@ span.cpuName{
         margin-bottom : 100px;
     }
     #header{
-        top : 0;
         left : 50%;
         margin-left: -960px;
+        left : 0;
+        top : 0;
         width : 100%;
         max-width : 1920px;
         display : flex;
